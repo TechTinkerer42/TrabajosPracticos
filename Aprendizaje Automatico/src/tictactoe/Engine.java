@@ -4,13 +4,13 @@ import tictactoe.ai.Player;
 import tictactoe.ai.RandomPlayer;
 
 
-public class TicTacToeEngine {
+public class Engine {
 	
 	private int playedTurns;
 	private Game game;
 	private Player current, p1, p2;
 	
-	public TicTacToeEngine() {
+	public Engine() {
 		game = new Game();
 		playedTurns = 0;
 	}

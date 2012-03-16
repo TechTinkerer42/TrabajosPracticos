@@ -1,9 +1,9 @@
 package tictactoe;
 
-public class TicTacToeTest {
+public class Test {
 
 	public static void main(String[] args) {
-		new TicTacToeEngine().random();
+		new Engine().random();
 	}
 	
 }
