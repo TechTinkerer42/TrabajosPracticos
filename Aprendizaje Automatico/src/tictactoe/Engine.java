@@ -56,7 +56,7 @@ public class Engine {
 		System.out.println("\n   ------");
 		int rowNumber = 0;
 		for (Mark[] row: game.getBoard().getMarks()) {
-			System.out.print(rowNumber + " | ");
+			System.out.print(rowNumber++ + " | ");
 			for(Mark value: row) {
 				String mark = (value == Mark.O) ? "0" : (value == Mark.X ? "X" : "-"); 
 				System.out.print(mark + " ");
