@@ -7,19 +7,24 @@ public class Board implements Cloneable {
 	private int completed;
 	
 	public Board() {
-		completed = 0;
+		this(null);
+		clear();
+	}
+	
+	public Board(Board b) {
 		marks = new Mark[SIZE][SIZE];
+		if (b != null) {
+			setTo(b);
+		}
+	}
+	
+	public void clear() {
+		completed = 0;
 		for (int i = 0; i < SIZE; i++) {
 			for (int j = 0; j < SIZE; j++) {
 				marks[i][j] = Mark.NONE;
 			}
 		}
-	}
-	
-	public Board(Board b) {
-		completed = 0;
-		marks = new Mark[SIZE][SIZE];
-		setTo(b);
 	}
 	
 	public Mark[][] getMarks() {

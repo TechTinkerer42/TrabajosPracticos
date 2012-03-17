@@ -8,8 +8,12 @@ public class Game {
 	
 	public Game() {
 		board = new Board();
+	}
+	
+	public void start() {
+		winner = null;
 		gameFinished = false;
-		winner = Mark.NONE;
+		board.clear();
 	}
 	
 	public void put(Mark mark, int row, int col) {

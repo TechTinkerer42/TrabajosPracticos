@@ -11,14 +11,22 @@ public class Engine {
 	
 	public Engine() {
 		game = new Game();
-		playedTurns = 0;
 	}
 	
 	public void startGame(Player p1, Player p2) {
+		restart();
 		this.p1 = p1;
 		this.p2 = p2;
 		current = p1;
 		play();
+		p1.notifyEndOfgame(game);
+		p2.notifyEndOfgame(game);
+	}
+	
+	private void restart() {
+		playedTurns = 0;
+		game.start();
+		current = null;
 	}
 	
 	private void play() {
