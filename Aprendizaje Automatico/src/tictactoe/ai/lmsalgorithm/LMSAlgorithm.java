@@ -32,4 +32,7 @@ public class LMSAlgorithm {
 		return strategy.calcVAprox(board, toEval);
 	}
 
+	public float[] getW() {
+		return strategy.getW();
+	}
 }

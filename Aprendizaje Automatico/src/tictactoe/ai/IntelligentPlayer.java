@@ -2,6 +2,8 @@ package tictactoe.ai;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import tictactoe.Board;
@@ -9,14 +11,17 @@ import tictactoe.Game;
 import tictactoe.Mark;
 import tictactoe.Movement;
 import tictactoe.ai.lmsalgorithm.LMSAlgorithm;
+import tictactoe.ai.lmsalgorithm.LMSTrainer;
 import util.Logger;
 
 public class IntelligentPlayer extends BasicPlayer {
 
 	private LMSAlgorithm experience;
+	private List<Board> boards;
 	
 	public IntelligentPlayer(Mark mark) {
 		super(mark);
+		boards = new LinkedList<Board>();
 		experience = new LMSAlgorithm();
 	}
 
@@ -28,13 +33,13 @@ public class IntelligentPlayer extends BasicPlayer {
 	public void makeMove(Game game) {
 		Movement move = selectMovement(game.getBoard());
 		game.put(mark, move.row, move.column);
+		((LinkedList<Board>) boards).addFirst(game.getBoard().clone());
 	}
 
 	@Override
-	public void notifyWinner(Mark winner) {
-		if (winner == mark) {	// I have won!
-			
-		}
+	public void notifyEndOfgame(Game game) {
+		Logger.log("Intelligent player", "Using this last game to train my self.\n", Logger.LEVEL_TRACE);
+		LMSTrainer.train(game.getWinner(), this, boards);
 	}
 	
 	/**
@@ -71,4 +76,7 @@ public class IntelligentPlayer extends BasicPlayer {
 		return possibleMovemens;
 	}
 	
+	public LMSAlgorithm getExperience() {
+		return experience;
+	}
 }

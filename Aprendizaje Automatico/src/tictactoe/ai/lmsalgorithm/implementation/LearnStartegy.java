@@ -65,4 +65,8 @@ public abstract class LearnStartegy {
 	}
 
 	public abstract String getName();
+
+	public float[] getW() {
+		return w;
+	}
 }

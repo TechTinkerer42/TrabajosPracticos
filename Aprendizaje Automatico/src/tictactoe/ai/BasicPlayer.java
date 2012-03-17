@@ -2,6 +2,7 @@ package tictactoe.ai;
 
 import java.util.Random;
 
+import tictactoe.Game;
 import tictactoe.Mark;
 
 public abstract class BasicPlayer implements Player {
@@ -28,7 +29,7 @@ public abstract class BasicPlayer implements Player {
 	}
 	
 	@Override
-	public void notifyWinner(Mark winner) {
+	public void notifyEndOfgame(Game game) {
 		
 	}
 }
