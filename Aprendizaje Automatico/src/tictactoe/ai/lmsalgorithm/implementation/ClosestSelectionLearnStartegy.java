@@ -3,9 +3,9 @@ package tictactoe.ai.lmsalgorithm.implementation;
 import tictactoe.Board;
 import tictactoe.Mark;
 
-public class ClosestSelectionBoardAnalizer extends LearnStartegy {
+public class ClosestSelectionLearnStartegy extends LearnStartegy {
 			
-	public ClosestSelectionBoardAnalizer() {
+	public ClosestSelectionLearnStartegy() {
 		super(3);
 	}
 

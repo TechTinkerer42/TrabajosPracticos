@@ -55,7 +55,8 @@ public class Engine {
 		} else {
 			System.out.println("*******************************************");
 			System.out.println("Game Finished! - Final board:");
-			System.out.println("Winner: " + game.getWinner() + "\n");
+			String winner = (game.getWinner() == null) ? "TIE" : game.getWinner().toString();
+			System.out.println("Winner: " + winner + "\n");
 		}
 		System.out.print("\n    ");
 		for(int i = 0; i < Board.SIZE; i++) {

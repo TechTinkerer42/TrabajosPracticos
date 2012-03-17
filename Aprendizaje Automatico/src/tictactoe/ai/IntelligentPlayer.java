@@ -40,6 +40,7 @@ public class IntelligentPlayer extends BasicPlayer {
 	public void notifyEndOfgame(Game game) {
 		Logger.log("Intelligent player", "Using this last game to train my self.\n", Logger.LEVEL_TRACE);
 		LMSTrainer.train(game.getWinner(), this, boards);
+		
 	}
 	
 	/**

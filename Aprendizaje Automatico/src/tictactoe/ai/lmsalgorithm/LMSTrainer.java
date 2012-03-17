@@ -40,12 +40,8 @@ public class LMSTrainer {
 	
 	public Player createTrainedPlayer(Mark mark) {
 		IntelligentPlayer p = new IntelligentPlayer(mark);
-		trainAsSecondPlayer(p);
-		return p;
-	}
-
-	private void trainAsSecondPlayer(IntelligentPlayer p) {
 		p.train(createTrainSet());
+		return p;
 	}
 	
 	private Map<Board, Float> createTrainSet() {
