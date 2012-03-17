@@ -26,4 +26,9 @@ public abstract class BasicPlayer implements Player {
 	public String toString() {
 		return getName() + ": " + mark;
 	}
+	
+	@Override
+	public void notifyWinner(Mark winner) {
+		
+	}
 }

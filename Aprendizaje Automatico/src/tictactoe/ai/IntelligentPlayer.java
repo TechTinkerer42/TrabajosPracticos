@@ -30,6 +30,13 @@ public class IntelligentPlayer extends BasicPlayer {
 		game.put(mark, move.row, move.column);
 	}
 
+	@Override
+	public void notifyWinner(Mark winner) {
+		if (winner == mark) {	// I have won!
+			
+		}
+	}
+	
 	/**
 	 * Input: Cualquier tablero desntro del conjunto de tableros validos.
 	 * Output: Cualquier movimiento dentro del conjunto de movimientos validos.
