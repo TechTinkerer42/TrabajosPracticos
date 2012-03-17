@@ -60,7 +60,7 @@ public class LMSTrainer {
 		b1.set(Mark.O, 1, 1);
 		b1.set(Mark.X, 2, 2);
 		b1.set(Mark.O, 2, 1);
-		trainSet.put(b1, 20000f);
+		trainSet.put(b1, 200f);
 		
 		return trainSet;
 	}
