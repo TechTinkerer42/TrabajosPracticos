@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import tictactoe.Board;
 import tictactoe.Game;
 import tictactoe.Mark;
+import tictactoe.Movement;
 
 public class HumanPlayer extends BasicPlayer {
 
@@ -47,18 +48,19 @@ public class HumanPlayer extends BasicPlayer {
 		String line;
 		while (!validValues) {
 			try {
-				System.out.println("Insert command:");
+				System.out.print("Insert command:");
 				line = input.readLine();
 				String[] values = line.split(",");
 				if (values != null && values.length == 2) {
-					movement.row = Integer.parseInt(values[0]);
-					movement.column = Integer.parseInt(values[1]);
+					movement.row = Integer.parseInt(values[0].trim());
+					movement.column = Integer.parseInt(values[1].trim());
 					validValues = true;
 				} else {
 					System.out.println("Command format: row, column");
 				}
 			} catch (IOException e) {
-				System.out.println("Could not grab user input!");
+				System.out.println("Could not grab user input! - cause: " + e.getMessage());
+				throw new IllegalStateException();
 			} catch (NumberFormatException e) {
 				System.out.println("row and columns must be separated by a comma and be positive integers between 0 and 2 inclusive");
 			}
@@ -69,11 +71,6 @@ public class HumanPlayer extends BasicPlayer {
 	@Override
 	public String getName() {
 		return "Human Player";
-	}
-	
-	private static class Movement {
-		int row;
-		int column;
 	}
 
 }
