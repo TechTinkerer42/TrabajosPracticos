@@ -5,6 +5,8 @@ import tictactoe.Mark;
 
 public class ClosestSelectionLearnStartegy extends LearnStartegy {
 			
+	private static final long serialVersionUID = 1L;
+
 	public ClosestSelectionLearnStartegy() {
 		super(3);
 	}

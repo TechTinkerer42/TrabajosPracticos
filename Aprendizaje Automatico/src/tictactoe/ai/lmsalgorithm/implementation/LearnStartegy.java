@@ -1,23 +1,26 @@
 package tictactoe.ai.lmsalgorithm.implementation;
 
+import java.io.Serializable;
+
 import tictactoe.Board;
 import tictactoe.Mark;
 
-public abstract class LearnStartegy {
+public abstract class LearnStartegy implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	protected static final float EPS = 0.0001f;
 	protected static int[][] SIDE_NON_DIAGONAL = {{ -1, 0 }, { 0, -1 }, { 0, 1 }, { 1, 0 }};
 	protected static int[][] SIDE_ALL = {{-1, -1}, { -1, 0 }, { -1, 1 }, { 0, -1 }, { 0, 1 }, 
 		{ 1, -1 }, { 1, 0 }, { 1, 1 }};
 	
 	protected Board temp;
-	protected float[] x, w;
+	protected float[] w, x;
 	
 	public LearnStartegy(int n) {
 		temp = new Board();
 		x = new float[n];
 		w = new float[n];
-		
 	}
 	
 	/**
@@ -61,7 +64,7 @@ public abstract class LearnStartegy {
 			for(int i = 0; i < w.length; i++) {
 				w[i] /= length;
 			}
-		}		
+		}
 	}
 
 	public abstract String getName();

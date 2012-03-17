@@ -1,5 +1,6 @@
 package tictactoe.ai;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -10,23 +11,28 @@ import tictactoe.Board;
 import tictactoe.Game;
 import tictactoe.Mark;
 import tictactoe.Movement;
+import tictactoe.ai.lmsalgorithm.PlayerIO;
 import tictactoe.ai.lmsalgorithm.LMSAlgorithm;
 import tictactoe.ai.lmsalgorithm.LMSTrainer;
 import util.Logger;
 
 public class IntelligentPlayer extends BasicPlayer {
 
-	private LMSAlgorithm experience;
+	private LMSAlgorithm algorithm;
 	private List<Board> boards;
 	
 	public IntelligentPlayer(Mark mark) {
+		this(new LMSAlgorithm(), mark);
+	}
+	
+	public IntelligentPlayer(LMSAlgorithm algorithm, Mark mark) {
 		super(mark);
 		boards = new LinkedList<Board>();
-		experience = new LMSAlgorithm();
+		this.algorithm = algorithm;
 	}
 
 	public void train(Map<Board, Float> traningSet) {
-		experience.train(traningSet, mark);
+		algorithm.train(traningSet, mark);
 	}
 	
 	@Override
@@ -40,7 +46,11 @@ public class IntelligentPlayer extends BasicPlayer {
 	public void notifyEndOfgame(Game game) {
 		Logger.log("Intelligent player", "Using this last game to train my self.\n", Logger.LEVEL_TRACE);
 		LMSTrainer.train(game.getWinner(), this, boards);
-		
+		try {
+			PlayerIO.save(algorithm);
+		} catch (IOException e) {
+			Logger.log("Error", "Could not save player experience", Logger.LEVEL_ERROR);
+		}
 	}
 	
 	/**
@@ -53,7 +63,7 @@ public class IntelligentPlayer extends BasicPlayer {
 		float bestValue = 0;
 		for(Movement movement: calcMovements(board)) {
 			temp.set(mark, movement.row, movement.column);
-			float value = experience.evaluate(temp, mark);
+			float value = algorithm.evaluate(temp, mark);
 			Logger.log("Player " + mark, "Movement " + movement + " evaluated as: " + value, Logger.LEVEL_DEBUG);
 			if (best == null || bestValue < value) {
 				best = movement;
@@ -78,6 +88,6 @@ public class IntelligentPlayer extends BasicPlayer {
 	}
 	
 	public LMSAlgorithm getExperience() {
-		return experience;
+		return algorithm;
 	}
 }

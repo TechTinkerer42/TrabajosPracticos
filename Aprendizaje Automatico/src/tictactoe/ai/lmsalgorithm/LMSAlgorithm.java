@@ -1,5 +1,6 @@
 package tictactoe.ai.lmsalgorithm;
 
+import java.io.Serializable;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -9,16 +10,21 @@ import tictactoe.ai.lmsalgorithm.implementation.DefensiveSelectionStrategy;
 import tictactoe.ai.lmsalgorithm.implementation.LearnStartegy;
 import util.Logger;
 
-public class LMSAlgorithm {
+public class LMSAlgorithm implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private LearnStartegy strategy;
 	private float nu;
 	
 	public LMSAlgorithm() {
-//		strategy = new ClosestSelectionBoardAnalizer();
-		strategy = new DefensiveSelectionStrategy();
+		this(new DefensiveSelectionStrategy());
+	}
+	
+	public LMSAlgorithm(LearnStartegy strategy) {
+		this.strategy = strategy;
 		nu  = 0.1f;
-		Logger.log("Intelligent Player", "Using strategy " + strategy.getName(), Logger.LEVEL_TRACE);
+		Logger.log("Intelligent Player", "Using strategy " + strategy.getName(), Logger.LEVEL_TRACE);		
 	}
 
 	public void train(Map<Board, Float> traningSet, Mark toEval) {

@@ -8,6 +8,8 @@ import util.Logger;
 
 public class DefensiveSelectionStrategy extends LearnStartegy {
 
+	private static final long serialVersionUID = 1L;
+
 	public DefensiveSelectionStrategy() {
 		super(4);
 	}

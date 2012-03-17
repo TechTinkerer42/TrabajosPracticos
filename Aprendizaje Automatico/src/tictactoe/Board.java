@@ -1,7 +1,11 @@
 package tictactoe;
 
-public class Board implements Cloneable {
-	public final static int SIZE = 3;
+import java.io.Serializable;
+
+public class Board implements Cloneable, Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	public static final int SIZE = 3;
 
 	private Mark[][] marks;
 	private int completed;
