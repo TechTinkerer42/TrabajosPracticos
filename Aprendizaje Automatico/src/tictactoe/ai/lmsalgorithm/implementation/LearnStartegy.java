@@ -20,11 +20,6 @@ public abstract class LearnStartegy {
 		
 	}
 	
-	public float evauate(Board board, Mark toEval) {
-		calcX(board, toEval);
-		return calcVAprox(board, toEval);
-	}
-	
 	/**
 	 * Returns the xi values for this board according to the definition of each xi
 	 * in this class.
@@ -36,6 +31,7 @@ public abstract class LearnStartegy {
 	 * Calculates Vsombero(b) from the actual x y w values.
 	 */
 	public float calcVAprox(Board board, Mark toEval) {
+		calcX(board, toEval);
 		float vAprox = 0;
 		for(int i = 0; i < w.length; i++) {
 			vAprox += w[i] * x[i];
@@ -67,4 +63,6 @@ public abstract class LearnStartegy {
 			}
 		}		
 	}
+
+	public abstract String getName();
 }

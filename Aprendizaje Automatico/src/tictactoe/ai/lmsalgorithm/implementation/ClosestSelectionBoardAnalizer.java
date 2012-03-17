@@ -10,6 +10,11 @@ public class ClosestSelectionBoardAnalizer extends LearnStartegy {
 	}
 
 	@Override
+	public String getName() {
+		return "Closest Group Selection";
+	}
+	
+	@Override
 	public void calcX(Board b, Mark toEval) {
 		x[0] = 1;	// always has to be 1
 		x[1] = evalPairs(b, toEval, true);	// toEval adyacent equal pairs
@@ -25,9 +30,11 @@ public class ClosestSelectionBoardAnalizer extends LearnStartegy {
 				if (mark == Mark.NONE) {
 					continue;
 				}
-				if ((compareEquals && mark == toEval) || (!compareEquals && mark != toEval)) {
+				if ((compareEquals && mark == toEval)) {
 					pairs += countAdyanetPairs(toEval, i, j);
 					temp.set(Mark.NONE, i, j);
+				} else if (!compareEquals && mark != toEval) {
+					pairs += countAdyanetPairs(mark, i, j);
 				}
 			}
 		}

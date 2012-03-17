@@ -21,7 +21,7 @@ public class IntelligentPlayer extends BasicPlayer {
 	}
 
 	public void train(Map<Board, Float> traningSet) {
-		experience.train(mark, traningSet);
+		experience.train(traningSet, mark);
 	}
 	
 	@Override
@@ -36,10 +36,9 @@ public class IntelligentPlayer extends BasicPlayer {
 	 */
 	private Movement selectMovement(Board board) {
 		Board temp = board.clone();
-		Collection<Movement> possibleMovemens = calcMovements(board);
 		Movement best = null;
 		float bestValue = 0;
-		for(Movement movement: possibleMovemens) {
+		for(Movement movement: calcMovements(board)) {
 			temp.set(mark, movement.row, movement.column);
 			float value = experience.evaluate(temp, mark);
 			Logger.log("Player " + mark, "Movement " + movement + " evaluated as: " + value, Logger.LEVEL_DEBUG);
