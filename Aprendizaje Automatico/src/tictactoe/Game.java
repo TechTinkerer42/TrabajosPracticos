@@ -12,15 +12,15 @@ public class Game {
 		winner = Mark.NONE;
 	}
 	
-	public void put(Mark player, int row, int col) {
+	public void put(Mark mark, int row, int col) {
 		if (gameFinished) {
 			throw new IllegalArgumentException("Board is already completed...");
 		}
 		if (board.isSet(row, col)) {
 			throw new IllegalArgumentException("Cell is already set");
 		}
-		board.set(player, row, col);
-		checkEndOfGame(player);
+		board.set(mark, row, col);
+		checkEndOfGame(mark);
 	}
 	
 	public boolean isSet(int row, int col) {

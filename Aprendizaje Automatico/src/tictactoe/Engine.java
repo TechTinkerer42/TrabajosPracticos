@@ -1,7 +1,6 @@
 package tictactoe;
 
 import tictactoe.ai.Player;
-import tictactoe.ai.RandomPlayer;
 
 
 public class Engine {
@@ -15,10 +14,14 @@ public class Engine {
 		playedTurns = 0;
 	}
 	
-	public void random() {
-		p1 = new RandomPlayer(Mark.X);
-		p2 = new RandomPlayer(Mark.O);
+	public void startGame(Player p1, Player p2) {
+		this.p1 = p1;
+		this.p2 = p2;
 		current = p1;
+		play();
+	}
+	
+	private void play() {
 		while(!game.isGameFinished()) {
 			printBoardStatus();
 			current.makeMove(game);
@@ -46,7 +49,14 @@ public class Engine {
 			System.out.println("Game Finished! - Final board:");
 			System.out.println("Winner: " + game.getWinner() + "\n");
 		}
+		System.out.print("\n    ");
+		for(int i = 0; i < Board.SIZE; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println("\n   ------");
+		int rowNumber = 0;
 		for (Mark[] row: game.getBoard().getMarks()) {
+			System.out.print(rowNumber + " | ");
 			for(Mark value: row) {
 				String mark = (value == Mark.O) ? "0" : (value == Mark.X ? "X" : "-"); 
 				System.out.print(mark + " ");

@@ -1,7 +1,7 @@
 package tictactoe;
 
 public class Board {
-	private final static int SIZE = 3;
+	public final static int SIZE = 3;
 
 	private Mark[][] marks;
 	private int completed;

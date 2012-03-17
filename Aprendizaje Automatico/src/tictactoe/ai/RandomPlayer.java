@@ -1,17 +1,12 @@
 package tictactoe.ai;
 
-import java.util.Random;
-
 import tictactoe.Game;
 import tictactoe.Mark;
 
-public class RandomPlayer implements Player {
+public class RandomPlayer extends BasicPlayer {
 
-	private Random random = new Random();
-	private Mark mark;
-	
 	public RandomPlayer(Mark mark) {
-		this.mark = mark;
+		super(mark);
 	}
 	
 	@Override
@@ -28,12 +23,8 @@ public class RandomPlayer implements Player {
 		}
 	}
 	
-	public Mark getMark() {
-		return mark;
-	}
-
 	@Override
-	public String toString() {
-		return "Player: " + mark;
+	public String getName() {
+		return "Random Player";
 	}
 }
