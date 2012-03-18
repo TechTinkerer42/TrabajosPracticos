@@ -14,7 +14,6 @@ import util.Logger;
 public class Main {
 
 	public static void main(String[] args) {
-		args = new String[] {"train", "1500"};
 		Logger.init();
 		Logger.LOG_LEVEL = Logger.LEVEL_TRACE;
 		Test test = new Test();
