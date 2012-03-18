@@ -1,5 +1,6 @@
 package tictactoe.ai.lmsalgorithm;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,6 +14,11 @@ public class PlayerIO {
 	private static final String fileName = "experience.exp";
 	private static final String path = "./Aprendizaje Automatico/res";
 
+	static {
+		// create folder to store information
+		new File(path).mkdirs();
+	}
+	
 	public static void save(LMSAlgorithm strategy) throws IOException {
 		FileOutputStream fos = new FileOutputStream(getFullPath());
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
