@@ -18,7 +18,6 @@ public class RandomPlayer extends BasicPlayer {
 			if (!game.isSet(row, col)) {
 				game.put(mark, row, col);
 				moved = true;
-				System.out.println("\n" + this + " => Set: (" + row + ", " + col + ")");
 			}
 		}
 	}
