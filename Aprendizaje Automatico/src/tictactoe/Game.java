@@ -46,6 +46,9 @@ public class Game {
 			winner = player;
 		} else {
 			gameFinished = board.isComplete();
+			if (gameFinished) {
+				winner = Mark.NONE;
+			}
 		}
 	}
 

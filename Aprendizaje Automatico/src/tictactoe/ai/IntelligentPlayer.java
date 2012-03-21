@@ -44,6 +44,7 @@ public class IntelligentPlayer extends BasicPlayer {
 
 	@Override
 	public void notifyEndOfgame(Game game) {
+		super.notifyEndOfgame(game);
 		Logger.log("Intelligent player", "Using this last game to train my self.\n", Logger.LEVEL_TRACE);
 		LMSTrainer.train(game.getWinner(), this, boards);
 		try {
@@ -89,5 +90,10 @@ public class IntelligentPlayer extends BasicPlayer {
 	
 	public LMSAlgorithm getExperience() {
 		return algorithm;
+	}
+	
+	@Override
+	public String getName() {
+		return "Intelligent Player";
 	}
 }

@@ -1,6 +1,7 @@
 package tictactoe.ai;
 
 import tictactoe.Game;
+import tictactoe.PlayerStats;
 
 public interface Player {
 	
@@ -8,4 +9,7 @@ public interface Player {
 	
 	void notifyEndOfgame(Game game);
 	
+	PlayerStats getStats();
+
+	String getName();
 }

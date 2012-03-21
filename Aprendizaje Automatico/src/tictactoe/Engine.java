@@ -61,7 +61,7 @@ public class Engine {
 	private void printBoardStatus() {
 		if (!game.isGameFinished()) {
 			System.out.println("------- Turn Count: " + playedTurns + "-------");
-			System.out.println("Plays " + current);
+			System.out.println("Plays " + current.getName());
 		} else {
 			System.out.println("*******************************************");
 			System.out.println("Game Finished! - Final board:");

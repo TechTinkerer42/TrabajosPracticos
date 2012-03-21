@@ -47,6 +47,9 @@ public class Test {
 				nGames--;
 				enfOfgame = nGames < 0;
 			}
+			System.out.println("***** Game stats ******");
+			System.out.println(p1);
+			System.out.println(p2);
 		} while(!enfOfgame);
 	}
 }
