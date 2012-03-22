@@ -45,7 +45,7 @@ public class PlayerStats {
 		float lostPercent = (losts / (float) totalGames) * 100;
 		s += "Lost: " + losts + " (" + lostPercent + "%)\n";
 		float tiesPercent = 100 - winPercent - lostPercent;
-		s += "Ties: " + losts + " (" + tiesPercent + "%)\n";
+		s += "Ties: " + ties + " (" + tiesPercent + "%)\n";
 		return s;
 	}
 }
