@@ -1,5 +1,7 @@
 package tictactoe;
 
+import java.text.DecimalFormat;
+
 
 public class PlayerStats {
 
@@ -37,15 +39,16 @@ public class PlayerStats {
 	
 	@Override
 	public String toString() {
+        DecimalFormat df = new DecimalFormat("#.##");
 		String s = "";
 		int totalGames = wins + losts + ties;
 		s += "Total Games: " + totalGames + "\n";
 		float winPercent = (wins / (float) totalGames) * 100;
-		s += "Wins: " + wins + " (" + winPercent + "%)\n";
+		s += "Wins: " + wins + " (" + df.format(winPercent) + "%)\n";
 		float lostPercent = (losts / (float) totalGames) * 100;
-		s += "Lost: " + losts + " (" + lostPercent + "%)\n";
+		s += "Lost: " + losts + " (" + df.format(lostPercent) + "%)\n";
 		float tiesPercent = 100 - winPercent - lostPercent;
-		s += "Ties: " + losts + " (" + tiesPercent + "%)\n";
+		s += "Ties: " + losts + " (" + df.format(tiesPercent) + "%)\n";
 		return s;
 	}
 }
