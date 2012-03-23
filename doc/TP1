@@ -16,6 +16,35 @@ I. Diseño de sistemas de aprendizaje
 			Sino => V(b) = V(b') donde b' es el mejor estado del tablero que puede alcanzarse que esta a
 				n movimientos de b'.
 
+	3) contar estrategias usadas y etc...
+	
 II. Aprendizaje de conceptos
 
-	
+Cielo		Temperatura	Humedad	Viento	Agua		Prevision		Hacer Deporte
+
+Soleado 	Templada 	Normal	Fuerte	Templada	Sigue igual  	Si
+Soleado 	Templada  	Alta  	Fuerte 	Templada 	Sigue igual 	Si
+Lluvioso  	Fria    	Alta  	Fuerte 	Templada 	Cambio       	No
+Soleado 	Templada  	Alta  	Fuerte 	Fria     	Cambio     		Si
+
+	1)
+		a) El nuevo conjunto de instancias X quedaria dado por:
+			cielo => soleado, nublado, lluvioso
+			aire => cálida, fría
+			humedad => normal, alta
+			viento => fuerte, débil
+			agua => cálida, fría
+			pronóstico => igual, cambiante
+		    corriente (del agua) => débil, moderada o fuerte
+		
+			El nuevo tamaño de hipotesis semanticamente diferente es = (4*3*3*3*3*3)* 4 + 1
+			Es decir, casi se quatriplicaria el espacio de hipotesis
+			
+		b) Cada atibuto A con k valores diferentes multiplica a la cantidad de hipotesis en 
+		casi k veces. |V| = (|V_ant| - 1) * (k + 1) + 1 
+
+		
+		
+		
+		
+		
