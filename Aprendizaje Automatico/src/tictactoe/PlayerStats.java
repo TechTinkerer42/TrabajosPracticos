@@ -48,7 +48,7 @@ public class PlayerStats {
 		float lostPercent = (losts / (float) totalGames) * 100;
 		s += "Lost: " + losts + " (" + df.format(lostPercent) + "%)\n";
 		float tiesPercent = 100 - winPercent - lostPercent;
-		s += "Ties: " + losts + " (" + df.format(tiesPercent) + "%)\n";
+		s += "Ties: " + ties + " (" + df.format(tiesPercent) + "%)\n";
 		return s;
 	}
 }

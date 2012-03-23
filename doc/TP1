@@ -1,0 +1,21 @@
+Trabajo Practico 1 - 
+
+I. Diseño de sistemas de aprendizaje
+
+	1) Aprender a jugar al 4 en linea
+		a) 
+			Tarea: colocar 4 fichas en linea antes que el oponente
+			Medida de rendimiento: cantidad maxima de fichas colocadas en linea
+			Experiencia de aprendizaje: 
+				-> cada vez que se logra bloquear una linea del oponente
+				-> cada vez que se logra alinear 4 fichas
+		b) 
+			Si b es un estado final de gana => V(b) = 100;
+			Si b es un estado final de pierde => V(b) = -100;
+			Si b es un estado final de empate => V(b) = 5;
+			Sino => V(b) = V(b') donde b' es el mejor estado del tablero que puede alcanzarse que esta a
+				n movimientos de b'.
+
+II. Aprendizaje de conceptos
+
+	
