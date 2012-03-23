@@ -60,9 +60,11 @@ public class Main {
 		Player random = new RandomPlayer((mark == Mark.X) ? Mark.O : Mark.X);
 		test.setP1(random);
 		test.setP2(intelligent);
-		test.getEngine().setPrintBoardStatus(false);
+		test.setPrintBoardStatus(false);
 		System.out.println("Training the player....");
 		test.run(nGames);
+		System.out.println(">>>>>>>>>>>> Intelligent player final stats <<<<<<<<<<<");
+		System.out.println(intelligent);
 		return intelligent;
 	}
 }

@@ -37,16 +37,12 @@ public class Engine {
 	
 	private void play() {
 		while(!game.isGameFinished()) {
-			if (printBoardStatus) { 
-				printBoardStatus();
-			}
+			printBoardStatus();
 			current.makeMove(game);
 			playedTurns++;
 			nextPlayer();
 		}
-		if (printBoardStatus) {
-			printBoardStatus();
-		}
+		printBoardStatus();
 	}
 	
 	private Player nextPlayer() {
@@ -59,6 +55,9 @@ public class Engine {
 	}
 	
 	private void printBoardStatus() {
+		if (!printBoardStatus) {
+			return;
+		}
 		if (!game.isGameFinished()) {
 			System.out.println("------- Turn Count: " + playedTurns + "-------");
 			System.out.println("Plays " + current.getName());

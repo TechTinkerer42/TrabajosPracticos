@@ -8,7 +8,8 @@ public class Test {
 	
 	private Engine ticTacToe;
 	private Player p1, p2;
-
+	private boolean printBoardStatus;
+	
 	public Test() {
 		this(null, null);
 	}
@@ -42,14 +43,21 @@ public class Test {
 			Player temp = p1;
 			p1 = p2;
 			p2 = temp;
-			Logger.log("End of Turn", "***** Players have switched turns! *****", Logger.LEVEL_TRACE);
 			if (nGames != FOR_EVER) {
 				nGames--;
 				enfOfgame = nGames < 0;
 			}
-			System.out.println("***** Game stats ******");
-			System.out.println(p1);
-			System.out.println(p2);
+			if (printBoardStatus) {
+				Logger.log("End of Turn", "***** Players have switched turns! *****", Logger.LEVEL_TRACE);
+				System.out.println("***** Game stats ******");
+				System.out.println(p1);
+				System.out.println(p2);
+			}
 		} while(!enfOfgame);
+	}
+	
+	public void setPrintBoardStatus(boolean printBoardStatus) {
+		this.printBoardStatus = printBoardStatus;
+		ticTacToe.setPrintBoardStatus(printBoardStatus);
 	}
 }
