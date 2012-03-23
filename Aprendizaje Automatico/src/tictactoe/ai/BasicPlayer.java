@@ -36,14 +36,7 @@ public abstract class BasicPlayer implements Player {
 	
 	@Override
 	public void notifyEndOfgame(Game game) {
-		Mark winner = game.getWinner();
-		if (winner == mark) {
-			stats.notifyStatus(PlayerStats.STATUS_WIN);
-		} else if (winner == Mark.NONE) {
-			stats.notifyStatus(PlayerStats.STATUS_TIE);
-		} else {
-			stats.notifyStatus(PlayerStats.STATUS_LOOSE);
-		}
+		stats.notifyStatus(mark, game.getWinner());
 	}
 	
 	@Override
