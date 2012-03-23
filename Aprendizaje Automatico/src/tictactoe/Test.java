@@ -8,7 +8,7 @@ public class Test {
 	
 	private Engine ticTacToe;
 	private Player p1, p2;
-	private boolean printBoardStatus;
+	private boolean printOutput;
 	
 	public Test() {
 		this(null, null);
@@ -47,7 +47,7 @@ public class Test {
 				nGames--;
 				enfOfgame = nGames < 0;
 			}
-			if (printBoardStatus) {
+			if (printOutput) {
 				Logger.log("End of Turn", "***** Players have switched turns! *****", Logger.LEVEL_TRACE);
 				System.out.println("***** Game stats ******");
 				System.out.println(p1);
@@ -56,8 +56,8 @@ public class Test {
 		} while(!enfOfgame);
 	}
 	
-	public void setPrintBoardStatus(boolean printBoardStatus) {
-		this.printBoardStatus = printBoardStatus;
-		ticTacToe.setPrintBoardStatus(printBoardStatus);
+	public void setPrintStatus(boolean printStatus) {
+		this.printOutput = printStatus;
+		ticTacToe.setPrintStatus(printStatus);
 	}
 }

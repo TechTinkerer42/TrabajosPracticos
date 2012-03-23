@@ -36,7 +36,7 @@ public class Main {
 		}
 		test.setP1(p1);
 		test.setP2(p2);
-		test.getEngine().setPrintBoardStatus(true);
+		test.getEngine().setPrintStatus(true);
 		test.run();
 	}
 	
@@ -60,7 +60,7 @@ public class Main {
 		Player random = new RandomPlayer((mark == Mark.X) ? Mark.O : Mark.X);
 		test.setP1(random);
 		test.setP2(intelligent);
-		test.setPrintBoardStatus(false);
+		test.setPrintStatus(false);
 		System.out.println("Training the player....");
 		test.run(nGames);
 		System.out.println(">>>>>>>>>>>> Intelligent player final stats <<<<<<<<<<<");

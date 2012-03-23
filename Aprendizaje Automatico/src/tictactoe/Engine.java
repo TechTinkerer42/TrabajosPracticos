@@ -8,15 +8,15 @@ public class Engine {
 	private int playedTurns;
 	private Game game;
 	private Player current, p1, p2;
-	private boolean printBoardStatus;
+	private boolean printStatus;
 	
 	public Engine() {
 		game = new Game();
-		printBoardStatus = true;
+		printStatus = true;
 	}
 	
-	public void setPrintBoardStatus(boolean printBoardStatus) {
-		this.printBoardStatus = printBoardStatus;
+	public void setPrintStatus(boolean printStatus) {
+		this.printStatus = printStatus;
 	}
 	
 	public void startGame(Player p1, Player p2) {
@@ -55,7 +55,7 @@ public class Engine {
 	}
 	
 	private void printBoardStatus() {
-		if (!printBoardStatus) {
+		if (!printStatus) {
 			return;
 		}
 		if (!game.isGameFinished()) {
