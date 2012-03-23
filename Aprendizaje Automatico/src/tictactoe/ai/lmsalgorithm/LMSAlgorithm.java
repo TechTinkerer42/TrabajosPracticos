@@ -41,4 +41,8 @@ public class LMSAlgorithm implements Serializable {
 	public float[] getW() {
 		return strategy.getW();
 	}
+	
+	public void restart() {
+		strategy.restart();
+	}
 }

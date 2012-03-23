@@ -12,4 +12,7 @@ public interface Player {
 	PlayerStats getStats();
 
 	String getName();
+	
+	void restart();
+	
 }

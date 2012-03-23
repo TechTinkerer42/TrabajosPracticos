@@ -20,6 +20,7 @@ public class IntelligentPlayer extends BasicPlayer {
 
 	private LMSAlgorithm algorithm;
 	private List<Board> boards;
+	private boolean trainingMode;
 	
 	public IntelligentPlayer(Mark mark) {
 		this(new LMSAlgorithm(), mark);
@@ -29,6 +30,7 @@ public class IntelligentPlayer extends BasicPlayer {
 		super(mark);
 		boards = new LinkedList<Board>();
 		this.algorithm = algorithm;
+		trainingMode = true;
 	}
 
 	public void train(Map<Board, Float> traningSet) {
@@ -39,19 +41,24 @@ public class IntelligentPlayer extends BasicPlayer {
 	public void makeMove(Game game) {
 		Movement move = selectMovement(game.getBoard());
 		game.put(mark, move.row, move.column);
-		((LinkedList<Board>) boards).addFirst(game.getBoard().clone());
+		if (trainingMode) {
+			((LinkedList<Board>) boards).addFirst(game.getBoard().clone());
+		}
 	}
 
 	@Override
 	public void notifyEndOfgame(Game game) {
 		super.notifyEndOfgame(game);
-		Logger.log("Intelligent player", "Using this last game to train my self.\n", Logger.LEVEL_TRACE);
-		LMSTrainer.train(game.getWinner(), this, boards);
-		try {
-			PlayerIO.save(algorithm);
-		} catch (IOException e) {
-			Logger.log("Error", "Could not save player experience", Logger.LEVEL_ERROR);
+		if (trainingMode) {
+			Logger.log("Intelligent player", "Using this last game to train my self.\n", Logger.LEVEL_TRACE);
+			LMSTrainer.train(game.getWinner(), this, boards);
+			try {
+				PlayerIO.save(algorithm);
+			} catch (IOException e) {
+				Logger.log("Error", "Could not save player experience", Logger.LEVEL_ERROR);
+			}
 		}
+		boards.clear();
 	}
 	
 	/**
@@ -95,5 +102,21 @@ public class IntelligentPlayer extends BasicPlayer {
 	@Override
 	public String getName() {
 		return "Intelligent Player";
+	}
+	
+	public void setTrainingMode(boolean trainingMode) {
+		this.trainingMode = trainingMode;
+	}
+	
+	public boolean getTrainingMode() {
+		return trainingMode;
+	}
+	
+	@Override
+	public void restart() {
+		super.restart();
+		algorithm.restart();
+		boards.clear();
+		trainingMode = true;
 	}
 }

@@ -43,4 +43,9 @@ public abstract class BasicPlayer implements Player {
 	public PlayerStats getStats() {
 		return stats;
 	}
+	
+	@Override
+	public void restart() {
+		stats.restart();
+	}
 }

@@ -21,6 +21,14 @@ public abstract class LearnStartegy implements Serializable {
 		temp = new Board();
 		x = new float[n];
 		w = new float[n];
+		for (int i = 0; i < w.length; i++) {
+			w[i] = 1;
+		}
+	}
+	
+	public void restart() {
+		x = new float[x.length];
+		w = new float[w.length];
 	}
 	
 	/**

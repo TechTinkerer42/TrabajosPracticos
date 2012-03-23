@@ -7,6 +7,7 @@ import tictactoe.ai.IntelligentPlayer;
 import tictactoe.ai.Player;
 import tictactoe.ai.RandomPlayer;
 import tictactoe.ai.lmsalgorithm.LMSAlgorithm;
+import tictactoe.ai.lmsalgorithm.LMSTrainer;
 import tictactoe.ai.lmsalgorithm.PlayerIO;
 import util.Logger;
 
@@ -14,8 +15,12 @@ import util.Logger;
 public class Main {
 
 	public static void main(String[] args) {
+//		args = new String[] {"train", "5000"};
 		Logger.init();
-		Logger.LOG_LEVEL = Logger.LEVEL_TRACE;
+		Logger.LOG_LEVEL = Logger.LEVEL_DEBUG;
+		
+		LMSTrainer.train();
+
 		Test test = new Test();
 		Player p1, p2;
 		if (args.length == 2) {
