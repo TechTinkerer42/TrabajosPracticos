@@ -17,13 +17,12 @@ public class LMSAlgorithm implements Serializable {
 	private float nu;
 	
 	public LMSAlgorithm() {
-//		this(new MitchelsStrategy(), 0.1f);
 		this(new DefensiveSelectionStrategy(), 0.1f);
 	}
 	
 	public LMSAlgorithm(LearnStartegy strategy, float nu) {
-		this.strategy = strategy;
 		this.nu  = nu;
+		setStrategy(strategy);
 		Logger.log("Intelligent Player", "Using strategy " + strategy.getName(), Logger.LEVEL_TRACE);		
 	}
 
@@ -44,5 +43,13 @@ public class LMSAlgorithm implements Serializable {
 	
 	public void restart() {
 		strategy.restart();
+	}
+	
+	public void setStrategy(LearnStartegy strategy) {
+		this.strategy = strategy;
+	}
+	
+	public LearnStartegy getStrategy() {
+		return strategy;
 	}
 }
