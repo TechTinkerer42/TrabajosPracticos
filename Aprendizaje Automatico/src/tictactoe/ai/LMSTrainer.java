@@ -27,7 +27,7 @@ public class LMSTrainer {
 			value = PRICE_LOOSING;
 		}
 		traningSet.add(new BoardWithEvaluation(suc, value));
-		LMSAlgorithm experience = p.getExperience();
+		LMSAlgorithm experience = p.getAlgorithm();
 		for (Board b: completeGame) {
 			value = experience.evaluate(suc);
 			traningSet.add(new BoardWithEvaluation(b, value));

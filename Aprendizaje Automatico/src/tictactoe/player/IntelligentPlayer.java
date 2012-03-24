@@ -47,7 +47,6 @@ public class IntelligentPlayer extends BasicPlayer {
 	@Override
 	public void notifyEndOfgame(Game game) {
 		super.notifyEndOfgame(game);
-//		((LinkedList<Board>) boards).addFirst(game.getBoard().clone());
 		if (trainingMode) {
 			Logger.log("Intelligent player", "Using this last game to train my self.\n", Logger.LEVEL_TRACE);
 			LMSTrainer.train(game.getWinner(), this, boards);
@@ -89,7 +88,7 @@ public class IntelligentPlayer extends BasicPlayer {
 		return possibleMovemens;
 	}
 	
-	public LMSAlgorithm getExperience() {
+	public LMSAlgorithm getAlgorithm() {
 		return algorithm;
 	}
 	
