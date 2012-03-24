@@ -10,7 +10,7 @@ public class Game {
 		board = new Board();
 	}
 	
-	public void start() {
+	public void restart() {
 		winner = null;
 		gameFinished = false;
 		board.clear();
@@ -72,7 +72,7 @@ public class Game {
 		return Mark.NONE;
 	}
 	
-	public Mark checkDiagonals() {
+	private Mark checkDiagonals() {
 		Mark[][] marks = board.getMarks();
 		if (marks[0][0] != Mark.NONE &&
 				marks[0][0] == marks[1][1] && marks[1][1] == marks[2][2]) {

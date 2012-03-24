@@ -1,14 +1,14 @@
-package tictactoe;
+package tictactoe.ai;
 
-public class Movement {
+public class Position {
 
 	public int row;
 	public int column;
 	
-	public Movement() {
+	public Position() {
 	}
 	
-	public Movement(int row, int column) {
+	public Position(int row, int column) {
 		this.row = row;
 		this.column = column;
 	}

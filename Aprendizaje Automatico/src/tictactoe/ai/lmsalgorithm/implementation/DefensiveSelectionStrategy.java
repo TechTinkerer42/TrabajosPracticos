@@ -20,11 +20,14 @@ public class DefensiveSelectionStrategy extends LearnStartegy {
 	}
 
 	@Override
-	public void calcX(Board b, Mark toEval) {
+	public void calcX(Board b) {
 		x[0] = 1;
-		x[1] = countFilledLines(b, toEval);
-		x[2] = countBlocks(b, toEval);
-		x[3] = (b.get(1, 1) == toEval) ? 1 : 0;
+		x[1] = countFilledLines(b, Mark.O);
+//		x[1] = countFilledLines(b, Mark.X);
+		x[2] = countBlocks(b, Mark.O);
+//		x[2] = countBlocks(b, Mark.X);
+		x[3] = (b.get(1, 1) == Mark.O) ? 1 : 0;
+//		x[3] = (b.get(1, 1) == Mark.X) ? 1 : 0;
 		Logger.log("x values", Arrays.toString(x), Logger.LEVEL_DEBUG);
 	}
 

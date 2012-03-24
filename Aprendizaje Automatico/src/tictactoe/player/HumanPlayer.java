@@ -1,4 +1,4 @@
-package tictactoe.ai;
+package tictactoe.player;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import tictactoe.Board;
 import tictactoe.Game;
 import tictactoe.Mark;
-import tictactoe.Movement;
+import tictactoe.ai.Position;
 
 public class HumanPlayer extends BasicPlayer {
 
@@ -23,7 +23,7 @@ public class HumanPlayer extends BasicPlayer {
 	public void makeMove(Game game) {
 		boolean validMovement = false;
 		while(!validMovement) {
-			Movement movement = readMovement();
+			Position movement = readMovement();
 			if (validMovement(movement)) {
 				if (!game.isSet(movement.row, movement.column)) {
 					game.put(mark, movement.row, movement.column);
@@ -37,14 +37,14 @@ public class HumanPlayer extends BasicPlayer {
 		}
 	}
 	
-	private boolean validMovement(Movement movement) {
+	private boolean validMovement(Position movement) {
 		return 0 <= movement.row && movement.row < Board.SIZE && 
 			0 <= movement.column && movement.column < Board.SIZE;
 	}
 	
-	private Movement readMovement() {
+	private Position readMovement() {
 		boolean validValues = false;
-		Movement movement = new Movement();
+		Position movement = new Position();
 		String line;
 		while (!validValues) {
 			try {

@@ -3,16 +3,12 @@ package tictactoe.ai.lmsalgorithm.implementation;
 import java.io.Serializable;
 
 import tictactoe.Board;
-import tictactoe.Mark;
 
 public abstract class LearnStartegy implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	protected static final float EPS = 0.0001f;
-	protected static int[][] SIDE_NON_DIAGONAL = {{ -1, 0 }, { 0, -1 }, { 0, 1 }, { 1, 0 }};
-	protected static int[][] SIDE_ALL = {{-1, -1}, { -1, 0 }, { -1, 1 }, { 0, -1 }, { 0, 1 }, 
-		{ 1, -1 }, { 1, 0 }, { 1, 1 }};
 	
 	protected Board temp;
 	protected float[] w, x;
@@ -20,32 +16,27 @@ public abstract class LearnStartegy implements Serializable {
 	public LearnStartegy(int n) {
 		temp = new Board();
 		x = new float[n];
-		w = new float[n];
-		for (int i = 0; i < w.length; i++) {
-			w[i] = 1;
-		}
+		w = new float[n + 1];
 	}
 	
 	public void restart() {
-		x = new float[x.length];
-		w = new float[w.length];
+		throw new IllegalArgumentException();
 	}
 	
 	/**
 	 * Returns the xi values for this board according to the definition of each xi
 	 * in this class.
-	 * This methods ensures that x[0] = 1 always.
 	 */
-	public abstract void calcX(Board b, Mark toEval);
+	public abstract void calcX(Board b);
 	
 	/**
 	 * Calculates Vsombero(b) from the actual x y w values.
 	 */
-	public float calcVAprox(Board board, Mark toEval) {
-		calcX(board, toEval);
-		float vAprox = 0;
-		for(int i = 0; i < w.length; i++) {
-			vAprox += w[i] * x[i];
+	public float calcVAprox(Board board) {
+		calcX(board);
+		float vAprox = w[0];
+		for(int i = 0; i < x.length; i++) {
+			vAprox += w[i + 1] * x[i];
 		}
 		return vAprox;
 	}
@@ -57,7 +48,8 @@ public abstract class LearnStartegy implements Serializable {
 	 */
 	public void updateW(float nu, float vTrain, float vAprox) {
 		for(int i = 0; i < w.length; i++) {
-			w[i] = w[i] + nu * (vTrain - vAprox) * x[i];
+			float xi = ((i == 0) ? 1 : x[i - 1]);	// TODO: x0 == ????
+			w[i] = w[i] + nu * (vTrain - vAprox) * xi;
 		}
 		normalize(w);
 	}

@@ -1,4 +1,4 @@
-package tictactoe.ai.lmsalgorithm;
+package tictactoe.ai;
 
 import java.io.File;
 import java.io.FileInputStream;

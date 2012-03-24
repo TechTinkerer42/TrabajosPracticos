@@ -1,24 +1,22 @@
-package tictactoe.ai.lmsalgorithm;
+package tictactoe.ai;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import tictactoe.Board;
 import tictactoe.Mark;
-import tictactoe.ai.IntelligentPlayer;
+import tictactoe.player.IntelligentPlayer;
 import util.Logger;
 
 public class LMSTrainer {
 
 	private static final float PRICE_WINNING = 100f;
 	private static final float PRICE_LOOSING = -100f;
-	private static final float PRICE_TIE = 0f;
+	private static final float PRICE_TIE = 10f;
 	
 	public static void train(Mark winner, IntelligentPlayer p, List<Board> completeGame) {
-		Map<Board, Float> traningSet = new HashMap<Board, Float>();
+		List<BoardWithEvaluation> traningSet = new LinkedList<BoardWithEvaluation>();
 		Board suc = completeGame.remove(0);
 		float value;
 		if (winner == null) {
@@ -28,13 +26,13 @@ public class LMSTrainer {
 		} else {
 			value = PRICE_LOOSING;
 		}
-		traningSet.put(suc, value);
+		traningSet.add(new BoardWithEvaluation(suc, value));
+		LMSAlgorithm experience = p.getExperience();
 		for (Board b: completeGame) {
-			value *= 0.8f;
-			traningSet.put(b, value);
+			value = experience.evaluate(suc);
+			traningSet.add(new BoardWithEvaluation(b, value));
 			suc = b;
 		}
-		LMSAlgorithm experience = p.getExperience();
 		String logChanges = "\nprevious w: " + Arrays.toString(experience.getW());
 		p.train(traningSet);
 		logChanges += "\nnew w: " + Arrays.toString(experience.getW());
@@ -67,5 +65,15 @@ public class LMSTrainer {
 			reverted.addFirst(bAux);
 		}
 		train(Mark.X, p, reverted);
+	}
+
+	public static class BoardWithEvaluation {
+		Board board;
+		float value;
+		
+		public BoardWithEvaluation(Board board, float value) {
+			this.board = board;
+			this.value = value;
+		}
 	}
 }

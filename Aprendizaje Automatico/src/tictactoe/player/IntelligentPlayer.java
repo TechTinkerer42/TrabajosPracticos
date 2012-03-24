@@ -1,19 +1,17 @@
-package tictactoe.ai;
+package tictactoe.player;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import tictactoe.Board;
 import tictactoe.Game;
 import tictactoe.Mark;
-import tictactoe.Movement;
-import tictactoe.ai.lmsalgorithm.PlayerIO;
-import tictactoe.ai.lmsalgorithm.LMSAlgorithm;
-import tictactoe.ai.lmsalgorithm.LMSTrainer;
+import tictactoe.ai.LMSAlgorithm;
+import tictactoe.ai.LMSTrainer;
+import tictactoe.ai.LMSTrainer.BoardWithEvaluation;
+import tictactoe.ai.Position;
 import util.Logger;
 
 public class IntelligentPlayer extends BasicPlayer {
@@ -33,13 +31,13 @@ public class IntelligentPlayer extends BasicPlayer {
 		trainingMode = true;
 	}
 
-	public void train(Map<Board, Float> traningSet) {
-		algorithm.train(traningSet, mark);
+	public void train(List<BoardWithEvaluation> traningSet) {
+		algorithm.train(traningSet);
 	}
 	
 	@Override
 	public void makeMove(Game game) {
-		Movement move = selectMovement(game.getBoard());
+		Position move = selectMovement(game.getBoard());
 		game.put(mark, move.row, move.column);
 		if (trainingMode) {
 			((LinkedList<Board>) boards).addFirst(game.getBoard().clone());
@@ -49,14 +47,10 @@ public class IntelligentPlayer extends BasicPlayer {
 	@Override
 	public void notifyEndOfgame(Game game) {
 		super.notifyEndOfgame(game);
+//		((LinkedList<Board>) boards).addFirst(game.getBoard().clone());
 		if (trainingMode) {
 			Logger.log("Intelligent player", "Using this last game to train my self.\n", Logger.LEVEL_TRACE);
 			LMSTrainer.train(game.getWinner(), this, boards);
-			try {
-				PlayerIO.save(algorithm);
-			} catch (IOException e) {
-				Logger.log("Error", "Could not save player experience", Logger.LEVEL_ERROR);
-			}
 		}
 		boards.clear();
 	}
@@ -65,30 +59,30 @@ public class IntelligentPlayer extends BasicPlayer {
 	 * Input: Cualquier tablero desntro del conjunto de tableros validos.
 	 * Output: Cualquier movimiento dentro del conjunto de movimientos validos.
 	 */
-	private Movement selectMovement(Board board) {
+	private Position selectMovement(Board board) {
 		Board temp = board.clone();
-		Movement best = null;
+		Position best = null;
 		float bestValue = 0;
-		for(Movement movement: calcMovements(board)) {
-			temp.set(mark, movement.row, movement.column);
-			float value = algorithm.evaluate(temp, mark);
-			Logger.log("Player " + mark, "Movement " + movement + " evaluated as: " + value, Logger.LEVEL_DEBUG);
+		for(Position pos: calcMovements(board)) {
+			temp.set(mark, pos.row, pos.column);
+			float value = algorithm.evaluate(temp);
+			Logger.log("Player " + mark, "Movement " + pos + " evaluated as: " + value, Logger.LEVEL_DEBUG);
 			if (best == null || bestValue < value) {
-				best = movement;
+				best = pos;
 				bestValue = value;
 			}
-			temp.set(Mark.NONE, movement.row, movement.column);
+			temp.set(Mark.NONE, pos.row, pos.column);
 		}
 		Logger.log("Player " + mark, "Best Movement: " + best + "=> eval: " + bestValue, Logger.LEVEL_DEBUG);
 		return best;
 	}
 
-	private Collection<Movement> calcMovements(Board board) {
-		Collection<Movement> possibleMovemens = new ArrayList<Movement>();
+	private Collection<Position> calcMovements(Board board) {
+		Collection<Position> possibleMovemens = new ArrayList<Position>();
 		for (int i = 0; i < Board.SIZE; i++) {
 			for (int j = 0; j < Board.SIZE; j++) {
 				if (!board.isSet(i, j)) {
-					possibleMovemens.add(new Movement(i, j));
+					possibleMovemens.add(new Position(i, j));
 				}
 			}
 		}
@@ -106,10 +100,6 @@ public class IntelligentPlayer extends BasicPlayer {
 	
 	public void setTrainingMode(boolean trainingMode) {
 		this.trainingMode = trainingMode;
-	}
-	
-	public boolean getTrainingMode() {
-		return trainingMode;
 	}
 	
 	@Override

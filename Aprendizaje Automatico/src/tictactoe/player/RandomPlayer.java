@@ -1,4 +1,4 @@
-package tictactoe.ai;
+package tictactoe.player;
 
 import tictactoe.Game;
 import tictactoe.Mark;
