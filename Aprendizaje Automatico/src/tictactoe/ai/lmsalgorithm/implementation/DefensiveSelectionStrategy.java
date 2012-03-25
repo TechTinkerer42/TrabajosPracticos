@@ -11,7 +11,7 @@ public class DefensiveSelectionStrategy extends LearnStartegy {
 	private static final long serialVersionUID = 1L;
 
 	public DefensiveSelectionStrategy() {
-		super(4);
+		super(3);
 	}
 	
 	@Override
@@ -21,13 +21,12 @@ public class DefensiveSelectionStrategy extends LearnStartegy {
 
 	@Override
 	public void calcX(Board b) {
-		x[0] = 1;
-		x[1] = countFilledLines(b, Mark.O);
-//		x[1] = countFilledLines(b, Mark.X);
-		x[2] = countBlocks(b, Mark.O);
-//		x[2] = countBlocks(b, Mark.X);
-		x[3] = (b.get(1, 1) == Mark.O) ? 1 : 0;
-//		x[3] = (b.get(1, 1) == Mark.X) ? 1 : 0;
+		x[0] = countFilledLines(b, Mark.O);
+//		x[0] = countFilledLines(b, Mark.X);
+		x[1] = countBlocks(b, Mark.O);
+//		x[1] = countBlocks(b, Mark.X);
+		x[2] = (b.get(1, 1) == Mark.O) ? 1 : 0;
+//		x[2] = (b.get(1, 1) == Mark.X) ? 1 : 0;
 		Logger.log("x values", Arrays.toString(x), Logger.LEVEL_DEBUG);
 	}
 
