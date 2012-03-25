@@ -75,5 +75,10 @@ public class LMSTrainer {
 			this.board = board;
 			this.value = value;
 		}
+		
+		@Override
+		public String toString() {
+			return "Board: " + board + " => value: " + value;
+		}
 	}
 }
