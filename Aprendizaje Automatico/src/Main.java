@@ -27,6 +27,7 @@ public class Main {
 		engine.run(nGames);
 		System.out.println(">>>>>>>>>>>> Intelligent player final stats <<<<<<<<<<<");
 		System.out.println(intelligent);
+		((IntelligentPlayer) intelligent).flushIO();
 		return intelligent;
 	}
 }

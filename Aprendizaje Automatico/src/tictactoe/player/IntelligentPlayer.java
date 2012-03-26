@@ -11,6 +11,7 @@ import tictactoe.Mark;
 import tictactoe.ai.LMSAlgorithm;
 import tictactoe.ai.LMSTrainer;
 import tictactoe.ai.LMSTrainer.BoardWithEvaluation;
+import tictactoe.ai.PlayerIO;
 import tictactoe.ai.Position;
 import util.Logger;
 
@@ -19,9 +20,11 @@ public class IntelligentPlayer extends BasicPlayer {
 	private LMSAlgorithm algorithm;
 	private List<Board> boards;
 	private boolean trainingMode;
+	private PlayerIO io;
 	
 	public IntelligentPlayer(Mark mark) {
 		this(new LMSAlgorithm(), mark);
+		io = new PlayerIO(getName());
 	}
 	
 	public IntelligentPlayer(LMSAlgorithm algorithm, Mark mark) {
@@ -52,6 +55,11 @@ public class IntelligentPlayer extends BasicPlayer {
 			LMSTrainer.train(game.getWinner(), this, boards);
 		}
 		boards.clear();
+		io.logStats(stats);
+	}
+	
+	public void flushIO() {
+		io.closeFiles();
 	}
 	
 	/**

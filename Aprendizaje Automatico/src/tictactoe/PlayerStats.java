@@ -41,4 +41,16 @@ public class PlayerStats {
 		s += "Ties: " + ties + " (" + df.format(tiesPercent) + "%)\n";
 		return s;
 	}
+
+	public int getWins() {
+		return wins;
+	}
+	
+	public int getLosts() {
+		return losts;
+	}
+	
+	public int getTies() {
+		return ties;
+	}
 }
