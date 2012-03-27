@@ -29,12 +29,13 @@ Soleado 	Templada  	Alta  	Fuerte 	Fria     	Cambio     		Si
 
 	1)
 		a) El nuevo conjunto de instancias X quedaria dado por:
-			cielo => soleado, nublado, lluvioso
+			cielo => soleado, nublado
 			aire => cálida, fría
 			humedad => normal, alta
 			viento => fuerte, débil
 			agua => cálida, fría
 			pronóstico => igual, cambiante
+			
 		    corriente (del agua) => débil, moderada o fuerte
 		
 			El nuevo tamaño de hipotesis semanticamente diferente es = (4*3*3*3*3*3)* 4 + 1
@@ -44,6 +45,25 @@ Soleado 	Templada  	Alta  	Fuerte 	Fria     	Cambio     		Si
 		casi k veces. |V| = (|V_ant| - 1) * (k + 1) + 1 
 
 		
+	2)  
+        S = <0,0,0,0,0,0>
+        G = <?,?,?,?,?,?>
+	       
+            <sol, cal, alta, fuert, fria, cambiante>     - 1
+	   
+        S = <sol, cal, alta, fuert, fria, cambiante>
+        G = <?,?,?,?,?,?>
+	       
+            <nub, fria, alta, fuert, cal, cambiante>    - 0
+		
+        S = {<sol, cal, alta, fuert, fria, cambiante>}
+        G = {<sol,?,?,?,?,?>, <?,?,?,?,fria,?>}
+		
+		
+		    <sol, cal, alta, fuert, calida, igual>        - 1
+		
+        S = {<sol, cal, alta, fuert, ?, ?>}
+        G = {<sol,?,?,?,?,?>}
 		
 		
 		
