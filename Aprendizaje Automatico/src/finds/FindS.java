@@ -1,5 +1,8 @@
 package finds;
 
+import java.util.Map;
+import java.util.Map.Entry;
+
 /**
  * <pre>
  * 	1. Initialize h to the most specific hypothesis in H
@@ -13,10 +16,27 @@ package finds;
  * </pre>
  */
 public class FindS {
+	
 	private Hypotesis hypotesis;
 	
-	public FindS() {
-		hypotesis = new SportHypotesis();
+	public FindS(Hypotesis hypotesis) {
+		this.hypotesis = hypotesis;
+	}
+	
+	public void train(Map<Hypotesis, Boolean> training) {
+		for (Entry<Hypotesis, Boolean> entry: training.entrySet()) {
+			if (entry.getValue()) {	// only evaluate positive instances of x
+				hypotesis.generalize(entry.getKey());
+			}
+		}
 	}
 
+	@Override
+	public String toString() {
+		return "Find-S algorithm. Current hypotesis: " + hypotesis;
+	}
+	
+	public boolean validates(Hypotesis h) {
+		return hypotesis.isMoreGeneralThan(h);
+	}
 }
