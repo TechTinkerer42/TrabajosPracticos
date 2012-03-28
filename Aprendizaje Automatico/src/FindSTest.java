@@ -20,25 +20,20 @@ public class FindSTest {
 	}
 
 	private static Map<Hypotesis, Boolean> getTrainingExamples() {
-		Map<Hypotesis, Boolean> training = new HashMap<Hypotesis, Boolean>();
-		Hypotesis h;
 		String[] values;
+		Map<Hypotesis, Boolean> training = new HashMap<Hypotesis, Boolean>();
 		// first set
 		values = new String[] {"soleado", "calido", "normal", "fuerte", "calida", "igual"};
-		h = new LikesSportHypotesis(values);
-		training.put(h, true);
+		training.put(new LikesSportHypotesis(values), true);
 		// second set
 		values = new String[] {"soleado", "calido", "alta", "fuerte", "calida", "igual"};
-		h = new LikesSportHypotesis(values);
-		training.put(h, true);
+		training.put(new LikesSportHypotesis(values), true);
 		// third set
 		values = new String[] {"nublado", "fria", "alta", "fuerte", "calida", "cambiante"};
-		h = new LikesSportHypotesis(values);
-		training.put(h, false);
+		training.put(new LikesSportHypotesis(values), false);
 		// forth set
 		values = new String[] {"soleado", "calido", "alta", "fuerte", "fria", "cambiante"};
-		h = new LikesSportHypotesis(values);
-		training.put(h, true);
+		training.put(new LikesSportHypotesis(values), true);
 		return training;
 	}
 
