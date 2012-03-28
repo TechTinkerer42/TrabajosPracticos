@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import finds.FindS;
 import finds.Hypotesis;
@@ -11,12 +12,12 @@ public class FindSTest {
 		FindS finds = new FindS(new LikesSportHypotesis());
 		Map<Hypotesis, Boolean> training = getTrainingExamples();
 
-		System.out.println("About to traing with: " + training);
+		System.out.println("About to train with: " + training);
 		// train
 		finds.train(training);
 		System.out.println("*** Find-S after the training ***");
 		System.out.println(finds);
-		System.out.println(finds.validates(getTestHypotesis()));
+		testPositiveExamplesWithAlgorithm(finds, training);
 	}
 
 	private static Map<Hypotesis, Boolean> getTrainingExamples() {
@@ -36,9 +37,10 @@ public class FindSTest {
 		training.put(new LikesSportHypotesis(values), true);
 		return training;
 	}
-
-	private static Hypotesis getTestHypotesis() {
-		String[] values = new String[] {"soleado", "calido", "alta", "fuerte", "fria", "cambiante"};
-		return new LikesSportHypotesis(values);
+	
+	private static void testPositiveExamplesWithAlgorithm(FindS algorithm, Map<Hypotesis, Boolean> training) {
+		for (Entry<Hypotesis, Boolean> entry: training.entrySet()) {
+			System.out.println(entry.getValue() + " ==> " + algorithm.validates(entry.getKey()));
+		}
 	}
 }
