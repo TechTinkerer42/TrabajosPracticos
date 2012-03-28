@@ -10,7 +10,7 @@ public abstract class Hypotesis {
 	 * Creates a new null hypotesis
 	 */
 	public Hypotesis() {
-		initializeFields();
+		this(new String[0]);
 	}
 	
 	public Hypotesis(String[] values) {
