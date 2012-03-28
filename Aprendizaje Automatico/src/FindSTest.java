@@ -38,8 +38,7 @@ public class FindSTest {
 	}
 
 	private static Hypotesis getTestHypotesis() {
-		Hypotesis h = new LikesSportHypotesis();
-		h.addValue(0, "nublado");
-		return h;
+		String[] values = new String[] {"soleado", "calido", "alta", "fuerte", "fria", "cambiante"};
+		return new LikesSportHypotesis(values);
 	}
 }

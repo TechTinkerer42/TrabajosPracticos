@@ -26,7 +26,7 @@ public class HypotesisField {
 			throw new IllegalArgumentException(getClass()
 					+ "is not comparable with " + h.getClass());
 		}
-		if (!values.containsAll(h.values)) {
+		if (!allValues.containsAll(h.values)) {
 			throw new IllegalArgumentException(h.values
 					+ " are not within domain! => " + allValues);
 		}
