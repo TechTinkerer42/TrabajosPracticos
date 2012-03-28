@@ -1,4 +1,4 @@
-package finds.implementation.field;
+package finds.implementation;
 
 import java.util.Collection;
 import java.util.HashSet;

@@ -2,7 +2,6 @@ package finds.implementation;
 
 import finds.Hypotesis;
 import finds.HypotesisField;
-import finds.implementation.field.LikesSportHypotesysFactory;
 
 public class LikesSportHypotesis extends Hypotesis {
 

@@ -27,27 +27,6 @@ public abstract class Hypotesis {
 		}
 	}
 
-	@Override
-	public String toString() {
-		String s = "{";
-		for (int i = 0; i < fields.length; i++) {
-			HypotesisField hf = fields[i];
-			s += "<";
-			if (hf.isComplete()) {
-				s += ALL;
-			} else if (hf.isEmpty()) {
-				s += NONE;
-			} else {
-				s += hf;
-			}
-			s += ">";
-			if (i != fields.length - 1)
-				s += ", ";
-		}
-		s += "}";
-		return s;
-	}
-
 	public void addValue(int index, String value) {
 		fields[index].addValue(value);
 	}
@@ -73,5 +52,26 @@ public abstract class Hypotesis {
 			throw new IllegalArgumentException(
 					"Cant compare hypotesis wih different dimensions!");
 		}
+	}
+	
+	@Override
+	public String toString() {
+		String s = "{";
+		for (int i = 0; i < fields.length; i++) {
+			HypotesisField hf = fields[i];
+			s += "<";
+			if (hf.isComplete()) {
+				s += ALL;
+			} else if (hf.isEmpty()) {
+				s += NONE;
+			} else {
+				s += hf;
+			}
+			s += ">";
+			if (i != fields.length - 1)
+				s += ", ";
+		}
+		s += "}";
+		return s;
 	}
 }
