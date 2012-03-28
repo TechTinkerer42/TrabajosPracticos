@@ -57,14 +57,41 @@ Soleado 	Templada  	Alta  	Fuerte 	Fria     	Cambio     		Si
             <nub, fria, alta, fuert, cal, cambiante>    - 0
 		
         S = {<sol, cal, alta, fuert, fria, cambiante>}
-        G = {<sol,?,?,?,?,?>, <?,?,?,?,fria,?>}
+        G = {<sol,?,?,?,?,?>, <?,cal,?,?,?,?>, <?,?,?,?,fria,?>}
 		
 		
 		    <sol, cal, alta, fuert, calida, igual>        - 1
 		
         S = {<sol, cal, alta, fuert, ?, ?>}
-        G = {<sol,?,?,?,?,?>}
+        G = {<sol,?,?,?,?,?>, <?,cal,?,?,?,?>}
 		
+		    <sol, cal, normal, fuert, calida, igual>      - 1
 		
-		
-		
+        S = {<sol, cal, ?, fuert, ?, ?>}
+        G = {<sol,?,?,?,?,?>, <?,cal,?,?,?,?>}
+        
+        
+    3) 
+    
+        sexo (Mujer, Varon)
+        color de cabello (morocho, castaño o rubio), 
+        altura (alto, mediano o bajo) y 
+        nacionalidad (argentino, italiano, español, francés, alemán, inglés o japonés)
+
+        S = <<<0, 0, 0, 0> <0, 0, 0, 0>>>
+        G = <<?,?,?,?> <?,?,?,?>>
+        
+            <<mujer morocha baja argentina> <varón castaño alto argentino>>     = 1
+    
+        S =  <<mujer morocha baja argentina> <varón castaño alto argentino>> 
+        G = <<?,?,?,?> <?,?,?,?>>
+
+            << mujer morocha baja argentina> <varón castaño bajo francés>>      = 1
+
+        S =  <<mujer morocha baja argentina> <varón castaño ? ?>> 
+        G = <<?,?,?,?> <?,?,?,?>>
+        
+<< mujer morocha baja inglesa > < mujer castaña alta alemana>>
+
+<< mujer castaña baja española> <varón castaño alto español>>
+        		
