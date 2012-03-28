@@ -7,7 +7,7 @@ import tictactoe.player.RandomPlayer;
 import util.Logger;
 
 
-public class Main {
+public class TicTacToeTest {
 
 	public static void main(String[] args) {
 		Logger.init();
