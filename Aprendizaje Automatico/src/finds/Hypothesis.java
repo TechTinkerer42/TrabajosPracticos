@@ -1,27 +1,30 @@
 package finds;
 
-public abstract class Hypotesis {
+public abstract class Hypothesis {
 
 	private static final String ALL = "?", NONE = "0";
 
-	protected HypotesisField[] fields;
+	protected HypothesisField[] fields;
 
 	/**
-	 * Creates a new null hypotesis
+	 * Creates a new null hypothesis
 	 */
-	public Hypotesis() {
+	public Hypothesis() {
 		this(new String[0]);
 	}
-	
-	public Hypotesis(String[] values) {
+
+	/**
+	 * Creates a new hypothesis with the specified values
+	 */
+	public Hypothesis(String[] values) {
 		initializeFields();
 		addValues(values);
 	}
 
 	protected abstract void initializeFields();
 
-	public void generalize(Hypotesis h) {
-		validateDomain(h);
+	public void generalize(Hypothesis h) {
+		validateDimention(h.fields.length);
 		for (int i = 0; i < fields.length; i++) {
 			fields[i].addAll(h.fields[i]);
 		}
@@ -32,13 +35,14 @@ public abstract class Hypotesis {
 	}
 
 	public void addValues(String[] value) {
+		validateDimention(value.length);
 		for (int i = 0; i < value.length; i++) {
 			fields[i].addValue(value[i]);
 		}
 	}
 
-	public boolean isMoreGeneralThan(Hypotesis h) {
-		validateDomain(h);
+	public boolean isMoreGeneralThan(Hypothesis h) {
+		validateDimention(h.fields.length);
 		for (int i = 0; i < fields.length; i++) {
 			if (!fields[i].isMoreGeneralThan(h.fields[i])) {
 				return false;
@@ -47,18 +51,18 @@ public abstract class Hypotesis {
 		return true;
 	}
 
-	private void validateDomain(Hypotesis h) {
-		if (fields.length != h.fields.length) {
+	private void validateDimention(int dim) {
+		if (fields.length != dim) {
 			throw new IllegalArgumentException(
-					"Cant compare hypotesis wih different dimensions!");
+				"Cant compare arguments wih different dimensions!");
 		}
 	}
-	
+
 	@Override
 	public String toString() {
 		String s = "{";
 		for (int i = 0; i < fields.length; i++) {
-			HypotesisField hf = fields[i];
+			HypothesisField hf = fields[i];
 			s += "<";
 			if (hf.isComplete()) {
 				s += ALL;

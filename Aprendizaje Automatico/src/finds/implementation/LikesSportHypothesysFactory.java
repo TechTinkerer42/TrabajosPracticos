@@ -3,10 +3,10 @@ package finds.implementation;
 import java.util.Collection;
 import java.util.HashSet;
 
-import finds.HypotesisField;
+import finds.HypothesisField;
 
 
-public class LikesSportHypotesysFactory {
+public class LikesSportHypothesysFactory {
 
 	public static final int FIELD_SKY 		= 0;
 	public static final int FIELD_AIR 		= 1;
@@ -15,7 +15,7 @@ public class LikesSportHypotesysFactory {
 	public static final int FIELD_WATER 	= 4;
 	public static final int FIELD_FORECAST 	= 5;
 	
-	public static HypotesisField getHypotesis(int field) {
+	public static HypothesisField getHypothesis(int field) {
 		Collection<String> allValues = new HashSet<String>();
 		switch(field) {
 			case FIELD_SKY:
@@ -33,7 +33,7 @@ public class LikesSportHypotesysFactory {
 			default:
 				throw new IllegalArgumentException("Unknown field: "  + field);
 		}
-		return new HypotesisField(allValues);
+		return new HypothesisField(allValues);
 	}
 
 	protected static void setSkyValues(Collection<String> allValues) {

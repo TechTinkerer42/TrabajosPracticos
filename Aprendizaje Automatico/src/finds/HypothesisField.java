@@ -3,12 +3,12 @@ package finds;
 import java.util.Collection;
 import java.util.HashSet;
 
-public class HypotesisField {
+public class HypothesisField {
 
 	protected Collection<String> allValues;
 	protected Collection<String> values;
 
-	public HypotesisField(Collection<String> allValues) {
+	public HypothesisField(Collection<String> allValues) {
 		this.allValues = allValues;
 		values = new HashSet<String>();
 	}
@@ -21,7 +21,7 @@ public class HypotesisField {
 		values.add(value);
 	}
 
-	public void addAll(HypotesisField h) {
+	public void addAll(HypothesisField h) {
 		if (!allValues.containsAll(h.values)) {
 			throw new IllegalArgumentException(h.values
 					+ " are not within domain! => " + allValues);
@@ -29,7 +29,7 @@ public class HypotesisField {
 		values.addAll(h.values);
 	}
 
-	public boolean isMoreGeneralThan(HypotesisField h) {
+	public boolean isMoreGeneralThan(HypothesisField h) {
 		return values.containsAll(h.values);
 	}
 

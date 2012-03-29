@@ -17,14 +17,14 @@ import java.util.Map.Entry;
  */
 public class FindS {
 	
-	private Hypotesis hypotesis;
+	private Hypothesis hypotesis;
 	
-	public FindS(Hypotesis hypotesis) {
+	public FindS(Hypothesis hypotesis) {
 		this.hypotesis = hypotesis;
 	}
 	
-	public void train(Map<Hypotesis, Boolean> training) {
-		for (Entry<Hypotesis, Boolean> entry: training.entrySet()) {
+	public void train(Map<Hypothesis, Boolean> training) {
+		for (Entry<Hypothesis, Boolean> entry: training.entrySet()) {
 			if (entry.getValue()) {	// only evaluate positive instances of x
 				hypotesis.generalize(entry.getKey());
 			}
@@ -36,7 +36,7 @@ public class FindS {
 		return "Find-S algorithm. Current hypotesis: " + hypotesis;
 	}
 	
-	public boolean validates(Hypotesis h) {
+	public boolean validates(Hypothesis h) {
 		return hypotesis.isMoreGeneralThan(h);
 	}
 }
