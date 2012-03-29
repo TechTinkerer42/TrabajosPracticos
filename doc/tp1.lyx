@@ -1,0 +1,487 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Aprendizaje Automatico - Trabajo Practico 1
+\end_layout
+
+\begin_layout Paragraph*
+Objetivo: Aprender a diseñar un sistema de aprendizaje y a aplicar los algoritmo
+s para el aprendizaje de conceptos.
+\end_layout
+
+\begin_layout Section
+Diseño de sistemas de aprendizaje
+\end_layout
+
+\begin_layout Enumerate
+Tarea de aprendizaje: Aprender a jugar al 4 en linea
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tarea: colocar 4 fichas en linea antes que el oponente.
+\end_layout
+
+\begin_layout Itemize
+Medida de rendimiento: Cantidad de partidos ganidos del total de partidos
+ jugados.
+\end_layout
+
+\begin_layout Itemize
+Experiencia de aprendizaje: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Cada vez que se logra bloquear una linea del oponente 
+\end_layout
+
+\begin_layout Itemize
+Cada vez que se logra alinear 4 fichas 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Funcion Objetivo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Si b es un estado final de 
+\begin_inset Formula $gana$
+\end_inset
+
+ => 
+\begin_inset Formula $V(b)=100$
+\end_inset
+
+; 
+\end_layout
+
+\begin_layout Itemize
+Si b es un estado final de 
+\begin_inset Formula $pierde$
+\end_inset
+
+ => 
+\begin_inset Formula $V(b)=-100$
+\end_inset
+
+; 
+\end_layout
+
+\begin_layout Itemize
+Si b es un estado final de 
+\begin_inset Formula $empate$
+\end_inset
+
+ => 
+\begin_inset Formula $V(b)=5$
+\end_inset
+
+; 
+\end_layout
+
+\begin_layout Itemize
+Sino => 
+\begin_inset Formula $V(b)=V(b')$
+\end_inset
+
+ donde 
+\begin_inset Formula $b'$
+\end_inset
+
+ es el mejor estado del tablero que puede alcanzarse que esta a 
+\begin_inset Formula $n$
+\end_inset
+
+ movimientos de b'.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f(b)=w_{0}+w_{1}x_{1}+w_{2}x_{2}+w_{3}x_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Calculo de los 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x_{1}=$
+\end_inset
+
+Cantidad de filas completadas.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{2}=$
+\end_inset
+
+Cantidad de tres en linea 
+\begin_inset Formula $bloqueados$
+\end_inset
+
+ del oponente.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{3}=$
+\end_inset
+
+
+\begin_inset Formula $1$
+\end_inset
+
+ si se tiene el centro, 
+\begin_inset Formula $0$
+\end_inset
+
+ si no.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Se implemento para en entrenamiento del aprendiz, un jugador oponente que
+ coloca fichas en forma 
+\begin_inset Formula $aleatoria$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Aprendizaje de conceptos
+\end_layout
+
+\begin_layout Enumerate
+Es 
+\begin_inset Formula $973$
+\end_inset
+
+ dado que por cada posible valor de cada campo de la hipotesis, se tiene
+ el valor 
+\begin_inset Formula $?$
+\end_inset
+
+ para representar que en ese ligar, cualquier valor es aceptado y...
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El nuevo conjunto de instancias X quedaria dado por: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+cielo => soleado, nublado 
+\end_layout
+
+\begin_layout Itemize
+aire => cálida, fría 
+\end_layout
+
+\begin_layout Itemize
+humedad => normal, alta 
+\end_layout
+
+\begin_layout Itemize
+viento => fuerte, débil 
+\end_layout
+
+\begin_layout Itemize
+agua => cálida, fría 
+\end_layout
+
+\begin_layout Itemize
+pronóstico => igual, cambiante 
+\end_layout
+
+\begin_layout Itemize
+corriente (del agua) => débil, moderada, fuerte 
+\end_layout
+
+\begin_layout Standard
+El nuevo tamaño de hipotesis 
+\begin_inset Formula $semanticamente$
+\end_inset
+
+ diferente es = 
+\begin_inset Formula $(4*3*3*3*3*3)*4+1$
+\end_inset
+
+ Es decir, casi se 
+\begin_inset Formula $quatriplicaria$
+\end_inset
+
+ el espacio de hipotesis.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Cada atibuto 
+\begin_inset Formula $A$
+\end_inset
+
+ con 
+\begin_inset Formula $k$
+\end_inset
+
+ valores diferentes multiplica a la cantidad de hipotesis en casi 
+\begin_inset Formula $k$
+\end_inset
+
+ veces.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $|V|=(|V_{ant}|-1)*(k+1)+1$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Pasos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+S = <0,0,0,0,0,0> --- G = <?,?,?,?,?,?>
+\end_layout
+
+\begin_layout Standard
+<sol, cal, alta, fuert, fria, cambiante> - 1
+\end_layout
+
+\begin_layout Itemize
+S = <sol, cal, alta, fuert, fria, cambiante> --- G = <?,?,?,?,?,?>
+\end_layout
+
+\begin_layout Standard
+<nub, fria, alta, fuert, cal, cambiante> - 0
+\end_layout
+
+\begin_layout Itemize
+S = {<sol, cal, alta, fuert, fria, cambiante>} --- G = {<sol,?,?,?,?,?>,
+ <?,cal,?,?,?,?>, <?,?,?,?,fria,?>}
+\end_layout
+
+\begin_layout Standard
+<sol, cal, alta, fuert, calida, igual> - 1
+\end_layout
+
+\begin_layout Itemize
+S = {<sol, cal, alta, fuert, ?, ?>} --- G = {<sol,?,?,?,?,?>, <?,cal,?,?,?,?>}
+\end_layout
+
+\begin_layout Standard
+<sol, cal, normal, fuert, calida, igual> - 1
+\end_layout
+
+\begin_layout Itemize
+S = {<sol, cal, ?, fuert, ?, ?>} --- G = {<sol,?,?,?,?,?>, <?,cal,?,?,?,?>}
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+opciones:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+sexo: Mujer, Varon
+\end_layout
+
+\begin_layout Itemize
+color de cabello: morocho, castaño o rubio
+\end_layout
+
+\begin_layout Itemize
+altura: alto, mediano o bajo
+\end_layout
+
+\begin_layout Itemize
+nacionalidad: argentino, italiano, español, francés, alemán, inglés o japonés
+\end_layout
+
+\begin_layout Enumerate
+Pasos:
+\end_layout
+
+\begin_layout Standard
+
+\size small
+S = <<<0, 0, 0, 0> <0, 0, 0, 0>>> 
+\end_layout
+
+\begin_layout Standard
+
+\size small
+G = <<?,?,?,?> <?,?,?,?>>
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+<<mujer morocha baja argentina> <varón castaño alto argentino>> = 1
+\end_layout
+
+\begin_layout Standard
+
+\size small
+S = <<mujer morocha baja argentina> <varón castaño alto argentino>> 
+\end_layout
+
+\begin_layout Standard
+
+\size small
+G = <<?,?,?,?> <?,?,?,?>>
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+<< mujer morocha baja argentina> <varón castaño bajo francés>> = 1
+\end_layout
+
+\begin_layout Standard
+
+\size small
+S = <<mujer morocha baja argentina> <varón castaño ? ?>> 
+\end_layout
+
+\begin_layout Standard
+
+\size small
+G = <<?,?,?,?> <?,?,?,?>>
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+<< mujer morocha baja inglesa > < mujer castaña alta alemana>> = 0
+\end_layout
+
+\begin_layout Standard
+
+\size small
+S = <<mujer morocha baja ?> <varon castaño ? ?>> 
+\end_layout
+
+\begin_layout Standard
+
+\size small
+G = {<<? ? ? argentina> < ? ? ? ?>>, << ? ? ? italiano> < ? ? ? ?>>, <<
+ ? ? ? español> < ? ? ? ?>>, <<? ? ? francés> < ? ? ? ?>>, << ? ? ? alemán>
+ < ? ? ? ?>>, << ? ? ? japonés> < ? ? ? ?>>}
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+<< mujer castaña baja española> <varón castaño alto español>> = 1
+\end_layout
+
+\begin_layout Standard
+
+\size small
+S = <<mujer ? baja ?> <varon castaño ? ?>> 
+\end_layout
+
+\begin_layout Standard
+
+\size small
+G = <<? ? ? argentina> < ? ? ? ?>>, << ? ? ? italiano> < ? ? ? ?>>, << ?
+ ? ? español> < ? ? ? ?>>, <<? ? ? francés> < ? ? ? ?>>, << ? ? ? alemán>
+ < ? ? ? ?>>, << ? ? ? japonés> < ? ? ? ?>>
+\end_layout
+
+\begin_layout Enumerate
+<< mujer rubia alta inglesa> <varón morocho bajo italiano>> nignuno
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
