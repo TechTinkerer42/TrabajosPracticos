@@ -22,10 +22,6 @@ public class HypotesisField {
 	}
 
 	public void addAll(HypotesisField h) {
-		if (getClass() != h.getClass()) {
-			throw new IllegalArgumentException(getClass()
-					+ "is not comparable with " + h.getClass());
-		}
 		if (!allValues.containsAll(h.values)) {
 			throw new IllegalArgumentException(h.values
 					+ " are not within domain! => " + allValues);
