@@ -63,6 +63,10 @@
 Aprendizaje Automatico - Trabajo Practico 1
 \end_layout
 
+\begin_layout Author
+Gonzalo Castiglione - 49138
+\end_layout
+
 \begin_layout Paragraph*
 Objetivo: Aprender a diseñar un sistema de aprendizaje y a aplicar los algoritmo
 s para el aprendizaje de conceptos.
@@ -163,13 +167,55 @@ Se podrian tomar tablero a partir de registros de jugadas realizadas entre
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $f(b)=w_{0}+w_{1}x_{1}+w_{2}x_{2}+w_{3}x_{3}$
+Para probar la implementacion del algoritmo se debera seguir los siguientes
+ pasos:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Descargar el archivo tictactoe.jar
+\end_layout
+
+\begin_layout Itemize
+Abrir una terminal y ejecutar: java -jar tictactoe.jar [argumentos]
+\end_layout
+
+\begin_layout Itemize
+Si no se envian argumentos al programa, comenzara una partida con un oponente
+ sin entrenamiento (online training)
+\end_layout
+
+\begin_layout Itemize
+Si se manda la palabra trained seguida de un numero (ej: traned 2000), se
+ creara un nuevo oponente, se lo hara jugar la cantidad de veces especificada
+ contra otro oponente que coloque fichas al azar) y luego se habilitara
+ la partida contra este nuevo jugador recien entrenado.
+\end_layout
+
+\begin_layout Itemize
+Ejemplo de invocacion al programa: 
+\begin_inset Formula $java$
+\end_inset
+
+ 
+\begin_inset Formula $-jar$
+\end_inset
+
+ 
+\begin_inset Formula $tictactoe.jar$
+\end_inset
+
+ 
+\begin_inset Formula $trained$
+\end_inset
+
+ 
+\begin_inset Formula $1500$
 \end_inset
 
 
 \end_layout
 
-\begin_deeper
 \begin_layout Enumerate
 Inicialmente se implemento una funcion en la que se consideraron los aspectos
  mas visibles a simple vista del juego:
@@ -725,7 +771,7 @@ Se presentan los resultados de a pares para simplicidad de la table ya que
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -747,7 +793,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Resultados Obtenidos de 
+Resultados Obtenidos en base a 
 \begin_inset Formula $2000$
 \end_inset
 
@@ -764,57 +810,6 @@ Resultados Obtenidos de
 
 \end_layout
 
-\begin_layout Standard
-Para probar la implementacion del algoritmo se debera seguir los siguientes
- pasos:
-\end_layout
-
-\begin_layout Itemize
-Descargar el archivo tictactoe.jar
-\end_layout
-
-\begin_layout Itemize
-Abrir una terminal y ejecutar: java -jar tictactoe.jar [argumentos]
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Si no se envian argumentos al programa, comenzara una partida con un oponente
- sin entrenamiento (online training)
-\end_layout
-
-\begin_layout Itemize
-Si se manda la palabra trained seguida de un numero (ej: traned 2000), se
- creara un nuevo oponente, se lo hara jugar la cantidad de veces especificada
- contra otro oponente que coloque fichas al azar) y luego se habilitara
- la partida contra este nuevo jugador recien entrenado.
-\end_layout
-
-\begin_layout Itemize
-Ejemplo de invocacion al programa: 
-\begin_inset Formula $java$
-\end_inset
-
- 
-\begin_inset Formula $-jar$
-\end_inset
-
- 
-\begin_inset Formula $tictactoe.jar$
-\end_inset
-
- 
-\begin_inset Formula $trained$
-\end_inset
-
- 
-\begin_inset Formula $1500$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Newpage newpage
@@ -1117,6 +1112,84 @@ G = <<? ? ? argentina> < ? ? ? ?>>, << ? ? ? italiano> < ? ? ? ?>>, << ?
 
 \begin_layout Standard
 (b) << mujer rubia alta inglesa> <varón morocho bajo italiano>> nignuno
+\end_layout
+
+\begin_layout Standard
+(c)
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+Sea h = conjunto mas general posible consistente con el ejemplo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+Para cada atributo restricción 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ en 
+\begin_inset Formula $h$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length 1.3cm
+\end_inset
+
+Pregunto al entrenador si el elemento 
+\begin_inset Formula $a_{i}>_{g}$
+\end_inset
+
+ al atributo 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ de la hipotesis correcta.
+ Si lo es, pruebo remover un atributo y repito hasta que deje de ser mas
+ general
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+El algoritmo esta implmentado en el ejecutable 
+\begin_inset Formula $finds.jar$
+\end_inset
+
+.
+ Para ejecutarlo simplemente ir a la linea de comandos y ejecutar 
+\begin_inset Formula $java$
+\end_inset
+
+ 
+\begin_inset Formula $-jar$
+\end_inset
+
+ 
+\begin_inset Formula $finds.jar$
+\end_inset
+
+.
+ Una vez realizado esto, se mostrara el conjunto que se usara para el entrenamie
+nto y la hipotesis actual luego de aplicado cada caso de entrenamiento.
+ Se puede observar que el conjunto final obtenido es el mismo que el visto
+ en clase.
 \end_layout
 
 \end_deeper
