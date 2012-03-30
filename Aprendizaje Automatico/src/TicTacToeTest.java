@@ -8,13 +8,26 @@ import util.Logger;
 
 
 public class TicTacToeTest {
-
+	
 	public static void main(String[] args) {
 		Logger.init();
 		Logger.LOG_LEVEL = Logger.LEVEL_TRACE;
 		Player p1 = new HumanPlayer(Mark.X);
-//		Player p2 = new IntelligentPlayer(Mark.O);
-		Player p2 = trainIntelligentPlayer(2000, Mark.O);
+		Player p2 = null;
+		if (args != null && args.length == 2) {
+			if ("trained".equals(args[0])) {
+				try {
+					int  ngames = Integer.parseInt(args[1]);
+					p2 = trainIntelligentPlayer(ngames, Mark.O);
+				} catch(NumberFormatException e) {
+					System.out.println("Invalid total number of games!");
+					return;
+				}
+			}
+		}
+		if (p2 == null) {
+			p2 = new IntelligentPlayer(Mark.O);	
+		}
 		new Engine(p1, p2).run();
 	}
 
@@ -26,8 +39,8 @@ public class TicTacToeTest {
 		System.out.println("Training the player....");
 		engine.run(nGames);
 		System.out.println(">>>>>>>>>>>> Intelligent player final stats <<<<<<<<<<<");
-		System.out.println(intelligent);
 		((IntelligentPlayer) intelligent).flushIO();
+		System.out.println(intelligent);
 		return intelligent;
 	}
 }
