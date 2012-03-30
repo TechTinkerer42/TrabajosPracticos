@@ -5,20 +5,23 @@ public abstract class Hypothesis {
 	private static final String ALL = "?", NONE = "0";
 
 	protected HypothesisField[] fields;
-
+	protected boolean value;
+	
 	/**
 	 * Creates a new null hypothesis
 	 */
 	public Hypothesis() {
-		this(new String[0]);
+		this(null, true);
 	}
 
 	/**
 	 * Creates a new hypothesis with the specified values
 	 */
-	public Hypothesis(String[] values) {
+	public Hypothesis(String[] values, boolean value) {
 		initializeFields();
-		addValues(values);
+		this.value = value;
+		if (values != null) 
+			addValues(values);
 	}
 
 	protected abstract void initializeFields();
@@ -58,6 +61,14 @@ public abstract class Hypothesis {
 		}
 	}
 
+	public void setValue(boolean value) {
+		this.value = value;
+	}
+	
+	public boolean getValue() {
+		return value;
+	}
+	
 	@Override
 	public String toString() {
 		String s = "{";

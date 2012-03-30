@@ -1,6 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.LinkedList;
+import java.util.List;
 
 import finds.FindS;
 import finds.Hypothesis;
@@ -10,37 +9,37 @@ public class FindSTest {
 
 	public static void main(String[] args) {
 		FindS finds = new FindS(new LikesSportHypothesis());
-		Map<Hypothesis, Boolean> training = getTrainingExamples();
+		List<Hypothesis> training = getTrainingExamples();
 
-		System.out.println("About to train with: " + training);
-		// train
+		System.out.println("Training set to use: " + training + "\n\n");
+		System.out.println("Starting the training\n");
 		finds.train(training);
-		System.out.println("*** Find-S after the training ***");
+		System.out.println("*** Find-S after the training ***\n");
 		System.out.println(finds);
-		testPositiveExamplesWithAlgorithm(finds, training);
+//		testPositiveExamplesWithAlgorithm(finds, training);
 	}
 
-	private static Map<Hypothesis, Boolean> getTrainingExamples() {
+	private static List<Hypothesis> getTrainingExamples() {
 		String[] values;
-		Map<Hypothesis, Boolean> training = new HashMap<Hypothesis, Boolean>();
+		List<Hypothesis> training = new LinkedList<Hypothesis>();
 		// first set
 		values = new String[] {"soleado", "calido", "normal", "fuerte", "calida", "igual"};
-		training.put(new LikesSportHypothesis(values), true);
+		training.add(new LikesSportHypothesis(values, true));
 		// second set
 		values = new String[] {"soleado", "calido", "alta", "fuerte", "calida", "igual"};
-		training.put(new LikesSportHypothesis(values), true);
+		training.add(new LikesSportHypothesis(values, true));
 		// third set
 		values = new String[] {"nublado", "fria", "alta", "fuerte", "calida", "cambiante"};
-		training.put(new LikesSportHypothesis(values), false);
+		training.add(new LikesSportHypothesis(values, false));
 		// forth set
 		values = new String[] {"soleado", "calido", "alta", "fuerte", "fria", "cambiante"};
-		training.put(new LikesSportHypothesis(values), true);
+		training.add(new LikesSportHypothesis(values, true));
 		return training;
 	}
 	
-	private static void testPositiveExamplesWithAlgorithm(FindS algorithm, Map<Hypothesis, Boolean> training) {
-		for (Entry<Hypothesis, Boolean> entry: training.entrySet()) {
-			System.out.println(entry.getValue() + " ==> " + algorithm.validates(entry.getKey()));
-		}
-	}
+//	private static void testPositiveExamplesWithAlgorithm(FindS algorithm, List<Hypothesis> training) {
+//		for (Hypothesis h: training) {
+//			System.out.println(h.getValue() + " ==> " + algorithm.validates(h));
+//		}
+//	}
 }

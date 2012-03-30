@@ -8,8 +8,8 @@ public class LikesSportHypothesis extends Hypothesis {
 	public LikesSportHypothesis() {
 	}
 	
-	public LikesSportHypothesis(String[] values) {
-		super(values);
+	public LikesSportHypothesis(String[] values, boolean value) {
+		super(values, value);
 	}
 	
 	@Override

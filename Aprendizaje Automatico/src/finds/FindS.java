@@ -1,7 +1,6 @@
 package finds;
 
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.Collection;
 
 /**
  * <pre>
@@ -23,10 +22,14 @@ public class FindS {
 		this.hypotesis = hypotesis;
 	}
 	
-	public void train(Map<Hypothesis, Boolean> training) {
-		for (Entry<Hypothesis, Boolean> entry: training.entrySet()) {
-			if (entry.getValue()) {	// only evaluate positive instances of x
-				hypotesis.generalize(entry.getKey());
+	public void train(Collection<Hypothesis> training) {
+		for (Hypothesis h: training) {
+			if (h.getValue()) {	// only evaluate positive instances of x
+				System.out.println(h + " = positive");
+				hypotesis.generalize(h);
+				System.out.println("\tCurrent Hypotesis: " + hypotesis + "\n");
+			} else {
+				System.out.println(h + " was ignored\n");
 			}
 		}
 	}
