@@ -158,7 +158,8 @@ Sino =>
 
 \end_deeper
 \begin_layout Enumerate
-asdasd
+Se podrian tomar tablero a partir de registros de jugadas realizadas entre
+ personas.
 \end_layout
 
 \begin_layout Enumerate
@@ -240,8 +241,8 @@ Cantidad de filas propias completadas.
 \begin_inset Formula $x_{2}=$
 \end_inset
 
-Cantidad de tres en linea 
-\begin_inset Formula $bloqueados$
+Cantidad lineas 
+\begin_inset Formula $bloqueadas$
 \end_inset
 
  del oponente.
@@ -309,9 +310,14 @@ A continuacion se presentan tablas de los resultados obtenidos a partir
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="5">
 <features tabularvalignment="middle">
@@ -692,11 +698,12 @@ Total de resultados de las primeras partidas
 \end_layout
 
 \begin_layout Standard
-Se presentan los resultados de a pares ya que los 
+Se presentan los resultados de a pares para simplicidad de la table ya que
+ los 
 \begin_inset Formula $w_{i}$
 \end_inset
 
- mas estables se alcanzan a partir de 
+ mas estables se alcanzan a partir de las 
 \begin_inset Formula $10$
 \end_inset
 
@@ -711,11 +718,14 @@ Se presentan los resultados de a pares ya que los
 \end_inset
 
  del total de partidas jugadas.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -754,6 +764,57 @@ Resultados Obtenidos de
 
 \end_layout
 
+\begin_layout Standard
+Para probar la implementacion del algoritmo se debera seguir los siguientes
+ pasos:
+\end_layout
+
+\begin_layout Itemize
+Descargar el archivo tictactoe.jar
+\end_layout
+
+\begin_layout Itemize
+Abrir una terminal y ejecutar: java -jar tictactoe.jar [argumentos]
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Si no se envian argumentos al programa, comenzara una partida con un oponente
+ sin entrenamiento (online training)
+\end_layout
+
+\begin_layout Itemize
+Si se manda la palabra trained seguida de un numero (ej: traned 2000), se
+ creara un nuevo oponente, se lo hara jugar la cantidad de veces especificada
+ contra otro oponente que coloque fichas al azar) y luego se habilitara
+ la partida contra este nuevo jugador recien entrenado.
+\end_layout
+
+\begin_layout Itemize
+Ejemplo de invocacion al programa: 
+\begin_inset Formula $java$
+\end_inset
+
+ 
+\begin_inset Formula $-jar$
+\end_inset
+
+ 
+\begin_inset Formula $tictactoe.jar$
+\end_inset
+
+ 
+\begin_inset Formula $trained$
+\end_inset
+
+ 
+\begin_inset Formula $1500$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Standard
 \begin_inset Newpage newpage
@@ -776,7 +837,40 @@ Es
 \begin_inset Formula $?$
 \end_inset
 
- para representar que en ese ligar, cualquier valor es aceptado y...
+ para representar que en ese lugar, cualquier valor es aceptado y el valor
+ 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ para indicar que ningun valor es aceptado, por lo que el total de posibles
+ instancias estaria dado por 
+\begin_inset Formula $(x_{1}+2)(x_{2}+2)...(x_{n}+2)$
+\end_inset
+
+.
+ Sin embargo, sintacticamente resultan iguales todas aquellas instancias
+ que contengan el valor 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+, por lo que se deben contar como si fuesen una sola, quedando asi el total
+ de instancias para 
+\begin_inset Formula $disfruta$
+\end_inset
+
+ 
+\begin_inset Formula $deporte$
+\end_inset
+
+ por: 
+\begin_inset Formula 
+\[
+(x_{1}+1)(x_{2}+1)...(x_{n}+1)+1=4*3*3*3*3*3+1=973
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -786,7 +880,11 @@ El nuevo conjunto de instancias X quedaria dado por:
 
 \begin_deeper
 \begin_layout Itemize
-cielo => soleado, nublado 
+cielo 
+\begin_inset Formula $=>$
+\end_inset
+
+ soleado, nublado 
 \end_layout
 
 \begin_layout Itemize
@@ -900,6 +998,10 @@ S = {<sol, cal, ?, fuert, ?, ?>} --- G = {<sol,?,?,?,?,?>, <?,cal,?,?,?,?>}
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+-
+\end_layout
+
 \begin_layout Enumerate
 opciones:
 \end_layout
