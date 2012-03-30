@@ -77,20 +77,20 @@ Tarea de aprendizaje: Aprender a jugar al 4 en linea
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Enumerate
 Tarea: colocar 4 fichas en linea antes que el oponente.
 \end_layout
 
-\begin_layout Itemize
+\begin_deeper
+\begin_layout Standard
 Medida de rendimiento: Cantidad de partidos ganidos del total de partidos
  jugados.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 Experiencia de aprendizaje: 
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 Cada vez que se logra bloquear una linea del oponente 
 \end_layout
@@ -100,12 +100,10 @@ Cada vez que se logra alinear 4 fichas
 \end_layout
 
 \end_deeper
-\end_deeper
 \begin_layout Enumerate
 Funcion Objetivo:
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 Si b es un estado final de 
 \begin_inset Formula $gana$
@@ -160,6 +158,10 @@ Sino =>
 
 \end_deeper
 \begin_layout Enumerate
+asdasd
+\end_layout
+
+\begin_layout Enumerate
 \begin_inset Formula $f(b)=w_{0}+w_{1}x_{1}+w_{2}x_{2}+w_{3}x_{3}$
 \end_inset
 
@@ -168,19 +170,70 @@ Sino =>
 
 \begin_deeper
 \begin_layout Enumerate
-Calculo de los 
-\begin_inset Formula $x_{i}$
-\end_inset
-
-
+Inicialmente se implemento una funcion en la que se consideraron los aspectos
+ mas visibles a simple vista del juego:
 \end_layout
 
-\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $x_{1}$
+\end_inset
+
+: cantidad de fichas propias en el tablero.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{2}$
+\end_inset
+
+: cantidad de fichas del oponente en el tablero.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{3}$
+\end_inset
+
+: Cantidad de fichas propias en linea.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{4}$
+\end_inset
+
+: Cantidad de fichas del oponente en linea.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{5}$
+\end_inset
+
+: Cantidad de lineas de 2 de longitud de fichas del propias en las filas,
+ columnas y diagonales.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{6}$
+\end_inset
+
+: Cantidad de lineas de 2 de longitud de fichas del oponente en las filas,
+ columnas y diagonales.
+\end_layout
+
+\begin_layout Standard
+Esta implementacion funcionaba, pero no resultba muy dificil ganarle al
+ aprendiz (entrenado), por lo que se optó por una implementacion mas 
+\begin_inset Formula $"defensiva"$
+\end_inset
+
+, en la que se de mas importancia a bloquear los 3 en linea del oponente
+ a tratar de completar 3 fichas propias en linea.
+ Proponiendose la siguiente implementacion:
+\end_layout
+
 \begin_layout Itemize
 \begin_inset Formula $x_{1}=$
 \end_inset
 
-Cantidad de filas completadas.
+Cantidad de filas propias completadas.
 \end_layout
 
 \begin_layout Itemize
@@ -209,14 +262,496 @@ Cantidad de tres en linea
  si no.
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-Se implemento para en entrenamiento del aprendiz, un jugador oponente que
- coloca fichas en forma 
-\begin_inset Formula $aleatoria$
+\begin_layout Standard
+Esta ultima implementacion dio resultados mas interesantes.
+ Por ejemplo, si se presenta un tablero en el que el aprendiz puede bloquear
+ o ganar, este termina optando por bloquear en vez de colocar la ficha ganadora.
+ A simple vista pareceria no ser una opcion viable, pero tiene la ventaja
+ que ya no resulta simple ganarle.
+\end_layout
+
+\begin_layout Standard
+Para el entrenamiento del aprendiz, se implemento el algorimto 
+\begin_inset Formula $LMS$
 \end_inset
 
-.
+ dado en clase para que funcione en forma 
+\begin_inset Formula $online$
+\end_inset
+
+, es decir, cada vez que se juega una partida, se asigna un puntaje a cada
+ partido (a partir de la 
+\begin_inset Formula $funcion$
+\end_inset
+
+ 
+\begin_inset Formula $objetivo$
+\end_inset
+
+ mencionada) y utilizando la formula 
+\begin_inset Formula $V_{train}(b)=\hat{V}(SUC(b))$
+\end_inset
+
+ se crea el conjunto de entrenamiento y ajustan los 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+ actuales.
+\end_layout
+
+\begin_layout Itemize
+A continuacion se presentan tablas de los resultados obtenidos a partir
+ del aprendiz vs jugador random en modo de entrenamiento online:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Juego
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ganados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Empatados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Perdidos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porcentaje de perdidos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0%\%
+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3-4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $50\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4-6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0%\%
+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7-8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0%\%
+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9-10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $50\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Total de resultados de las primeras partidas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se presentan los resultados de a pares ya que los 
+\begin_inset Formula $w_{i}$
+\end_inset
+
+ mas estables se alcanzan a partir de 
+\begin_inset Formula $10$
+\end_inset
+
+ partidas aproximadamente.
+ A partir de esto, la cantidad de partidos perididos es aproximadamente
+ del 
+\begin_inset Formula $7$
+\end_inset
+
+ al 
+\begin_inset Formula $15\%$
+\end_inset
+
+ del total de partidas jugadas.
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 2.6cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename resultados.png
+	lyxscale 30
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultados Obtenidos de 
+\begin_inset Formula $2000$
+\end_inset
+
+ partidas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -386,8 +921,8 @@ altura: alto, mediano o bajo
 nacionalidad: argentino, italiano, español, francés, alemán, inglés o japonés
 \end_layout
 
-\begin_layout Enumerate
-Pasos:
+\begin_layout Standard
+(a) Pasos:
 \end_layout
 
 \begin_layout Standard
@@ -478,8 +1013,8 @@ G = <<? ? ? argentina> < ? ? ? ?>>, << ? ? ? italiano> < ? ? ? ?>>, << ?
  < ? ? ? ?>>, << ? ? ? japonés> < ? ? ? ?>>
 \end_layout
 
-\begin_layout Enumerate
-<< mujer rubia alta inglesa> <varón morocho bajo italiano>> nignuno
+\begin_layout Standard
+(b) << mujer rubia alta inglesa> <varón morocho bajo italiano>> nignuno
 \end_layout
 
 \end_deeper
