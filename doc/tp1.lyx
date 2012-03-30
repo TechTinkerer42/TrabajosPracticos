@@ -77,17 +77,17 @@ Diseño de sistemas de aprendizaje
 \end_layout
 
 \begin_layout Enumerate
-Tarea de aprendizaje: Aprender a jugar al 4 en linea
+Tarea de aprendizaje: Aprender a jugar al 4 en línea
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-Tarea: colocar 4 fichas en linea antes que el oponente.
+Tarea: colocar 4 fichas en línea antes que el oponente.
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-Medida de rendimiento: Cantidad de partidos ganidos del total de partidos
+Medida de rendimiento: Cantidad de partidos ganados del total de partidos
  jugados.
 \end_layout
 
@@ -96,16 +96,16 @@ Experiencia de aprendizaje:
 \end_layout
 
 \begin_layout Itemize
-Cada vez que se logra bloquear una linea del oponente 
+Cada vez que se logra bloquear una línea del oponente.
 \end_layout
 
 \begin_layout Itemize
-Cada vez que se logra alinear 4 fichas 
+Cada vez que se logra alinear 4 fichas.
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Funcion Objetivo:
+Función Objetivo:
 \end_layout
 
 \begin_layout Itemize
@@ -167,13 +167,17 @@ Se podrian tomar tablero a partir de registros de jugadas realizadas entre
 \end_layout
 
 \begin_layout Enumerate
-Para probar la implementacion del algoritmo se debera seguir los siguientes
+Para probar la implementación del algoritmo se deberá seguir los siguientes
  pasos:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Descargar el archivo tictactoe.jar
+Descargar el archivo 
+\begin_inset Formula $tictactoe.jar$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -181,19 +185,26 @@ Abrir una terminal y ejecutar: java -jar tictactoe.jar [argumentos]
 \end_layout
 
 \begin_layout Itemize
-Si no se envian argumentos al programa, comenzara una partida con un oponente
+Si no se envian argumentos al programa, comenzará una partida con un oponente
  sin entrenamiento (online training)
 \end_layout
 
 \begin_layout Itemize
-Si se manda la palabra trained seguida de un numero (ej: traned 2000), se
- creara un nuevo oponente, se lo hara jugar la cantidad de veces especificada
- contra otro oponente que coloque fichas al azar) y luego se habilitara
- la partida contra este nuevo jugador recien entrenado.
+Si se manda la palabra 
+\begin_inset Formula $trained$
+\end_inset
+
+ seguida de un numero (ej: traned 
+\begin_inset Formula $2000$
+\end_inset
+
+), se creará un nuevo oponente, se lo hará jugar la cantidad de veces especifica
+da contra otro oponente que coloque fichas al azar) y luego se habilitará
+ la partida contra este nuevo jugador recién entrenado.
 \end_layout
 
 \begin_layout Itemize
-Ejemplo de invocacion al programa: 
+Ejemplo de invocación al programa: 
 \begin_inset Formula $java$
 \end_inset
 
@@ -217,7 +228,7 @@ Ejemplo de invocacion al programa:
 \end_layout
 
 \begin_layout Enumerate
-Inicialmente se implemento una funcion en la que se consideraron los aspectos
+Inicialmente se implementó una función en la que se consideró los aspectos
  mas visibles a simple vista del juego:
 \end_layout
 
@@ -225,55 +236,55 @@ Inicialmente se implemento una funcion en la que se consideraron los aspectos
 \begin_inset Formula $x_{1}$
 \end_inset
 
-: cantidad de fichas propias en el tablero.
+: Cantidad de fichas propias en el tablero.
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $x_{2}$
 \end_inset
 
-: cantidad de fichas del oponente en el tablero.
+: Cantidad de fichas del oponente en el tablero.
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $x_{3}$
 \end_inset
 
-: Cantidad de fichas propias en linea.
+: Cantidad de fichas propias en línea.
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $x_{4}$
 \end_inset
 
-: Cantidad de fichas del oponente en linea.
+: Cantidad de fichas del oponente en línea.
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $x_{5}$
 \end_inset
 
-: Cantidad de lineas de 2 de longitud de fichas del propias en las filas,
- columnas y diagonales.
+: Cantidad de líneas de longitud 2 de fichas del propias en las filas, columnas
+ y diagonales.
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $x_{6}$
 \end_inset
 
-: Cantidad de lineas de 2 de longitud de fichas del oponente en las filas,
+: Cantidad de líneas de longitud 2 de fichas del oponente en las filas,
  columnas y diagonales.
 \end_layout
 
 \begin_layout Standard
-Esta implementacion funcionaba, pero no resultba muy dificil ganarle al
- aprendiz (entrenado), por lo que se optó por una implementacion mas 
+Esta implementación funcionaba, pero no resultba muy dificil ganarle al
+ aprendiz (entrenado), por lo que se optó por una implementación mas 
 \begin_inset Formula $"defensiva"$
 \end_inset
 
-, en la que se de mas importancia a bloquear los 3 en linea del oponente
- a tratar de completar 3 fichas propias en linea.
- Proponiendose la siguiente implementacion:
+, en la que se de mas importancia a bloquear los 3 en línea del oponente
+ a tratar de completar 3 fichas propias en línea.
+ Proponiendose la siguiente implementación:
 \end_layout
 
 \begin_layout Itemize
@@ -287,7 +298,7 @@ Cantidad de filas propias completadas.
 \begin_inset Formula $x_{2}=$
 \end_inset
 
-Cantidad lineas 
+Cantidad líneas 
 \begin_inset Formula $bloqueadas$
 \end_inset
 
@@ -310,7 +321,7 @@ Cantidad lineas
 \end_layout
 
 \begin_layout Standard
-Esta ultima implementacion dio resultados mas interesantes.
+Esta ultima implementación dio resultados mas interesantes.
  Por ejemplo, si se presenta un tablero en el que el aprendiz puede bloquear
  o ganar, este termina optando por bloquear en vez de colocar la ficha ganadora.
  A simple vista pareceria no ser una opcion viable, pero tiene la ventaja
@@ -318,7 +329,7 @@ Esta ultima implementacion dio resultados mas interesantes.
 \end_layout
 
 \begin_layout Standard
-Para el entrenamiento del aprendiz, se implemento el algorimto 
+Para el entrenamiento del aprendiz, se implementó el algorimto 
 \begin_inset Formula $LMS$
 \end_inset
 
@@ -328,7 +339,7 @@ Para el entrenamiento del aprendiz, se implemento el algorimto
 
 , es decir, cada vez que se juega una partida, se asigna un puntaje a cada
  partido (a partir de la 
-\begin_inset Formula $funcion$
+\begin_inset Formula $función$
 \end_inset
 
  
@@ -347,8 +358,24 @@ Para el entrenamiento del aprendiz, se implemento el algorimto
 \end_layout
 
 \begin_layout Itemize
-A continuacion se presentan tablas de los resultados obtenidos a partir
- del aprendiz vs jugador random en modo de entrenamiento online:
+A continuación se presentan tablas de los resultados obtenidos a partir
+ del 
+\begin_inset Formula $aprendiz$
+\end_inset
+
+ 
+\begin_inset Formula $vs$
+\end_inset
+
+ 
+\begin_inset Formula $jugador$
+\end_inset
+
+ 
+\begin_inset Formula $random$
+\end_inset
+
+ en modo de entrenamiento online:
 \end_layout
 
 \begin_layout Standard
@@ -460,7 +487,7 @@ Porcentaje de perdidos
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0%\%
+\begin_inset Formula $0%%
 $
 \end_inset
 
@@ -561,7 +588,7 @@ $
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0%\%
+\begin_inset Formula $0%%
 $
 \end_inset
 
@@ -612,7 +639,7 @@ $
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0%\%
+\begin_inset Formula $0%%
 $
 \end_inset
 
@@ -827,7 +854,7 @@ Es
 \begin_inset Formula $973$
 \end_inset
 
- dado que por cada posible valor de cada campo de la hipotesis, se tiene
+ dado que por cada posible valor de cada campo de la hipótesis, se tiene
  el valor 
 \begin_inset Formula $?$
 \end_inset
@@ -907,7 +934,7 @@ corriente (del agua) => débil, moderada, fuerte
 \end_layout
 
 \begin_layout Standard
-El nuevo tamaño de hipotesis 
+El nuevo tamaño de hipótesis 
 \begin_inset Formula $semanticamente$
 \end_inset
 
@@ -919,7 +946,7 @@ El nuevo tamaño de hipotesis
 \begin_inset Formula $quatriplicaria$
 \end_inset
 
- el espacio de hipotesis.
+ el espacio de hipótesis.
 \end_layout
 
 \end_deeper
@@ -932,7 +959,7 @@ Cada atibuto
 \begin_inset Formula $k$
 \end_inset
 
- valores diferentes multiplica a la cantidad de hipotesis en casi 
+ valores diferentes multiplica a la cantidad de hipótesis en casi 
 \begin_inset Formula $k$
 \end_inset
 
@@ -1003,19 +1030,19 @@ opciones:
 
 \begin_deeper
 \begin_layout Itemize
-sexo: Mujer, Varon
+Sexo: Mujer, Varon
 \end_layout
 
 \begin_layout Itemize
-color de cabello: morocho, castaño o rubio
+Color de cabello: morocho, castaño o rubio
 \end_layout
 
 \begin_layout Itemize
-altura: alto, mediano o bajo
+Altura: alto, mediano o bajo
 \end_layout
 
 \begin_layout Itemize
-nacionalidad: argentino, italiano, español, francés, alemán, inglés o japonés
+Nacionalidad: argentino, italiano, español, francés, alemán, inglés o japonés
 \end_layout
 
 \begin_layout Standard
@@ -1156,7 +1183,7 @@ Pregunto al entrenador si el elemento
 \begin_inset Formula $a_{i}$
 \end_inset
 
- de la hipotesis correcta.
+ de la hipótesis correcta.
  Si lo es, pruebo remover un atributo y repito hasta que deje de ser mas
  general
 \end_layout
@@ -1173,7 +1200,7 @@ El algoritmo esta implmentado en el ejecutable
 \end_inset
 
 .
- Para ejecutarlo simplemente ir a la linea de comandos y ejecutar 
+ Para ejecutarlo simplemente ir a la línea de comandos y ejecutar 
 \begin_inset Formula $java$
 \end_inset
 
@@ -1187,7 +1214,7 @@ El algoritmo esta implmentado en el ejecutable
 
 .
  Una vez realizado esto, se mostrara el conjunto que se usara para el entrenamie
-nto y la hipotesis actual luego de aplicado cada caso de entrenamiento.
+nto y la hipótesis actual luego de aplicado cada caso de entrenamiento.
  Se puede observar que el conjunto final obtenido es el mismo que el visto
  en clase.
 \end_layout
