@@ -277,7 +277,7 @@ Inicialmente se implementó una función en la que se consideró los aspectos
 \end_layout
 
 \begin_layout Standard
-Esta implementación funcionaba, pero no resultba muy dificil ganarle al
+Esta implementación funciónaba, pero no resultba muy dificil ganarle al
  aprendiz (entrenado), por lo que se optó por una implementación mas 
 \begin_inset Formula $"defensiva"$
 \end_inset
@@ -333,11 +333,11 @@ Para el entrenamiento del aprendiz, se implementó el algorimto
 \begin_inset Formula $LMS$
 \end_inset
 
- dado en clase para que funcione en forma 
+ dado en clase para que funcióne en forma 
 \begin_inset Formula $online$
 \end_inset
 
-, es decir, cada vez que se juega una partida, se asigna un puntaje a cada
+, es decir, cada vez que se juega una partida, se asígna un puntaje a cada
  partido (a partir de la 
 \begin_inset Formula $función$
 \end_inset
@@ -383,7 +383,7 @@ A continuación se presentan tablas de los resultados obtenidos a partir
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -872,7 +872,7 @@ Es
 \begin_inset Formula $\emptyset$
 \end_inset
 
-, por lo que se deben contar como si fuesen una sola, quedando asi el total
+, por lo que se deben contar como si fuesen una sola, quedando así el total
  de instancias para 
 \begin_inset Formula $disfruta$
 \end_inset
@@ -963,7 +963,7 @@ El nuevo tamaño de hipótesis
 \begin_inset Formula $(4*3*3*3*3*3)*4+1$
 \end_inset
 
- Es decir, casi se 
+ Es decir, casí se 
 \begin_inset Formula $quatriplicaria$
 \end_inset
 
@@ -980,7 +980,7 @@ Cada atibuto
 \begin_inset Formula $k$
 \end_inset
 
- valores diferentes multiplica a la cantidad de hipótesis en casi 
+ valores diferentes multiplica a la cantidad de hipótesis en casí 
 \begin_inset Formula $k$
 \end_inset
 
@@ -1550,6 +1550,137 @@ nto y la hipótesis actual luego de aplicado cada caso de entrenamiento.
  en clase.
 \end_layout
 
+\begin_layout Enumerate
+(c)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Luego de corridas 
+\begin_inset Formula $20$
+\end_inset
+
+ simulaciónes, se midió que en promedio se necesitan unos 
+\begin_inset Formula $27$
+\end_inset
+
+ ejemplos aletorios de aprendizaje para alcanzar la hipótesis objetivo (Soleado,
+ Cálida, ?, ?, ?, ?).
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+En la gráfico a continuación se muestra la cantidad de ejemplos (aleatorios)
+ que debieron presentarse al algoritmo 
+\begin_inset Formula $Find-S$
+\end_inset
+
+ para que alcanze la función objetivo.
+ 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename simulacion.png
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultados de la simulación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A medida que se agregan mas 
+\begin_inset Formula $“?”$
+\end_inset
+
+, se tiene una hipótesis mas genérica, es decir, se pierde especificidad,
+ por lo que encontrarla debería resultar mas sencillo.
+ Si ponemos a modo de ejemplo, el caso mas extremo, que sería (?, ?, ?,
+ ?, ?, ?), cualquier hipótesis que tomemos va a acercarnos un paso mas hacia
+ ella, ya que sería siempre validada (por supuesto, siempre y cuando esta
+ no halla sido presentada anteriormente).
+\end_layout
+
+\begin_layout Enumerate
+A continuación se presenta un gráfico en donde se realizaron 
+\begin_inset Formula $100$
+\end_inset
+
+ simulaciónes para tratar de alcanzar cada hipótesis.
+ Se comenzó con un hipótesis inicial toda inizializada en 
+\begin_inset Quotes eld
+\end_inset
+
+?
+\begin_inset Quotes erd
+\end_inset
+
+, y para cada paso de la simulación, uno de estos simbolos era reemplazado
+ por algún valor especifico.
+ Obteniednose así un gráfico de la cantidad promedio de ejemplos necesarios
+ vs cantidad de valores 
+\begin_inset Quotes eld
+\end_inset
+
+?
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename hiptesisVariable.png
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Resultados de la simulación para hipotesis variable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \end_body
 \end_document
