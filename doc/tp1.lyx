@@ -186,7 +186,7 @@ Abrir una terminal y ejecutar: java -jar tictactoe.jar [argumentos]
 
 \begin_layout Itemize
 Si no se envian argumentos al programa, comenzará una partida con un oponente
- sin entrenamiento (online training)
+ sin entrenamiento (online tLluviosong)
 \end_layout
 
 \begin_layout Itemize
@@ -383,7 +383,7 @@ A continuación se presentan tablas de los resultados obtenidos a partir
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -487,8 +487,7 @@ Porcentaje de perdidos
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0%%
-$
+\begin_inset Formula $0\%$
 \end_inset
 
 
@@ -588,8 +587,7 @@ $
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0%%
-$
+\begin_inset Formula $0\%$
 \end_inset
 
 
@@ -639,8 +637,7 @@ $
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0%%
-$
+\begin_inset Formula $0\%$
 \end_inset
 
 
@@ -798,7 +795,7 @@ Se presentan los resultados de a pares para simplicidad de la table ya que
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -903,34 +900,58 @@ El nuevo conjunto de instancias X quedaria dado por:
 \begin_deeper
 \begin_layout Itemize
 cielo 
-\begin_inset Formula $=>$
+\begin_inset Formula $\Longrightarrow$
 \end_inset
 
- soleado, nublado 
+ soleado, nublado, lluvioso
 \end_layout
 
 \begin_layout Itemize
-aire => cálida, fría 
+aire 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ cálida, fría 
 \end_layout
 
 \begin_layout Itemize
-humedad => normal, alta 
+humedad 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ normal, alta 
 \end_layout
 
 \begin_layout Itemize
-viento => fuerte, débil 
+viento 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ fuerte, débil 
 \end_layout
 
 \begin_layout Itemize
-agua => cálida, fría 
+agua 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ cálida, fría 
 \end_layout
 
 \begin_layout Itemize
-pronóstico => igual, cambiante 
+pronóstico 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ igual, cambiante 
 \end_layout
 
 \begin_layout Itemize
-corriente (del agua) => débil, moderada, fuerte 
+corriente (del agua) 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ débil, moderada, fuerte 
 \end_layout
 
 \begin_layout Standard
@@ -982,48 +1003,358 @@ Pasos:
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
-S = <0,0,0,0,0,0> --- G = <?,?,?,?,?,?>
+\begin_layout Standard
+\begin_inset Formula $S_{0}$
+\end_inset
+
+= {(
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+)}
 \end_layout
 
 \begin_layout Standard
-<sol, cal, alta, fuert, fria, cambiante> - 1
-\end_layout
+\begin_inset Formula $G_{0}$
+\end_inset
 
-\begin_layout Itemize
-S = <sol, cal, alta, fuert, fria, cambiante> --- G = <?,?,?,?,?,?>
-\end_layout
-
-\begin_layout Standard
-<nub, fria, alta, fuert, cal, cambiante> - 0
-\end_layout
-
-\begin_layout Itemize
-S = {<sol, cal, alta, fuert, fria, cambiante>} --- G = {<sol,?,?,?,?,?>,
- <?,cal,?,?,?,?>, <?,?,?,?,fria,?>}
+ = {(?,?,?,?,?,?)}
 \end_layout
 
 \begin_layout Standard
-<sol, cal, alta, fuert, calida, igual> - 1
-\end_layout
+\begin_inset Formula $\dashrightarrow$
+\end_inset
 
-\begin_layout Itemize
-S = {<sol, cal, alta, fuert, ?, ?>} --- G = {<sol,?,?,?,?,?>, <?,cal,?,?,?,?>}
+<Soleada, Cálida, Alta, Fuerte, Fría, Cambiante> - Yes
 \end_layout
 
 \begin_layout Standard
-<sol, cal, normal, fuert, calida, igual> - 1
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ = {(Soleada, Cálida, Alta, Fuerte, Fría, Cambiante)}
 \end_layout
 
-\begin_layout Itemize
-S = {<sol, cal, ?, fuert, ?, ?>} --- G = {<sol,?,?,?,?,?>, <?,cal,?,?,?,?>}
+\begin_layout Standard
+\begin_inset Formula $G_{1}$
+\end_inset
+
+ = {(?,?,?,?,?,?)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dashrightarrow$
+\end_inset
+
+<Nueblado, Fría, Alta, Fuerte, Calido, Cambiente> - No
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{2}$
+\end_inset
+
+ = {(Soleada, Cálida, Alta, Fuerte, Fría, Cambiante)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{2}$
+\end_inset
+
+ = {(Soleada,?,?,?,?,?), (?,Calida,?,?,?,?), (?,?,?,?,Fría,?)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dashrightarrow$
+\end_inset
+
+<Soleada, Cálida, Alta, Fuerte, Cálida, Igual> - Yes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{3}$
+\end_inset
+
+ = {(Soleada, Cálida, Alta, Fuerte, ?, ?)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{3}$
+\end_inset
+
+= {(Soleada,?,?,?,?,?), (?,Cálida,?,?,?,?)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dashrightarrow$
+\end_inset
+
+<Soleada, Cálida, Noarmal, Fuerte, Cálida, Igual> - Yes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{4}$
+\end_inset
+
+ = {(Soleada, Cálida, ?, Fuerte, ?, ?)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{4}$
+\end_inset
+
+ = {(Soleada,?,?,?,?,?>, <?,Cálida,?,?,?,?>}
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
--
+Pasos
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $S_{0}$
+\end_inset
+
+={(
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+) v (
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{0}$
+\end_inset
+
+={(?,?,?,?,?,?) v (?,?,?,?,?,?)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dashrightarrow$
+\end_inset
+
+<Soleado, Cálido, Normal, Fuerte, Cálido, Iguál> - Yes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{1}$
+\end_inset
+
+={(Soleado, Cálido, Normal, Fuerte, Cálido, Iguál) v (
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{1}$
+\end_inset
+
+={(?,?,?,?,?,?) v (?,?,?,?,?,?)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dashrightarrow$
+\end_inset
+
+<Soleado, Cálido, Alto, Fuerte, Cálido, Iguál> - Yes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{2}$
+\end_inset
+
+={(Soleado, Cálido, Normal, Fuerte, Cálido, Iguál)v(Soleado, Cálido, Alto,
+ Fuerte, Cálido, Iguál), (Soleado, Cálido, ?, Fuerte, Cálido, Iguál) v (
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{2}$
+\end_inset
+
+={(?,?,?,?,?,?) v (?,?,?,?,?,?)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dashrightarrow$
+\end_inset
+
+<Rainy, Frío, Fuerte, Fuerte, Cálido, Change> - No
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{3}$
+\end_inset
+
+={(Soleado, Cálido, Normal, Fuerte, Cálido, Iguál) v (Soleado, Cálido, Alto,
+ Fuerte, Cálido, Iguál), (Soleado, Cálido, ?, Fuerte, Cálido, Iguál) v (
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+\begin_inset Formula $\phi$
+\end_inset
+
+)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{3}$
+\end_inset
+
+= {(Soleado, ?, ?, ?, ?) v (?, Cálido, ?, ?, ?), (Soleado, ?, ?, ?, ?) v
+ (?, ?, ?, ?, Iguál), (?, Cálido, ?, ?, ?) v (?, ?, ?, ?, Iguál)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\dashrightarrow$
+\end_inset
+
+<Soleado, Cálido, Fuerte, Fuerte, Fría, Cambiante> - Yes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{4}$
+\end_inset
+
+={(Soleado, Cálido, ?, Fuerte, Cálido, Iguál) v (Soleado, Calido, Alto,
+ Fría, Cambiante)}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G_{4}$
+\end_inset
+
+= {(Soleado, ?, ?, ?, ?) v (?, Cálido, ?, ?, ?), (Soleado, ?, ?, ?, ?) v
+ (?, ?, ?, ?, Iguál), (?, Cálido, ?, ?, ?) v (?, ?, ?, ?, Iguál)}
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 opciones:
 \end_layout
