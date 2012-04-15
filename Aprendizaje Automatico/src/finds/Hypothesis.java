@@ -1,5 +1,6 @@
 package finds;
 
+
 public abstract class Hypothesis {
 
 	private static final String NONE = "0";
@@ -44,6 +45,17 @@ public abstract class Hypothesis {
 		}
 	}
 
+	public void setValue(int index, String value) {
+		fields[index].setValue(value);
+	}
+	
+	public void setValues(String[] values) {
+		validateDimention(values.length);
+		for (int i = 0; i < values.length; i++) {
+			setValue(i, values[i]);
+		}
+	}
+	
 	public boolean isMoreGeneralThan(Hypothesis h) {
 		validateDimention(h.fields.length);
 		for (int i = 0; i < fields.length; i++) {
@@ -63,6 +75,14 @@ public abstract class Hypothesis {
 
 	public void setValue(boolean value) {
 		this.value = value;
+	}
+	
+	public int length() {
+		return fields.length;
+	}
+	
+	public HypothesisField getField(int index) {
+		return fields[index];
 	}
 	
 	public boolean getValue() {

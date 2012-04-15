@@ -24,19 +24,27 @@ public class FindS {
 	
 	public void train(Collection<Hypothesis> training) {
 		for (Hypothesis h: training) {
-			if (h.getValue()) {	// only evaluate positive instances of x
-				System.out.println(h + " = positive");
-				hypotesis.generalize(h);
-				System.out.println("\tCurrent Hypotesis: " + hypotesis + "\n");
-			} else {
-				System.out.println(h + " was ignored\n");
-			}
+			train(h);
 		}
 	}
-
+	
+	public void train(Hypothesis h) {
+		if (h.getValue()) {	// only evaluate positive instances of x
+//			System.out.println(h + " = positive");
+			hypotesis.generalize(h);
+//			System.out.println("\tCurrent Hypotesis: " + hypotesis + "\n");
+		} else {
+//			System.out.println(h + " was ignored\n");
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "Find-S algorithm. Current hypotesis: " + hypotesis;
+	}
+	
+	public Hypothesis getHypotesis() {
+		return hypotesis;
 	}
 	
 	public boolean validates(Hypothesis h) {

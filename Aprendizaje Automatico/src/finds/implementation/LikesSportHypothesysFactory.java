@@ -1,7 +1,8 @@
 package finds.implementation;
 
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 import finds.HypothesisField;
 
@@ -16,7 +17,7 @@ public class LikesSportHypothesysFactory {
 	public static final int FIELD_FORECAST 	= 5;
 	
 	public static HypothesisField getHypothesis(int field) {
-		Collection<String> allValues = new HashSet<String>();
+		List<String> allValues = new LinkedList<String>();
 		switch(field) {
 			case FIELD_SKY:
 				setSkyValues(allValues); break;
@@ -39,7 +40,7 @@ public class LikesSportHypothesysFactory {
 	protected static void setSkyValues(Collection<String> allValues) {
 		allValues.add("soleado");
 		allValues.add("nublado");
-//		allValues.add("lluvioso");
+		allValues.add("lluvioso");
 	}
 
 	protected static void setAirValues(Collection<String> allValues) {
