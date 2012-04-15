@@ -30,11 +30,11 @@ public class FindS {
 	
 	public void train(Hypothesis h) {
 		if (h.getValue()) {	// only evaluate positive instances of x
-//			System.out.println(h + " = positive");
+			System.out.println(h + " = positive");
 			hypotesis.generalize(h);
-//			System.out.println("\tCurrent Hypotesis: " + hypotesis + "\n");
+			System.out.println("\tCurrent Hypotesis: " + hypotesis + "\n");
 		} else {
-//			System.out.println(h + " was ignored\n");
+			System.out.println(h + " was ignored\n");
 		}
 	}
 	
