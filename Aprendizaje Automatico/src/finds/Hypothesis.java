@@ -2,7 +2,7 @@ package finds;
 
 public abstract class Hypothesis {
 
-	private static final String ALL = "?", NONE = "0";
+	private static final String NONE = "0";
 
 	protected HypothesisField[] fields;
 	protected boolean value;
@@ -75,9 +75,7 @@ public abstract class Hypothesis {
 		for (int i = 0; i < fields.length; i++) {
 			HypothesisField hf = fields[i];
 			s += "<";
-			if (hf.isComplete()) {
-				s += ALL;
-			} else if (hf.isEmpty()) {
+			if (hf.isEmpty()) {
 				s += NONE;
 			} else {
 				s += hf;

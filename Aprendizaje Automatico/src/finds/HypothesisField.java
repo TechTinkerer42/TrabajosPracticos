@@ -1,49 +1,60 @@
 package finds;
 
 import java.util.Collection;
-import java.util.HashSet;
 
 public class HypothesisField {
-
+	private static final String ALL_VALUES = "?";
+	
 	protected Collection<String> allValues;
-	protected Collection<String> values;
+	protected String values;
 
 	public HypothesisField(Collection<String> allValues) {
 		this.allValues = allValues;
-		values = new HashSet<String>();
+		values = null;
 	}
 
 	public void addValue(String value) {
 		if (!allValues.contains(value)) {
-			throw new IllegalArgumentException(value
-					+ " is not within domain! => " + allValues);
+			throw new IllegalArgumentException(value + " is not within domain! => " + allValues);
 		}
-		values.add(value);
+		if (values == null) {
+			values = value;
+		} else {
+			values = ALL_VALUES;
+		}
 	}
 
 	public void addAll(HypothesisField h) {
-		if (!allValues.containsAll(h.values)) {
-			throw new IllegalArgumentException(h.values
-					+ " are not within domain! => " + allValues);
+		if (h.values != null) {
+			if (values == null) {
+				values = h.values;
+			}
+			if (!h.values.equals(values)) {
+				values = ALL_VALUES;
+			} 
 		}
-		values.addAll(h.values);
 	}
 
 	public boolean isMoreGeneralThan(HypothesisField h) {
-		return values.containsAll(h.values);
-	}
-
-	public boolean isComplete() {
-		return values.containsAll(allValues);
+		if (values == null) {
+			if (h.values == null) {
+				return true;
+			}
+			return false;
+		}
+		if (values.equals(ALL_VALUES) || values.equals(h.values)) {
+			return true;
+		}
+		return false;
 	}
 
 	public boolean isEmpty() {
-		return values.size() == 0;
+		return values == null;
 	}
 
 	@Override
 	public String toString() {
-		return values.toString();
+		return values == null ? "0" : values.toString();
 	}
 
 }
