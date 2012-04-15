@@ -162,7 +162,7 @@ Sino =>
 
 \end_deeper
 \begin_layout Enumerate
-Se podrian tomar tablero a partir de registros de jugadas realizadas entre
+Se podrian tomar tableros a partir de registros de jugadas realizadas entre
  personas.
 \end_layout
 
@@ -186,7 +186,8 @@ Abrir una terminal y ejecutar: java -jar tictactoe.jar [argumentos]
 
 \begin_layout Itemize
 Si no se envian argumentos al programa, comenzará una partida con un oponente
- sin entrenamiento (online tLluviosong)
+ sin entrenamiento (aprende en forma online, es decir, a medida que se juega
+ contra el, mejor se vuelve)
 \end_layout
 
 \begin_layout Itemize
@@ -321,10 +322,10 @@ Cantidad líneas
 \end_layout
 
 \begin_layout Standard
-Esta ultima implementación dio resultados mas interesantes.
+Esta última implementación dio resultados mas interesantes.
  Por ejemplo, si se presenta un tablero en el que el aprendiz puede bloquear
  o ganar, este termina optando por bloquear en vez de colocar la ficha ganadora.
- A simple vista pareceria no ser una opcion viable, pero tiene la ventaja
+ A simple vista parecería no ser una opcion viable, pero tiene la ventaja
  que ya no resulta simple ganarle.
 \end_layout
 
@@ -346,7 +347,7 @@ Para el entrenamiento del aprendiz, se implementó el algorimto
 \begin_inset Formula $objetivo$
 \end_inset
 
- mencionada) y utilizando la formula 
+ mencionada) y utilizando la fórmula 
 \begin_inset Formula $V_{train}(b)=\hat{V}(SUC(b))$
 \end_inset
 
@@ -768,7 +769,7 @@ Total de resultados de las primeras partidas
 \end_layout
 
 \begin_layout Standard
-Se presentan los resultados de a pares para simplicidad de la table ya que
+Se presentan los resultados de a pares para simplicidad de la tabla ya que
  los 
 \begin_inset Formula $w_{i}$
 \end_inset
@@ -862,12 +863,12 @@ Es
 \end_inset
 
  para indicar que ningun valor es aceptado, por lo que el total de posibles
- instancias estaria dado por 
+ instancias estaría dado por 
 \begin_inset Formula $(x_{1}+2)(x_{2}+2)...(x_{n}+2)$
 \end_inset
 
 .
- Sin embargo, sintacticamente resultan iguales todas aquellas instancias
+ Sin embargo, sintácticamente resultan iguales todas aquellas instancias
  que contengan el valor 
 \begin_inset Formula $\emptyset$
 \end_inset
@@ -894,7 +895,7 @@ Es
 
 \begin_deeper
 \begin_layout Enumerate
-El nuevo conjunto de instancias X quedaria dado por: 
+El nuevo conjunto de instancias X quedaría dado por: 
 \end_layout
 
 \begin_deeper
@@ -963,8 +964,9 @@ El nuevo tamaño de hipótesis
 \begin_inset Formula $(4*3*3*3*3*3)*4+1$
 \end_inset
 
+.
  Es decir, casí se 
-\begin_inset Formula $quatriplicaria$
+\begin_inset Formula $quatriplicaría$
 \end_inset
 
  el espacio de hipótesis.
@@ -980,8 +982,8 @@ Cada atibuto
 \begin_inset Formula $k$
 \end_inset
 
- valores diferentes multiplica a la cantidad de hipótesis en casí 
-\begin_inset Formula $k$
+ valores diferentes multiplica a la cantidad de hipótesis actuales en 
+\begin_inset Formula $k+1$
 \end_inset
 
  veces.
@@ -1356,7 +1358,7 @@ Pasos
 
 \end_deeper
 \begin_layout Enumerate
-opciones:
+Opciones:
 \end_layout
 
 \begin_deeper
@@ -1544,8 +1546,8 @@ El algoritmo esta implmentado en el ejecutable
 \end_inset
 
 .
- Una vez realizado esto, se mostrara el conjunto que se usara para el entrenamie
-nto y la hipótesis actual luego de aplicado cada caso de entrenamiento.
+ Una vez realizado esto, se mostrara el conjunto que se usará para el entrenamie
+nto y la hipótesis actual luego de aplicado cada caso del entrenamiento.
  Se puede observar que el conjunto final obtenido es el mismo que el visto
  en clase.
 \end_layout
