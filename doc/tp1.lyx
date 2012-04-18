@@ -1385,13 +1385,19 @@ Nacionalidad: argentino, italiano, español, francés, alemán, inglés o japon�
 \begin_layout Standard
 
 \size small
-S = <<<0, 0, 0, 0> <0, 0, 0, 0>>> 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+= {<<0, 0, 0, 0> <0, 0, 0, 0>>}
 \end_layout
 
 \begin_layout Standard
 
 \size small
-G = <<?,?,?,?> <?,?,?,?>>
+\begin_inset Formula $G_{0}$
+\end_inset
+
+= {<<?,?,?,?> <?,?,?,?>>}
 \end_layout
 
 \begin_layout Standard
@@ -1403,13 +1409,19 @@ G = <<?,?,?,?> <?,?,?,?>>
 \begin_layout Standard
 
 \size small
-S = <<mujer morocha baja argentina> <varón castaño alto argentino>> 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+= {<<mujer morocha baja argentina> <varón castaño alto argentino>>}
 \end_layout
 
 \begin_layout Standard
 
 \size small
-G = <<?,?,?,?> <?,?,?,?>>
+\begin_inset Formula $G_{1}$
+\end_inset
+
+= {<<?,?,?,?> <?,?,?,?>>}
 \end_layout
 
 \begin_layout Standard
@@ -1421,13 +1433,19 @@ G = <<?,?,?,?> <?,?,?,?>>
 \begin_layout Standard
 
 \size small
-S = <<mujer morocha baja argentina> <varón castaño ? ?>> 
+\begin_inset Formula $S_{2}$
+\end_inset
+
+= {<<mujer morocha baja argentina> <varón castaño ? ?>> }
 \end_layout
 
 \begin_layout Standard
 
 \size small
-G = <<?,?,?,?> <?,?,?,?>>
+\begin_inset Formula $G_{2}$
+\end_inset
+
+= {<<?,?,?,?> <?,?,?,?>>}
 \end_layout
 
 \begin_layout Standard
@@ -1439,15 +1457,19 @@ G = <<?,?,?,?> <?,?,?,?>>
 \begin_layout Standard
 
 \size small
-S = <<mujer morocha baja ?> <varon castaño ? ?>> 
+\begin_inset Formula $S_{3}$
+\end_inset
+
+= {<<mujer morocha baja ?> <varon castaño ? ?>> }
 \end_layout
 
 \begin_layout Standard
 
 \size small
-G = {<<? ? ? argentina> < ? ? ? ?>>, << ? ? ? italiano> < ? ? ? ?>>, <<
- ? ? ? español> < ? ? ? ?>>, <<? ? ? francés> < ? ? ? ?>>, << ? ? ? alemán>
- < ? ? ? ?>>, << ? ? ? japonés> < ? ? ? ?>>}
+\begin_inset Formula $G_{3}$
+\end_inset
+
+= {<< ? ? ? ?>< varon ? ? ?>>, << ? ? ? argentina> < ? ? ? ?>>}
 \end_layout
 
 \begin_layout Standard
@@ -1459,19 +1481,29 @@ G = {<<? ? ? argentina> < ? ? ? ?>>, << ? ? ? italiano> < ? ? ? ?>>, <<
 \begin_layout Standard
 
 \size small
-S = <<mujer ? baja ?> <varon castaño ? ?>> 
+\begin_inset Formula $S_{4}$
+\end_inset
+
+= {<<mujer ? baja ?> <varon castaño ? ?>> }
 \end_layout
 
 \begin_layout Standard
 
 \size small
-G = <<? ? ? argentina> < ? ? ? ?>>, << ? ? ? italiano> < ? ? ? ?>>, << ?
- ? ? español> < ? ? ? ?>>, <<? ? ? francés> < ? ? ? ?>>, << ? ? ? alemán>
- < ? ? ? ?>>, << ? ? ? japonés> < ? ? ? ?>>
+\begin_inset Formula $G_{4}$
+\end_inset
+
+= {<< ? ? ? ?>< varon ? ? ?>>}
 \end_layout
 
 \begin_layout Standard
-(b) << mujer rubia alta inglesa> <varón morocho bajo italiano>> nignuno
+(b) Cada hipotesis consistente con el ejemplo dado, puede contener o bien
+ un ? o el valor que tenga especificado por el ejemplo.
+ Como se tienen 2 valores por atributo, daria un total de 
+\begin_inset Formula $2^{8}=256$
+\end_inset
+
+ hipótesis.
 \end_layout
 
 \begin_layout Standard
@@ -1598,7 +1630,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Resultados de la simulación
+Cantidad media de ejemplos necesarios para alcanzar la hipótesis objetivo
 \end_layout
 
 \end_inset
