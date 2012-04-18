@@ -1,0 +1,273 @@
+% Preview source code
+
+%% LyX 1.6.4.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{longtable}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+
+\begin{document}
+\begin{enumerate}
+\item Matriz de probabilidades de gustos para cada tipo de oyente de la
+radio:
+
+
+\begin{tabular}{|c|c|c|}
+\hline 
+ & J & V\tabularnewline
+\hline
+\hline 
+P(1) & 0.95 & 0.03\tabularnewline
+\hline 
+P(2) & 0.05 & 0.82\tabularnewline
+\hline 
+P(3) & 0.02 & 0.34\tabularnewline
+\hline 
+P(4) & 0.2 & 0.92\tabularnewline
+\hline
+\end{tabular}
+
+Condicion $c$ = El oyente disfruta del los programas 1 y 3, pero
+no de los programas 2 y 4.
+
+Sabiendo que un cumple con $c$. Se pueden definir las siguientes
+variables:
+
+$x_{j}=$ Oyentes jovenes que cumplen con $c$.
+
+$x_{v}=$ Oyentes viejos que cumplen con $c$.
+
+Con estas ultimas formulas recien definidias, resulta facil ver que
+cualquier oyente que cumple con $c$, tiene que pertenecer al conjunto
+$x_{j}$ o $x_{v}$. Por lo que se podria definir ademas la varaible$x_{Total}=x_{j}+x_{v}$
+(notar que $x_{j}\cap x_{v}=\phi$)
+
+Quedando asi la siguiente formula:
+
+\begin{equation}
+P(J|c)=\frac{x_{j}}{x_{Total}}=\frac{x_{j}}{x_{j}+x_{v}}\end{equation}
+
+
+En donde cada $x$ se expresa como:
+
+$x_{j}=P(1|J)*P(2|J)*(1-P(3|J))*(1-P(1|J))$
+
+$x_{v}=P(1|V)*P(2|V)*(1-P(3|V))*(1-P(1|V))$
+
+Reemplazando las formulas con los valores entregados:
+
+$x_{j}=0.95*0.02*(1-0.02)*(1-0.2)\approx0.015$
+
+$x_{v}=0.03*0.82*(1-0.34)*(1-0.92)\approx0.001$
+
+Finalmente, si reemplazamos estos ultimos resultados en $(1)$, resulta
+que \[
+P(J|c)=\frac{0.015}{0.015+0.001}=0.92\]
+
+
+Es decir, hay un $92\%$ de probabilidad que el oyente sea joven.
+
+\item Algormitmo $h_{MAP}$
+
+
+Para cada hipótesis h de H, se calcula: $P(h|D)=\frac{P(D|h)*P(h)}{P(D)}$
+
+Se da como salida $h_{MAP}$ = ${max\atop h\epsilon H}P(h|D)$ \\
+
+
+Hipótesis a consderar:
+
+$x=(1,0,1,1,0)$
+
+$h_{1}=$La persona es escoses
+
+$h_{2}=$La persona es inglesa.
+
+Calculo de probabilidad para cada hipótesis:\\
+
+
+Se define la probabilidad de $h$ como: $P(h)=\frac{1}{|H|}=0.5=h_{1}=h_{2}$
+\begin{itemize}
+\item $P(h_{1}|D)=\frac{1*0.5}{P(D)}=0.5$
+\item $P(h_{2}|D)=\frac{1*0.5}{P(D)}=0.5$
+\end{itemize}
+Con los datos observados el algoritmo $h_{max}$ no es capaz de asegurar
+si $x$ es escoses o ingles ya que ambos tienen la misma probabilidad
+de ocurrir.
+
+\item Solucion
+
+
+\begin{longtable}{|c||c|c|c|c|c|}
+\hline 
+ & Maiz & Granola & Azucarados & Avena & Mayor a 60\tabularnewline
+\hline
+\hline 
+1 & 1 & 0 & 0 & 0 & 1\tabularnewline
+\hline 
+2 & 1 & 0 & 0 & 1 & 1\tabularnewline
+\hline 
+3 & 1 & 1 & 1 & 1 & 1\tabularnewline
+\hline 
+4 & 0 & 0 & 0 & 1 & 1\tabularnewline
+\hline 
+5 & 0 & 1 & 1 & 0 & 0\tabularnewline
+\hline 
+6 & 1 & 1 & 0 & 0 & 0\tabularnewline
+\hline
+\end{longtable}
+
+Se desea clasificar la instancia: $x=(0,1,1,0)$.
+
+Formula del clasificador de Naive de Bayes\[
+v_{NB}={max\atop v_{j}\varepsilon V}P(v_{j})\prod_{i=0}^{n}P(a_{i}|v_{j})\]
+
+\begin{itemize}
+\item Calculo de la probabilidad
+
+
+$v_{NB}=$P($v_{j}$)P(Maiz = 0|$v_{j}$)P(Granola = 1|$v_{j}$)P(Azucarado
+= 1|$v_{j}$)P(Avena = 0|$v_{j}$)
+
+P(Mayor a 60 = 1) = $\frac{4}{6}=0.667$
+
+P(Mayor a 60 = 0) = 1 - P(Mayor a 60 = 1) = $\frac{2}{6}=0.333$
+
+P(Maiz = 0|Mayor a 60 = 1) = $\frac{1}{4}=0.25$
+
+P(Maiz = 0|Mayor a 60 = 0) = $\frac{1}{2}=0.5$
+
+P(Granola = 1|Mayor a 60 = 1) = $\frac{1}{4}=0.25$
+
+P(Granola = 1|Mayor a 60 = 0) = $\frac{2}{2}=1$
+
+P(Azucarado = 1|Mayor a 60 = 1) = $\frac{1}{4}=0.25$
+
+P(Azucarado = 1|Mayor a 60 = 0) = $\frac{1}{2}=0.5$
+
+P(Avena = 0|Mayor a 60 = 1) = $\frac{1}{4}=0.25$
+
+P(Avena = 0|Mayor a 60 = 0) = $\frac{2}{2}=1$\\
+
+
+Quedando las ecuaciones de las probabilidades de $x$ de la siguiente
+manera:
+
+Sea $c$ = Mayor a 60.
+
+Sea $d$ = No es mayor a 60.
+
+(1) - P($c$)P(Maiz = 0|$c$)P(Granola = 1|$c$)P(Azucarado = 1|$c$)P(Avena
+= 0|$c$) = $0.667*0.25*0.25*0.25*0.25=2.6x10^{-3}$
+
+(2) - P($d$)P(Maiz = 0|$d$)P(Granola = 1|$d$)P(Azucarado = 1|$d$)P(Avena
+= 0|$d$) = $0.333*0.5*1*0.5*1=0.083$\\
+
+
+Por ser el resultado de $(1)>(2)$, el algoritmo escoge $v_{NB}=x$
+es Mayor a 60 con una probabilidad de $\frac{(1)}{(1)+(2)}\simeq97\%$.
+Cabe aclarar que este resultado fue obtenido a partir de una muestra
+muy $chica$, por lo que su grado de certeza podria no ser ser aceptable.
+
+\end{itemize}
+\item Solucion
+
+
+\begin{tabular}{|c||c|c|c|c|}
+\hline 
+ & Rico & Casado & Saludable & Contenta?\tabularnewline
+\hline
+\hline 
+1 & 1 & 1 & 1 & 1\tabularnewline
+\hline 
+2 & 0 & 0 & 1 & 1\tabularnewline
+\hline 
+3 & 1 & 1 & 0 & 1\tabularnewline
+\hline 
+4 & 1 & 0 & 1 & 1\tabularnewline
+\hline 
+5 & 0 & 0 & 0 & 0\tabularnewline
+\hline 
+6 & 1 & 0 & 0 & 0\tabularnewline
+\hline 
+7 & 0 & 0 & 1 & 0\tabularnewline
+\hline 
+8 & 0 & 1 & 0 & 0\tabularnewline
+\hline 
+9 & 0 & 0 & 0 & 0\tabularnewline
+\hline
+\end{tabular}\\
+Se desea calcular la probabilidad que la instancia: $x=(0,1,1)$
+este feliz con su vida.
+\begin{itemize}
+\item Calculo de la probabilidad
+
+
+$v_{NB}=$P($v_{j}$)P(Rico = 0|$v_{j}$)P(Casado = 1|$v_{j}$)P(Saludable
+= 1|$v_{j}$)
+
+P(Contenta = 1) = $\frac{4}{9}=0.444$
+
+P(Contenta = 0) = $\frac{5}{9}=0.556$
+
+P(Rico = 0|Contenta = 1) = $\frac{1}{4}=0.25$
+
+P(Rico = 0|Contenta = 0) = $\frac{4}{5}=0.8$
+
+P(Casado = 1|Contenta = 1) = $\frac{2}{4}=0.5$
+
+P(Casado = 1|Contenta = 0) = $\frac{1}{5}=0.2$
+
+P(Saludable = 1|Contenta = 1) = $\frac{3}{4}=0.75$
+
+P(Saludable = 1|Contenta = 0) = $\frac{1}{5}=0.2$
+
+Ecuaciones de las probabilidades de $x$ de la siguiente manera:
+
+Sea $c$ = Esta contenta con su vida.
+
+Sea $d$ = No esta contenta con su vida.
+
+1$\Longrightarrow$ P($c$)P(Rico = 0|$c$)P(Casado = 1|$c$)P(Saludable
+= 1|$c$) = $0.444*0.25*0.5*0.75=0.042$
+
+2$\Longrightarrow$ P($d$)P(Rico = 0|$d$)P(Casado = 1|$d$)P(Saludable
+= 1|$d$) = $0.556*0.8*0.2*0.2=0.0178$
+\begin{enumerate}
+\item El alorimto retorna que la persona esta contenta con una probabilidad
+de acierto de $\frac{0.042}{0.042+0.0178}=0.70$. Es decir, un $70\%$.
+\item Sea una persona /$x=(0,1,?)$. La probabilidad de que $x$ este Contenta,
+esta dada por:\\
+-$x_{1}=(0,1,0)$ este contenta o que $x_{2}=(0,1,1)$ este contenta.
+
+
+$c$ = la persona esta contenta
+
+P(Saludable = 0|$c$) = $\frac{1}{4}=0.25$
+
+P($c$)P(Rico = 0|$c$)P(Casado = 1|$c$)P(Saludable = 0|$c$) = $0.444*0.25*0.5*0.25=0.014$
+
+P($c$)P(Rico = 0|$c$)P(Casado = 1|$c$)P(Saludable = 1|$c$) = $0.444*0.25*0.5*0.75=0.042$
+
+Por lo tanto, la probabilidad que una persona Pobre y Casada este
+contenta esta dada por $p=0.014+0.042=0.434$
+
+\item adsadasds
+\end{enumerate}
+\end{itemize}
+\item asd
+\end{enumerate}
+df
+\end{document}
+
