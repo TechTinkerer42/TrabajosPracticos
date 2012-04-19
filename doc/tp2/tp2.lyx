@@ -3,11 +3,14 @@
 \begin_document
 \begin_header
 \textclass article
-\use_default_options true
+\begin_preamble
+% Preview source code
+\end_preamble
+\use_default_options false
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding auto
+\inputencoding latin9
 \fontencoding global
 \font_roman default
 \font_sans default
@@ -25,6 +28,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
 \use_geometry false
@@ -37,7 +41,7 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\use_refstyle 1
+\use_refstyle 0
 \index Index
 \shortcut idx
 \color #008000
@@ -59,20 +63,1965 @@
 
 \begin_body
 
-\begin_layout Title
-Aprendizaje Automatico - Trabajo Practico 1
+\begin_layout Enumerate
+Matriz de probabilidades de gustos para cada tipo de oyente de la radio:
 \end_layout
 
-\begin_layout Author
-Gonzalo Castiglione - 49138
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
-\begin_layout Paragraph*
-Objetivo: Aprender a clasificar datos utilizando clasificadores bayesianos
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+J 
 \end_layout
 
-\begin_layout Section
-Aprendizaje bayesiano
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P(1) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.95 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.03
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P(2) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.05 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.82
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P(3) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.02 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.34
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P(4) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.92
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Condicion 
+\begin_inset Formula $c$
+\end_inset
+
+ = El oyente disfruta del los programas 1 y 3, pero no de los programas
+ 2 y 4.
+\end_layout
+
+\begin_layout Standard
+Sabiendo que un cumple con 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ Se pueden definir las siguientes variables:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{j}=$
+\end_inset
+
+ Oyentes jovenes que cumplen con 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{v}=$
+\end_inset
+
+ Oyentes viejos que cumplen con 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Con estas ultimas formulas recien definidias, resulta facil ver que cualquier
+ oyente que cumple con 
+\begin_inset Formula $c$
+\end_inset
+
+, tiene que pertenecer al conjunto 
+\begin_inset Formula $x_{j}$
+\end_inset
+
+ o 
+\begin_inset Formula $x_{v}$
+\end_inset
+
+.
+ Por lo que se podria definir ademas la varaible
+\begin_inset Formula $x_{Total}=x_{j}+x_{v}$
+\end_inset
+
+ (notar que 
+\begin_inset Formula $x_{j}\cap x_{v}=\phi$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Quedando asi la siguiente formula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P(J|c)=\frac{x_{j}}{x_{Total}}=\frac{x_{j}}{x_{j}+x_{v}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En donde cada 
+\begin_inset Formula $x$
+\end_inset
+
+ se expresa como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{j}=P(1|J)*P(2|J)*(1-P(3|J))*(1-P(1|J))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{v}=P(1|V)*P(2|V)*(1-P(3|V))*(1-P(1|V))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reemplazando las formulas con los valores entregados:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{j}=0.95*0.02*(1-0.02)*(1-0.2)\approx0.015$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{v}=0.03*0.82*(1-0.34)*(1-0.92)\approx0.001$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, si reemplazamos estos ultimos resultados en 
+\begin_inset Formula $(1)$
+\end_inset
+
+, resulta que 
+\begin_inset Formula 
+\[
+P(J|c)=\frac{0.015}{0.015+0.001}=0.92
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir, hay un 
+\begin_inset Formula $92\%$
+\end_inset
+
+ de probabilidad que el oyente sea joven.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Algormitmo 
+\begin_inset Formula $h_{MAP}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Para cada hipótesis h de H, se calcula: 
+\begin_inset Formula $P(h|D)=\frac{P(D|h)*P(h)}{P(D)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se da como salida 
+\begin_inset Formula $h_{MAP}$
+\end_inset
+
+ = 
+\begin_inset Formula ${max\atop h\epsilon H}P(h|D)$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hipótesis a consderar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x=(1,0,1,1,0)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $h_{1}=$
+\end_inset
+
+La persona es escoses
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $h_{2}=$
+\end_inset
+
+La persona es inglesa.
+\end_layout
+
+\begin_layout Standard
+Calculo de probabilidad para cada hipótesis:
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se define la probabilidad de 
+\begin_inset Formula $h$
+\end_inset
+
+ como: 
+\begin_inset Formula $P(h)=\frac{1}{|H|}=0.5=h_{1}=h_{2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P(h_{1}|D)=\frac{1*0.5}{P(D)}=0.5$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P(h_{2}|D)=\frac{1*0.5}{P(D)}=0.5$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Con los datos observados el algoritmo 
+\begin_inset Formula $h_{max}$
+\end_inset
+
+ no es capaz de asegurar si 
+\begin_inset Formula $x$
+\end_inset
+
+ es escoses o ingles ya que ambos tienen la misma probabilidad de ocurrir.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Solucion
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="6">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maiz 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Granola 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Azucarados 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Avena 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mayor a 60
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se desea clasificar la instancia: 
+\begin_inset Formula $x=(0,1,1,0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Formula del clasificador de Naive de Bayes
+\begin_inset Formula 
+\[
+v_{NB}={max\atop v_{j}\varepsilon V}P(v_{j})\prod_{i=0}^{n}P(a_{i}|v_{j})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Calculo de la probabilidad
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $v_{NB}=$
+\end_inset
+
+P(
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)P(Maiz = 0|
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)P(Granola = 1|
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)P(Azucarado = 1|
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)P(Avena = 0|
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+P(Mayor a 60 = 1) = 
+\begin_inset Formula $\frac{4}{6}=0.667$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Mayor a 60 = 0) = 1 - P(Mayor a 60 = 1) = 
+\begin_inset Formula $\frac{2}{6}=0.333$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Maiz = 0|Mayor a 60 = 1) = 
+\begin_inset Formula $\frac{1}{4}=0.25$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Maiz = 0|Mayor a 60 = 0) = 
+\begin_inset Formula $\frac{1}{2}=0.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Granola = 1|Mayor a 60 = 1) = 
+\begin_inset Formula $\frac{1}{4}=0.25$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Granola = 1|Mayor a 60 = 0) = 
+\begin_inset Formula $\frac{2}{2}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Azucarado = 1|Mayor a 60 = 1) = 
+\begin_inset Formula $\frac{1}{4}=0.25$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Azucarado = 1|Mayor a 60 = 0) = 
+\begin_inset Formula $\frac{1}{2}=0.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Avena = 0|Mayor a 60 = 1) = 
+\begin_inset Formula $\frac{1}{4}=0.25$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Avena = 0|Mayor a 60 = 0) = 
+\begin_inset Formula $\frac{2}{2}=1$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Quedando las ecuaciones de las probabilidades de 
+\begin_inset Formula $x$
+\end_inset
+
+ de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $c$
+\end_inset
+
+ = Mayor a 60.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $d$
+\end_inset
+
+ = No es mayor a 60.
+\end_layout
+
+\begin_layout Standard
+(1) - P(
+\begin_inset Formula $c$
+\end_inset
+
+)P(Maiz = 0|
+\begin_inset Formula $c$
+\end_inset
+
+)P(Granola = 1|
+\begin_inset Formula $c$
+\end_inset
+
+)P(Azucarado = 1|
+\begin_inset Formula $c$
+\end_inset
+
+)P(Avena = 0|
+\begin_inset Formula $c$
+\end_inset
+
+) = 
+\begin_inset Formula $0.667*0.25*0.25*0.25*0.25=2.6x10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(2) - P(
+\begin_inset Formula $d$
+\end_inset
+
+)P(Maiz = 0|
+\begin_inset Formula $d$
+\end_inset
+
+)P(Granola = 1|
+\begin_inset Formula $d$
+\end_inset
+
+)P(Azucarado = 1|
+\begin_inset Formula $d$
+\end_inset
+
+)P(Avena = 0|
+\begin_inset Formula $d$
+\end_inset
+
+) = 
+\begin_inset Formula $0.333*0.5*1*0.5*1=0.083$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ser el resultado de 
+\begin_inset Formula $(1)>(2)$
+\end_inset
+
+, el algoritmo escoge 
+\begin_inset Formula $v_{NB}=x$
+\end_inset
+
+ es Mayor a 60 con una probabilidad de 
+\begin_inset Formula $\frac{(1)}{(1)+(2)}\simeq97\%$
+\end_inset
+
+.
+ Cabe aclarar que este resultado fue obtenido a partir de una muestra muy
+ 
+\begin_inset Formula $chica$
+\end_inset
+
+, por lo que su grado de certeza podria no ser ser aceptable.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Solucion
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rico 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Casado 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Saludable 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Contenta?
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ Se desea calcular la probabilidad que la instancia: 
+\begin_inset Formula $x=(0,1,1)$
+\end_inset
+
+ este feliz con su vida.
+ 
+\end_layout
+
+\begin_layout Itemize
+Calculo de la probabilidad
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $v_{NB}=$
+\end_inset
+
+P(
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)P(Rico = 0|
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)P(Casado = 1|
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)P(Saludable = 1|
+\begin_inset Formula $v_{j}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+P(Contenta = 1) = 
+\begin_inset Formula $\frac{4}{9}=0.444$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Contenta = 0) = 
+\begin_inset Formula $\frac{5}{9}=0.556$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Rico = 0|Contenta = 1) = 
+\begin_inset Formula $\frac{1}{4}=0.25$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Rico = 0|Contenta = 0) = 
+\begin_inset Formula $\frac{4}{5}=0.8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Casado = 1|Contenta = 1) = 
+\begin_inset Formula $\frac{2}{4}=0.5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Casado = 1|Contenta = 0) = 
+\begin_inset Formula $\frac{1}{5}=0.2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Saludable = 1|Contenta = 1) = 
+\begin_inset Formula $\frac{3}{4}=0.75$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(Saludable = 1|Contenta = 0) = 
+\begin_inset Formula $\frac{1}{5}=0.2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ecuaciones de las probabilidades de 
+\begin_inset Formula $x$
+\end_inset
+
+ de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $c$
+\end_inset
+
+ = Esta contenta con su vida.
+\end_layout
+
+\begin_layout Standard
+Sea 
+\begin_inset Formula $d$
+\end_inset
+
+ = No esta contenta con su vida.
+\end_layout
+
+\begin_layout Standard
+1
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ P(
+\begin_inset Formula $c$
+\end_inset
+
+)P(Rico = 0|
+\begin_inset Formula $c$
+\end_inset
+
+)P(Casado = 1|
+\begin_inset Formula $c$
+\end_inset
+
+)P(Saludable = 1|
+\begin_inset Formula $c$
+\end_inset
+
+) = 
+\begin_inset Formula $0.444*0.25*0.5*0.75=0.042$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ P(
+\begin_inset Formula $d$
+\end_inset
+
+)P(Rico = 0|
+\begin_inset Formula $d$
+\end_inset
+
+)P(Casado = 1|
+\begin_inset Formula $d$
+\end_inset
+
+)P(Saludable = 1|
+\begin_inset Formula $d$
+\end_inset
+
+) = 
+\begin_inset Formula $0.556*0.8*0.2*0.2=0.0178$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+El algorimto retorna que la persona esta contenta con una probabilidad de
+ acierto de 
+\begin_inset Formula $\frac{0.042}{0.042+0.0178}=0.70$
+\end_inset
+
+.
+ Es decir, un 
+\begin_inset Formula $70\%$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Sea una persona /
+\begin_inset Formula $x=(0,1)$
+\end_inset
+
+.
+ La probabilidad de que 
+\begin_inset Formula $x$
+\end_inset
+
+ este Contenta, esta dada por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c$
+\end_inset
+
+ = la persona esta contenta
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d$
+\end_inset
+
+ = la persona esta contenta
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{1}$
+\end_inset
+
+= P(
+\begin_inset Formula $c$
+\end_inset
+
+)P(Rico = 0|
+\begin_inset Formula $c$
+\end_inset
+
+)P(Casado = 1|
+\begin_inset Formula $c$
+\end_inset
+
+) = 
+\begin_inset Formula $0.444*0.25*0.5=0.055$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{2}$
+\end_inset
+
+= P(
+\begin_inset Formula $d$
+\end_inset
+
+)P(Rico = 0|
+\begin_inset Formula $d$
+\end_inset
+
+)P(Casado = 1|
+\begin_inset Formula $d$
+\end_inset
+
+) = 
+\begin_inset Formula $0.556*0.8*0.2=0.089$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(
+\begin_inset Formula $x_{1}$
+\end_inset
+
+) = 
+\begin_inset Formula $\frac{0.089}{0.089+0.055}=0.62\Rightarrow62\%$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Por lo tanto, la probabilidad que una persona Pobre y Casada este contenta
+ es del 
+\begin_inset Formula $62\%$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Una persona pobre, casada y saludable estaria definida por 
+\begin_inset Formula $x=(0,1,1)$
+\end_inset
+
+.
+ La probabilidad que 
+\begin_inset Formula $x$
+\end_inset
+
+ este contenta es de 
+\begin_inset Formula $\frac{0.042}{0.042+0.012}=0.78$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $c$
+\end_inset
+
+ = la persona esta contenta
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $d$
+\end_inset
+
+ = la persona esta contenta
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{1}$
+\end_inset
+
+= P(
+\begin_inset Formula $c$
+\end_inset
+
+)P(Rico = 0|
+\begin_inset Formula $c$
+\end_inset
+
+)P(Casado = 1|
+\begin_inset Formula $c$
+\end_inset
+
+)P(Saludable = 1|
+\begin_inset Formula $c$
+\end_inset
+
+) = 
+\begin_inset Formula $0.444*0.25*0.5*0.75=0.042$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $v_{2}$
+\end_inset
+
+= P(
+\begin_inset Formula $d$
+\end_inset
+
+)P(Rico = 0|
+\begin_inset Formula $d$
+\end_inset
+
+)P(Casado = 1|
+\begin_inset Formula $d$
+\end_inset
+
+)P(Saludable = 1|
+\begin_inset Formula $d$
+\end_inset
+
+)= 
+\begin_inset Formula $0.556*0.8*0.2*0.2=0.018$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+P(
+\begin_inset Formula $x_{1}$
+\end_inset
+
+) = 
+\begin_inset Formula $\frac{0.042}{0.042+0.018}=0.7\Rightarrow70\%$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+asd 
+\end_layout
+
+\begin_layout Standard
+df 
 \end_layout
 
 \end_body
