@@ -63,8 +63,25 @@
 
 \begin_body
 
+\begin_layout Title
+Aprendizaje Automatico - Trabajo Practico 1
+\end_layout
+
+\begin_layout Author
+Gonzalo Castiglione - 49138
+\end_layout
+
+\begin_layout Paragraph*
+Objetivo: Aprender a clasíficar datos utilizando clasíficadores bayesianos.
+\end_layout
+
+\begin_layout Section
+Aprendizaje bayesiano
+\end_layout
+
 \begin_layout Enumerate
-Matriz de probabilidades de gustos para cada tipo de oyente de la radio:
+A continuación se muestra una matríz de probabilidades de gustos para cada
+ tipo de oyente de la radio:
 \end_layout
 
 \begin_deeper
@@ -228,7 +245,31 @@ P(4)
 \end_layout
 
 \begin_layout Standard
-Condicion 
+La fila 
+\begin_inset Formula $i$
+\end_inset
+
+ indica la probabilidad que al grupo (
+\begin_inset Formula $J$
+\end_inset
+
+ o 
+\begin_inset Formula $V$
+\end_inset
+
+) le guste el programa 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sea la condición 
 \begin_inset Formula $c$
 \end_inset
 
@@ -237,19 +278,14 @@ Condicion
 \end_layout
 
 \begin_layout Standard
-Sabiendo que un cumple con 
-\begin_inset Formula $c$
-\end_inset
-
-.
- Se pueden definir las siguientes variables:
+Se pueden definen las siguientes variables a fin de simplificar las cuentas:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula $x_{j}=$
 \end_inset
 
- Oyentes jovenes que cumplen con 
+ Oyentes jóvenes que cumplen con 
 \begin_inset Formula $c$
 \end_inset
 
@@ -268,7 +304,7 @@ Sabiendo que un cumple con
 \end_layout
 
 \begin_layout Standard
-Con estas ultimas formulas recien definidias, resulta facil ver que cualquier
+Con estas ultimas fórmulas recién definidias, resulta fácil ver que cualquier
  oyente que cumple con 
 \begin_inset Formula $c$
 \end_inset
@@ -282,7 +318,7 @@ Con estas ultimas formulas recien definidias, resulta facil ver que cualquier
 \end_inset
 
 .
- Por lo que se podria definir ademas la varaible
+ Por lo que se podría definir Además la varaible 
 \begin_inset Formula $x_{Total}=x_{j}+x_{v}$
 \end_inset
 
@@ -294,7 +330,7 @@ Con estas ultimas formulas recien definidias, resulta facil ver que cualquier
 \end_layout
 
 \begin_layout Standard
-Quedando asi la siguiente formula:
+Quedando así la siguiente fórmula:
 \end_layout
 
 \begin_layout Standard
@@ -331,7 +367,12 @@ En donde cada
 \end_layout
 
 \begin_layout Standard
-Reemplazando las formulas con los valores entregados:
+Sabiendo que el oyente cumple con 
+\begin_inset Formula $c$
+\end_inset
+
+ y reemplazando las fórmulas con los valores de la matríz de probabilidades,
+ se obtiene que:
 \end_layout
 
 \begin_layout Standard
@@ -349,7 +390,7 @@ Reemplazando las formulas con los valores entregados:
 \end_layout
 
 \begin_layout Standard
-Finalmente, si reemplazamos estos ultimos resultados en 
+Finalmente, si reemplazamos estos últimos resultados en 
 \begin_inset Formula $(1)$
 \end_inset
 
@@ -369,7 +410,7 @@ Es decir, hay un
 \begin_inset Formula $92\%$
 \end_inset
 
- de probabilidad que el oyente sea joven.
+ de probabilidad que el oyente en cuestión sea joven.
 \end_layout
 
 \end_deeper
@@ -428,11 +469,11 @@ La persona es escoses
 \begin_inset Formula $h_{2}=$
 \end_inset
 
-La persona es inglesa.
+La persona es inglésa.
 \end_layout
 
 \begin_layout Standard
-Calculo de probabilidad para cada hipótesis:
+Cálculo de probabilidad para cada hipótesis:
 \begin_inset Newline newline
 \end_inset
 
@@ -474,12 +515,12 @@ Con los datos observados el algoritmo
 \begin_inset Formula $x$
 \end_inset
 
- es escoses o ingles ya que ambos tienen la misma probabilidad de ocurrir.
+ es escoses o inglés ya que ambos tienen la misma probabilidad de ocurrir.
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Solucion
+Solución
 \end_layout
 
 \begin_deeper
@@ -507,7 +548,7 @@ Solucion
 \begin_inset Text
 
 \begin_layout Plain Layout
-Maiz 
+Maíz 
 \end_layout
 
 \end_inset
@@ -893,7 +934,7 @@ Mayor a 60
 \end_layout
 
 \begin_layout Standard
-Se desea clasificar la instancia: 
+Se desea clasíficar la instancia: 
 \begin_inset Formula $x=(0,1,1,0)$
 \end_inset
 
@@ -901,7 +942,7 @@ Se desea clasificar la instancia:
 \end_layout
 
 \begin_layout Standard
-Formula del clasificador de Naive de Bayes
+fórmula del clasíficador de Naive de Bayes
 \begin_inset Formula 
 \[
 v_{NB}={max\atop v_{j}\varepsilon V}P(v_{j})\prod_{i=0}^{n}P(a_{i}|v_{j})
@@ -912,11 +953,6 @@ v_{NB}={max\atop v_{j}\varepsilon V}P(v_{j})\prod_{i=0}^{n}P(a_{i}|v_{j})
 
 \end_layout
 
-\begin_layout Itemize
-Calculo de la probabilidad
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 \begin_inset Formula $v_{NB}=$
 \end_inset
@@ -925,7 +961,7 @@ P(
 \begin_inset Formula $v_{j}$
 \end_inset
 
-)P(Maiz = 0|
+)P(Maíz = 0|
 \begin_inset Formula $v_{j}$
 \end_inset
 
@@ -961,7 +997,7 @@ P(Mayor a 60 = 0) = 1 - P(Mayor a 60 = 1) =
 \end_layout
 
 \begin_layout Standard
-P(Maiz = 0|Mayor a 60 = 1) = 
+P(Maíz = 0|Mayor a 60 = 1) = 
 \begin_inset Formula $\frac{1}{4}=0.25$
 \end_inset
 
@@ -969,7 +1005,7 @@ P(Maiz = 0|Mayor a 60 = 1) =
 \end_layout
 
 \begin_layout Standard
-P(Maiz = 0|Mayor a 60 = 0) = 
+P(Maíz = 0|Mayor a 60 = 0) = 
 \begin_inset Formula $\frac{1}{2}=0.5$
 \end_inset
 
@@ -1057,7 +1093,7 @@ Sea
 \begin_inset Formula $c$
 \end_inset
 
-)P(Maiz = 0|
+)P(Maíz = 0|
 \begin_inset Formula $c$
 \end_inset
 
@@ -1085,7 +1121,7 @@ Sea
 \begin_inset Formula $d$
 \end_inset
 
-)P(Maiz = 0|
+)P(Maíz = 0|
 \begin_inset Formula $d$
 \end_inset
 
@@ -1118,26 +1154,39 @@ Por ser el resultado de
 \end_inset
 
 , el algoritmo escoge 
-\begin_inset Formula $v_{NB}=x$
+\begin_inset Formula $v_{NB}=c$
 \end_inset
 
- es Mayor a 60 con una probabilidad de 
+, es decir, la persona es mayoy a 60.
+ 
+\end_layout
+
+\begin_layout Standard
+Además (por normalización), como las se cantidades anteriores suman uno,
+ se puede calcular la probabilidad de que 
+\begin_inset Formula $x$
+\end_inset
+
+ ocurra realizando 
 \begin_inset Formula $\frac{(1)}{(1)+(2)}\simeq97\%$
 \end_inset
 
 .
- Cabe aclarar que este resultado fue obtenido a partir de una muestra muy
  
-\begin_inset Formula $chica$
+\end_layout
+
+\begin_layout Standard
+Cabe aclarar que este resultado fue obtenido a partir de una muestra muy
+ 
+\begin_inset Formula $pequeña$
 \end_inset
 
-, por lo que su grado de certeza podria no ser ser aceptable.
+, por lo que su grado de certeza podría no ser ser aceptable.
 \end_layout
 
 \end_deeper
-\end_deeper
 \begin_layout Enumerate
-Solucion
+Matríz con las mediciones realizadas por el psicólogo
 \end_layout
 
 \begin_deeper
@@ -1636,8 +1685,8 @@ Contenta?
  
 \end_layout
 
-\begin_layout Itemize
-Calculo de la probabilidad
+\begin_layout Enumerate
+Cálculo de la probabilidad
 \end_layout
 
 \begin_deeper
@@ -1808,7 +1857,7 @@ Sea
  
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 El algorimto retorna que la persona esta contenta con una probabilidad de
  acierto de 
 \begin_inset Formula $\frac{0.042}{0.042+0.0178}=0.70$
@@ -1823,6 +1872,7 @@ El algorimto retorna que la persona esta contenta con una probabilidad de
  
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Sea una persona /
 \begin_inset Formula $x=(0,1)$
@@ -1836,18 +1886,19 @@ Sea una persona /
  este Contenta, esta dada por:
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset Formula $c$
 \end_inset
 
- = la persona esta contenta
+ = la persona esta contenta.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula $d$
 \end_inset
 
- = la persona esta contenta
+ = la persona no esta contenta.
 \end_layout
 
 \begin_layout Standard
@@ -1908,7 +1959,6 @@ P(
 
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 Por lo tanto, la probabilidad que una persona Pobre y Casada este contenta
  es del 
@@ -1918,6 +1968,7 @@ Por lo tanto, la probabilidad que una persona Pobre y Casada este contenta
 
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Una persona pobre, casada y saludable estaria definida por 
 \begin_inset Formula $x=(0,1,1)$
@@ -1935,18 +1986,19 @@ Una persona pobre, casada y saludable estaria definida por
 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset Formula $c$
 \end_inset
 
- = la persona esta contenta
+ = la persona esta contenta.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula $d$
 \end_inset
 
- = la persona esta contenta
+ = la persona no esta contenta.
 \end_layout
 
 \begin_layout Standard
@@ -2016,13 +2068,16 @@ P(
 \end_layout
 
 \end_deeper
+\end_deeper
 \begin_layout Enumerate
 asd 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 df 
 \end_layout
 
+\end_deeper
 \end_body
 \end_document
