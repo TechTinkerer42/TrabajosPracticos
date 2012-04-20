@@ -72,7 +72,7 @@ Gonzalo Castiglione - 49138
 \end_layout
 
 \begin_layout Paragraph*
-Objetivo: Aprender a clasíficar datos utilizando clasíficadores bayesianos.
+Objetivo: Aprender a clasificár datos utilizando clasíficadores bayesianos.
 \end_layout
 
 \begin_layout Section
@@ -278,126 +278,47 @@ Sea la condición
 \end_layout
 
 \begin_layout Standard
-Se pueden definen las siguientes variables a fin de simplificar las cuentas:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $x_{j}=$
+Reaalizando un análists previo de los resultados, se ve que la mayoría de
+ los jovenes disfrutan de escuchar los programas 
+\begin_inset Formula $1$
 \end_inset
 
- Oyentes jóvenes que cumplen con 
-\begin_inset Formula $c$
+ y 
+\begin_inset Formula $3$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $x_{v}=$
+ y por el otro lado, la mayoría de los viejos no disfrutan de los progrmas
+ 
+\begin_inset Formula $1$
 \end_inset
 
- Oyentes viejos que cumplen con 
-\begin_inset Formula $c$
+ y 
+\begin_inset Formula $3$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Con estás ultimas fórmulas recién definidias, resulta fácil ver que cualquier
- oyente que cumple con 
-\begin_inset Formula $c$
-\end_inset
-
-, tiene que pertenecer al conjunto 
-\begin_inset Formula $x_{j}$
-\end_inset
-
- o 
-\begin_inset Formula $x_{v}$
-\end_inset
-
-.
- Por lo que se podría definir Además la varaible 
-\begin_inset Formula $x_{Total}=x_{j}+x_{v}$
-\end_inset
-
- (notar que 
-\begin_inset Formula $x_{j}\cap x_{v}=\phi$
-\end_inset
-
-)
-\end_layout
-
-\begin_layout Standard
-Quedando así la siguiente fórmula:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-P(J|c)=\frac{x_{j}}{x_{Total}}=\frac{x_{j}}{x_{j}+x_{v}}
-\end{equation}
-
+ Por lo que, a simple vista, debería esperarse un resultado en donde haya
+ un probabilidad muy grande que oyente sea joven.
+\begin_inset Newline newline
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-En donde cada 
-\begin_inset Formula $x$
-\end_inset
-
- se expresa como:
+Sea P(J) = probabilidad que el oyente sea joven = 1 - P(V) (ya que para
+ esta estación de radio, no existe ningúna otra categoría de oyentes)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $x_{j}=P(1|J)*P(2|J)*(1-P(3|J))*(1-P(1|J))$
+Por el teorema de 
+\begin_inset Formula $Bayes$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $x_{v}=P(1|V)*P(2|V)*(1-P(3|V))*(1-P(1|V))$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Sabiendo que el oyente cumple con 
-\begin_inset Formula $c$
-\end_inset
-
- y reemplazando las fórmulas con los valores de la matríz de probabilidades,
- se obtiene que:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $x_{j}=0.95*0.02*(1-0.02)*(1-0.2)\approx0.015$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $x_{v}=0.03*0.82*(1-0.34)*(1-0.92)\approx0.001$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Finalmente, si reemplazamos estos últimos resultados en 
-\begin_inset Formula $(1)$
-\end_inset
-
-, resulta que 
+, se tiene la fórmula:
 \begin_inset Formula 
 \[
-P(J|c)=\frac{0.015}{0.015+0.001}=0.92
+P(J|c)=\frac{P(c|J)P(J)}{P(c)}
 \]
 
 \end_inset
@@ -406,11 +327,130 @@ P(J|c)=\frac{0.015}{0.015+0.001}=0.92
 \end_layout
 
 \begin_layout Standard
-Es decir, hay un 
-\begin_inset Formula $92\%$
+A partir de esta fórmula, se realiza el cálculo de 
+\begin_inset Formula $v_{NB}$
 \end_inset
 
- de probabilidad que el oyente en cuestión sea joven.
+
+\end_layout
+
+\begin_layout Standard
+P(
+\begin_inset Formula $c$
+\end_inset
+
+|J) = P(p1 = 1|J) * P(p3 = 1|J) * P(p2 = 0|J) * P(p4 = 0|J) 
+\begin_inset Formula $\simeq0.1444$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para el cálculo de P(
+\begin_inset Formula $c$
+\end_inset
+
+), se puede aplicar el teorema de la probabilidad total,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P(c)=P(c|J)*P(J)+P(c|V)*P(V)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En esta fórmula faltaría calcular la proabilidad P(
+\begin_inset Formula $c$
+\end_inset
+
+|V) (de manera análoga a P(
+\begin_inset Formula $c$
+\end_inset
+
+|J))
+\end_layout
+
+\begin_layout Standard
+P(
+\begin_inset Formula $c$
+\end_inset
+
+|V) = P(p1 = 1|V) * P(p3 = 1|V) * P(p2 = 0|V) * P(p4 = 0|V) 
+\begin_inset Formula $\simeq0.0016$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reemplazando estos últimos valores en (1), se obtiene que P(
+\begin_inset Formula $c$
+\end_inset
+
+) 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\simeq0.016$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y reemplazando nuevamente todos los valores calculados en la fórmula de
+ 
+\begin_inset Formula $Bayes$
+\end_inset
+
+.
+ Queda finalmente que P(J|
+\begin_inset Formula $c$
+\end_inset
+
+)
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\simeq0.9$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Hay un 
+\begin_inset Formula $90\%$
+\end_inset
+
+ de probabilidad que el oyente sea joven.
+ 
 \end_layout
 
 \end_deeper
@@ -459,17 +499,17 @@ Hipótesis a consderar:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $h_{1}=$
+\begin_inset Formula $h_{e}=$
 \end_inset
 
-La persona es escoses
+La persona es escoses y siempre se cumplen los datos observados.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $h_{2}=$
+\begin_inset Formula $h_{i}=$
 \end_inset
 
-La persona es inglésa.
+La persona es inglésa y siempre se cumplen los datos observados.
 \end_layout
 
 \begin_layout Standard
@@ -478,29 +518,41 @@ Cálculo de probabilidad para cada hipótesis:
 \end_inset
 
 
+\begin_inset Formula 
+\begin{equation}
+P(X)=\sum_{i}P(X|Ai)P(Ai)
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Se define la probabilidad de 
-\begin_inset Formula $h$
+\begin_inset Formula $P(h_{e})=(1*\frac{1}{13})*5+(\frac{1}{2}*\frac{2}{13})*2=7/13=0.54$
 \end_inset
 
- como: 
-\begin_inset Formula $P(h)=\frac{1}{|H|}=0.5=h_{1}=h_{2}$
-\end_inset
 
- 
 \end_layout
 
-\begin_layout Itemize
-\begin_inset Formula $P(h_{1}|D)=\frac{1*0.5}{P(D)}=0.5$
+\begin_layout Standard
+\begin_inset Formula $P(h_{i})=(1*\frac{1}{13})*4+(\frac{1}{2}*\frac{2}{13})*2=6/13=0.46$
 \end_inset
 
- 
+
 \end_layout
 
-\begin_layout Itemize
-\begin_inset Formula $P(h_{2}|D)=\frac{1*0.5}{P(D)}=0.5$
+\begin_layout Standard
+(Notar que la suma de ambas hipótesis es 
+\begin_inset Formula $1$
+\end_inset
+
+, y como son los únicos casos que pueden ocurrir, esta bien)
+\end_layout
+
+\begin_layout Standard
+Quedando así 
+\begin_inset Formula $P(h_{e}|D)=P(h_{i}|D)=\frac{1}{13}$
 \end_inset
 
  
@@ -934,7 +986,7 @@ Mayor a 60
 \end_layout
 
 \begin_layout Standard
-Se desea clasíficar la instancia: 
+Se desea clasificár la instancia: 
 \begin_inset Formula $x=(0,1,1,0)$
 \end_inset
 
