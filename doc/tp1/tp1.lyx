@@ -162,7 +162,7 @@ Sino =>
 
 \end_deeper
 \begin_layout Enumerate
-Se podrian tomar tableros a partir de registros de jugadas realizadas entre
+Se podrían tomar tableros a partir de registros de jugadas realizadas entre
  personas.
 \end_layout
 
@@ -1663,7 +1663,7 @@ A continuación se presenta un gráfico en donde se realizaron
 \end_inset
 
  simulaciónes para tratar de alcanzar cada hipótesis.
- Se comenzó con un hipótesis inicial toda inizializada en 
+ Se comenzó con un hipótesis inicial toda inicializada en 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1671,8 +1671,8 @@ A continuación se presenta un gráfico en donde se realizaron
 \begin_inset Quotes erd
 \end_inset
 
-, y para cada paso de la simulación, uno de estos simbolos era reemplazado
- por algún valor especifico.
+, y para cada paso de la simulación, uno de estos símbolos era reemplazado
+ por algún valor específico.
  Obteniednose así un gráfico de la cantidad promedio de ejemplos necesarios
  vs cantidad de valores 
 \begin_inset Quotes eld
