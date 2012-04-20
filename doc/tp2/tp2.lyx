@@ -86,6 +86,11 @@ A continuación se muestra una matríz de probabilidades de gustos para cada
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset space \hspace{}
+\length 3.5cm
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
@@ -1243,6 +1248,11 @@ Matríz con las mediciones realizadas por el psicólogo
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="5">
 <features tabularvalignment="middle">
@@ -3275,6 +3285,11 @@ Matríz de confusión
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hspace{}
+\length 5cm
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
 <features tabularvalignment="middle">
