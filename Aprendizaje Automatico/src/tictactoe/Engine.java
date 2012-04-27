@@ -77,7 +77,7 @@ public class Engine {
 		}
 		if (!game.isGameFinished()) {
 			System.out.println("------- Turn Count: " + playedTurns + "-------");
-			System.out.println("Plays " + current.getName());
+			System.out.println("Plays " + current.getName() + " - " + current.getMark());
 		} else {
 			System.out.println("*******************************************");
 			System.out.println("Game Finished! - Final board:");

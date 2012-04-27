@@ -1,6 +1,7 @@
 package tictactoe.player;
 
 import tictactoe.Game;
+import tictactoe.Mark;
 import tictactoe.PlayerStats;
 
 public interface Player {
@@ -15,4 +16,5 @@ public interface Player {
 	
 	void restart();
 	
+	Mark getMark();
 }
