@@ -27,6 +27,7 @@ public class LMSAlgorithm implements Serializable {
 	}
 
 	public void train(List<BoardWithEvaluation> traningSet) {
+		// Calculate all output values
 		for (BoardWithEvaluation boardWithEval: traningSet) {
 			float vAprox = strategy.calcVAprox(boardWithEval.board);
 			strategy.updateW(nu, boardWithEval.value, vAprox);
@@ -51,5 +52,13 @@ public class LMSAlgorithm implements Serializable {
 	
 	public LearnStartegy getStrategy() {
 		return strategy;
+	}
+	
+	@Override
+	public String toString() {
+		String s = "LMSAlgorithm {";
+		s += "nu: " + nu + ",\n";
+		s += "strategy: " + strategy + "\n";
+		return s + "}";
 	}
 }
