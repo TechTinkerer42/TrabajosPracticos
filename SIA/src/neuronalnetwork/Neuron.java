@@ -17,18 +17,18 @@ public class Neuron {
 	}
 
 	public void createInputConnections(int inputSize) {
-		inConnections = new Connection[inputSize];
-		for (int i = 0; i < inConnections.length; i++) {
-			inConnections[i] = new Connection(null);
-		}
+		createInputConnections(inputSize, null);
 	}
 	
-	public void createConnection(Layer layer) {
-		Neuron[] connect = layer.getNeurons();
-		inConnections = new Connection[connect.length];
-		int i = 0;
-		for (Neuron from: connect) {
-			inConnections[i++] = new Connection(from);
+	public void createInputConnections(Layer fromLayer) {
+		createInputConnections(fromLayer.getNumOfNeurons(), fromLayer.getNeurons());
+	}
+	
+	private void createInputConnections(int inputSize, Neuron[] fromNeurons) {
+		inConnections = new Connection[inputSize];
+		for (int i = 0; i < inConnections.length; i++) {
+			Neuron from = (fromNeurons == null) ? null : fromNeurons[i];
+			inConnections[i] = new Connection(from);
 		}
 	}
 

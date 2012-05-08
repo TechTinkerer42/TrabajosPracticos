@@ -31,7 +31,7 @@ public class Layer {
 	
 	public void createConnections(Layer layer) {
 		for (Neuron n: neurons) {
-			n.createConnection(layer);
+			n.createInputConnections(layer);
 		}
 	}
 
