@@ -254,7 +254,7 @@ Se tienen 80 componentes, de las cuales 12 son defectuosas.
 \begin_deeper
 \begin_layout Enumerate
 La proporción de componentes no defetuosos de la muestra = 
-\begin_inset Formula $\frac{80-12}{80}=0.85$
+\begin_inset Formula $\bar{x}_{nd}\frac{80-12}{80}=0.85$
 \end_inset
 
 
@@ -262,11 +262,78 @@ La proporción de componentes no defetuosos de la muestra =
 
 \begin_deeper
 \begin_layout Enumerate
-asd
+Un estimador 
+\begin_inset Formula $\hat{x}$
+\end_inset
+
+ es un estimador insesgado para estimar a 
+\begin_inset Formula $x$
+\end_inset
+
+ si 
+\begin_inset Formula $E[\hat{x}]=x$
+\end_inset
+
+.
+ Por lo tanto este es un estimador 
+\begin_inset Formula $insesgado$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
-asd
+Muestra: 
+\begin_inset Formula $68$
+\end_inset
+
+ mediciones con 
+\begin_inset Formula $\{x_{i},y_{i}\}=1$
+\end_inset
+
+ y 
+\begin_inset Formula $12$
+\end_inset
+
+ mediciones con 
+\begin_inset Formula $\{x_{i},y_{i}\}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $e_{0}=(0-0.85)$
+\end_inset
+
+ (para las 
+\begin_inset Formula $12$
+\end_inset
+
+ muestras defectuosas)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $e_{1}=(1-0.85)$
+\end_inset
+
+ (para las 
+\begin_inset Formula $68$
+\end_inset
+
+ muestras no defectuosas)
+\end_layout
+
+\begin_layout Standard
+Por lo que el error cuádratico medio estaría dado por la fórmula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E_{CM}=\sqrt{\frac{(1-0.85)\text{²}*68+(0-0.85)\text{²}*12}{80}}=\sqrt{\frac{1.53+8.67}{80}}\simeq0.35$
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -276,6 +343,111 @@ Proporción de sistemas que funcionan correctamente =
 \end_inset
 
 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+asdad
+\end_layout
+
+\begin_layout Enumerate
+Solucion
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Grafico del peso del cerebro y peso total para cada ejemplo dado
+\end_layout
+
+\begin_layout LyX-Code
+load brains.txt;
+\end_layout
+
+\begin_layout LyX-Code
+x = 1:28;
+\end_layout
+
+\begin_layout LyX-Code
+y = brains(:,1);
+\end_layout
+
+\begin_layout LyX-Code
+z = brains(:,2);
+\end_layout
+
+\begin_layout LyX-Code
+clf;
+\end_layout
+
+\begin_layout LyX-Code
+hold on;
+\end_layout
+
+\begin_layout LyX-Code
+plot(x, y, '*b;Peso Promedio en Kg;')
+\end_layout
+
+\begin_layout LyX-Code
+plot(x, z, '*r;Peso Cerebro Promedio en G;')
+\end_layout
+
+\begin_layout LyX-Code
+print('-dpng', './TotalWeightVsBrainWeight.png');
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename TotalWeightVsBrainWeight.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Peso del cerebro y peso total para cada medicion en brains.txt*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+*El valor del peso del cerebro de la medicion 25 no se muestra en la figura
+ ya que se alejaba demasiado del resto de los valores y estos otros ya no
+ llegaban a distinguirse correctamente.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En una observacion a simple vista, se puede ver que las mediciones que se
+ diferencian notablemente del resto son: 
+\begin_inset Formula $6,7,14,15,16$
+\end_inset
+
+ y por supuesto, la 
+\begin_inset Formula $25$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
