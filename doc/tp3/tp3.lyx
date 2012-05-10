@@ -361,7 +361,7 @@ Grafico del peso del cerebro y peso total para cada ejemplo dado
 
 \begin_deeper
 \begin_layout Enumerate
-asd
+codigo
 \end_layout
 
 \begin_deeper
@@ -406,13 +406,18 @@ print('-dpng', './TotalWeightVsBrainWeight.png');
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1.5cm
+\end_inset
+
+
 \begin_inset Graphics
 	filename TotalWeightVsBrainWeight.png
 	lyxscale 30
-	scale 30
+	scale 20
 
 \end_inset
 
@@ -445,9 +450,14 @@ Peso del cerebro y peso total para cada medicion en brains.txt*
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
 \begin_inset Graphics
 	filename TwVsBw.png
 	lyxscale 30
@@ -512,9 +522,64 @@ No
 
 \end_deeper
 \begin_layout Enumerate
-reedf
+codigo
 \end_layout
 
+\begin_deeper
+\begin_layout LyX-Code
+load brains.txt 
+\end_layout
+
+\begin_layout LyX-Code
+regstats(brains(:,1), brains(:,2),'linear')
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename logBrains.png
+	lyxscale 30
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Logaritmo de ambas mediciones y la linea que mejor los aproxima
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \end_body
 \end_document
