@@ -359,6 +359,12 @@ Solucion
 Grafico del peso del cerebro y peso total para cada ejemplo dado
 \end_layout
 
+\begin_deeper
+\begin_layout Enumerate
+asd
+\end_layout
+
+\begin_deeper
 \begin_layout LyX-Code
 load brains.txt;
 \end_layout
@@ -400,12 +406,12 @@ print('-dpng', './TotalWeightVsBrainWeight.png');
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename TotalWeightVsBrainWeight.png
-	lyxscale 50
+	lyxscale 30
 	scale 30
 
 \end_inset
@@ -428,9 +434,58 @@ Peso del cerebro y peso total para cada medicion en brains.txt*
 \end_layout
 
 \begin_layout Standard
-*El valor del peso del cerebro de la medicion 25 no se muestra en la figura
- ya que se alejaba demasiado del resto de los valores y estos otros ya no
- llegaban a distinguirse correctamente.
+* El valor del peso del cerebro de la medicion 25 no se ve en la figura
+ ya que se aleja demasiado del resto de los valores y el ajustar los ejes
+ solo para mostrar ese valor produce que todas las demas mediciones no puedan
+ apreciarse correctamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename TwVsBw.png
+	lyxscale 30
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Peso total en Kg Vs peso del cerebro en G**
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+** Se removieron los valores para los 
+\begin_inset Formula $4$
+\end_inset
+
+ valores de 
+\begin_inset Formula $x$
+\end_inset
+
+ mayores a 
+\begin_inset Formula $2000$
+\end_inset
+
+ ya que ocltaban la visualizacion de todos los demas valores
 \begin_inset Newline newline
 \end_inset
 
@@ -438,7 +493,7 @@ Peso del cerebro y peso total para cada medicion en brains.txt*
 \end_layout
 
 \begin_layout Standard
-En una observacion a simple vista, se puede ver que las mediciones que se
+En una observación a simple vista, se puede ver que las mediciones que se
  diferencian notablemente del resto son: 
 \begin_inset Formula $6,7,14,15,16$
 \end_inset
@@ -448,6 +503,16 @@ En una observacion a simple vista, se puede ver que las mediciones que se
 \end_inset
 
 .
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+No
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+reedf
 \end_layout
 
 \end_deeper
