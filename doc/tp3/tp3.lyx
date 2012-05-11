@@ -82,8 +82,12 @@ Soluciones
 
 \begin_deeper
 \begin_layout Enumerate
+medidas:
+\end_layout
+
+\begin_layout Enumerate
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="5">
+<lyxtabular version="3" rows="4" columns="5">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0pt">
@@ -104,7 +108,7 @@ Soluciones
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ancho
+Ancho Pétalo
 \end_layout
 
 \end_inset
@@ -113,7 +117,7 @@ Ancho
 \begin_inset Text
 
 \begin_layout Plain Layout
-Largo
+Largo Pétalo
 \end_layout
 
 \end_inset
@@ -122,7 +126,7 @@ Largo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ancho
+Ancho Cépalo
 \end_layout
 
 \end_inset
@@ -131,7 +135,7 @@ Ancho
 \begin_inset Text
 
 \begin_layout Plain Layout
-Largo
+Largo Cépalo
 \end_layout
 
 \end_inset
@@ -142,7 +146,10 @@ Largo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Media
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -151,7 +158,10 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-5.8433
+\begin_inset Formula $6.5880$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -160,7 +170,10 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.0573
+\begin_inset Formula $2.9740$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -169,7 +182,10 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-3.7580
+\begin_inset Formula $5.5520$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -178,7 +194,72 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.1993
+\begin_inset Formula $2.0260$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.6232$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.3160$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.5409$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.2692$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -189,7 +270,10 @@ Media
 \begin_inset Text
 
 \begin_layout Plain Layout
-Varianza
+\begin_inset Formula $E_{cm}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -198,7 +282,10 @@ Varianza
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.8281
+\begin_inset Formula $0.0081$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -207,7 +294,10 @@ Varianza
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.4359
+\begin_inset Formula $0.0021$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -216,7 +306,10 @@ Varianza
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.7653
+\begin_inset Formula $0.0061$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -225,7 +318,10 @@ Varianza
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.7622
+\begin_inset Formula $0.0015$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -239,13 +335,140 @@ Varianza
 \end_layout
 
 \begin_layout Enumerate
-asd
+Intervalos de confianza para con un nivel de confianza de 
+\begin_inset Formula $0.95$
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Enumerate
-asd
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Largo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Largo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $I$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.8643$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.9657$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.0837$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.0863$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Se tienen 80 componentes, de las cuales 12 son defectuosas.
@@ -287,7 +510,7 @@ Muestra:
 \begin_inset Formula $68$
 \end_inset
 
- mediciones con 
+ mediciónes con 
 \begin_inset Formula $\{x_{i},y_{i}\}=1$
 \end_inset
 
@@ -295,7 +518,7 @@ Muestra:
 \begin_inset Formula $12$
 \end_inset
 
- mediciones con 
+ mediciónes con 
 \begin_inset Formula $\{x_{i},y_{i}\}=0$
 \end_inset
 
@@ -347,21 +570,105 @@ Proporción de sistemas que funcionan correctamente =
 
 \end_deeper
 \begin_layout Enumerate
-asdad
+código:
 \end_layout
 
+\begin_deeper
+\begin_layout LyX-Code
+birds=[ 
+\end_layout
+
+\begin_layout LyX-Code
+...replace meditions here...
+\end_layout
+
+\begin_layout LyX-Code
+];
+\end_layout
+
+\begin_layout LyX-Code
+alpha=0.01 
+\end_layout
+
+\begin_layout LyX-Code
+[h,p,ci,stats] = ttest(birds(:,2), birds(:,3), alpha)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si alpha > p-value = 0.0117 
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Entonces se rechaza 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ (o sea que uD=0) 
+\end_layout
+
+\begin_layout Standard
+Si no
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Entonces no se rechaza, es decir las plumas podrían ser iguales.
+\end_layout
+
+\begin_layout Standard
+Estan en lo cierto, para alpha 
+\begin_inset Formula $=0.05$
+\end_inset
+
+ hay variación entre el color de las plumas
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
-Solucion
+Solución
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-Grafico del peso del cerebro y peso total para cada ejemplo dado
+Gráfico del peso del cerebro y peso total para cada ejemplo dado
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-codigo
+código
 \end_layout
 
 \begin_deeper
@@ -406,7 +713,7 @@ print('-dpng', './TotalWeightVsBrainWeight.png');
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -425,7 +732,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Peso del cerebro y peso total para cada medicion en brains.txt*
+Peso del cerebro y peso total para cada medición en brains.txt*
 \end_layout
 
 \end_inset
@@ -439,9 +746,9 @@ Peso del cerebro y peso total para cada medicion en brains.txt*
 \end_layout
 
 \begin_layout Standard
-* El valor del peso del cerebro de la medicion 25 no se ve en la figura
+* El valor del peso del cerebro de la medición 25 no se ve en la figura
  ya que se aleja demasiado del resto de los valores y el ajustar los ejes
- solo para mostrar ese valor produce que todas las demas mediciones no puedan
+ solo para mostrar ese valor produce que todas las demas mediciónes no puedan
  apreciarse correctamente.
 \end_layout
 
@@ -450,7 +757,7 @@ Peso del cerebro y peso total para cada medicion en brains.txt*
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -495,7 +802,7 @@ Peso total en Kg Vs peso del cerebro en G**
 \begin_inset Formula $2000$
 \end_inset
 
- ya que ocltaban la visualizacion de todos los demas valores
+ ya que ocultaban la visualización de todos los demás valores
 \begin_inset Newline newline
 \end_inset
 
@@ -503,7 +810,7 @@ Peso total en Kg Vs peso del cerebro en G**
 \end_layout
 
 \begin_layout Standard
-En una observación a simple vista, se puede ver que las mediciones que se
+En una observación a simple vista, se puede ver que las mediciónes que se
  diferencian notablemente del resto son: 
 \begin_inset Formula $6,7,14,15,16$
 \end_inset
@@ -522,7 +829,7 @@ No
 
 \end_deeper
 \begin_layout Enumerate
-codigo
+código
 \end_layout
 
 \begin_deeper
@@ -531,7 +838,7 @@ load brains.txt
 \end_layout
 
 \begin_layout LyX-Code
-regstats(brains(:,1), brains(:,2),'linear')
+regstats(brains(:,1), brains(:,2),'línear')
 \end_layout
 
 \begin_layout LyX-Code
@@ -562,7 +869,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Logaritmo de ambas mediciones y la linea que mejor los aproxima
+Logaritmo de ambas mediciónes y la línea que mejor los aproxima
 \end_layout
 
 \end_inset
