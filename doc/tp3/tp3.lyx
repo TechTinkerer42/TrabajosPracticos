@@ -163,9 +163,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $6.5880$
-\end_inset
-
 
 \end_layout
 
@@ -175,9 +172,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $2.9740$
-\end_inset
-
 
 \end_layout
 
@@ -187,9 +181,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $5.5520$
-\end_inset
-
 
 \end_layout
 
@@ -199,9 +190,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $2.0260$
-\end_inset
-
 
 \end_layout
 
@@ -225,9 +213,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.6232$
-\end_inset
-
 
 \end_layout
 
@@ -237,9 +222,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.3160$
-\end_inset
-
 
 \end_layout
 
@@ -249,9 +231,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.5409$
-\end_inset
-
 
 \end_layout
 
@@ -261,9 +240,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.2692$
-\end_inset
-
 
 \end_layout
 
@@ -287,9 +263,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.0081$
-\end_inset
-
 
 \end_layout
 
@@ -299,9 +272,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.0021$
-\end_inset
-
 
 \end_layout
 
@@ -311,9 +281,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.0061$
-\end_inset
-
 
 \end_layout
 
@@ -323,9 +290,6 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $0.0015$
-\end_inset
-
 
 \end_layout
 
@@ -337,6 +301,18 @@ Ancho Pétalo
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+5.0060 3.4280 1.4620 0.2460 
+\end_layout
+
+\begin_layout Standard
+5.9360 2.7700 4.2600 1.3260 
+\end_layout
+
+\begin_layout Standard
+6.5880 2.9740 5.5520 2.0260
 \end_layout
 
 \begin_layout Enumerate
@@ -895,6 +871,36 @@ En los gráficos del punto
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+asd
+\end_layout
+
+\begin_layout Enumerate
+Estimadores de maxima verosimilitud
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+mu hat:
+\end_layout
+
+\begin_layout Standard
+5.8433 3.0573 3.7580 1.1993 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+sigma hat: 
+\end_layout
+
+\begin_layout Standard
+0.4214 0.0756 2.9140 0.5361
+\end_layout
+
+\end_deeper
 \begin_layout LyX-Code
 \begin_inset Newpage newpage
 \end_inset
@@ -1086,6 +1092,10 @@ Logaritmo de ambas mediciónes y la línea que mejor los aproxima
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout LyX-Code
 
 \end_layout
 
