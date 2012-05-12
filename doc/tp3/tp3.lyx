@@ -25,9 +25,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
-\papersize default
-\use_geometry false
+\papersize a4paper
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \use_mhchem 1
@@ -42,6 +43,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -60,7 +65,7 @@
 \begin_body
 
 \begin_layout Title
-Aprendizaje Automatico - Trabajo Practico 3
+Aprendizaje Automático - Trabajo Práctico 3
 \end_layout
 
 \begin_layout Author
@@ -108,16 +113,7 @@ medidas:
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ancho Pétalo
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Largo Pétalo
+Largo Cépalo
 \end_layout
 
 \end_inset
@@ -131,11 +127,20 @@ Ancho Cépalo
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Largo Pétalo
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Largo Cépalo
+Ancho Pétalo
 \end_layout
 
 \end_inset
@@ -472,6 +477,8 @@ Largo
 \end_deeper
 \begin_layout Enumerate
 Se tienen 80 componentes, de las cuales 12 son defectuosas.
+ Por ser este experimiento una secuencia de ensayos Bernoulli, repetidos
+ n veces, se lo puede considerar una distribución binomial.
 \end_layout
 
 \begin_deeper
@@ -494,17 +501,51 @@ Un estimador
 \end_inset
 
  si 
-\begin_inset Formula $E[\hat{x}]=x$
+\begin_inset Formula $E[\hat{x}]=p$
 \end_inset
 
 .
- Por lo tanto este es un estimador 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Sea 
+\begin_inset Formula $S_{n}=x_{1}+x_{2}+...+x_{n}$
+\end_inset
+
+.
+ En donde cada 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ representa
+\begin_inset Formula $1$
+\end_inset
+
+ si el componente no esta defectuoso o 
+\begin_inset Formula $0$
+\end_inset
+
+ en caso contrario.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[\bar{x}]=E((\sum x_{i})/n)=\frac{1}{n}\sum E(x_{i})=\frac{1}{n}np=p$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Por lo tanto este es un estimador 
 \begin_inset Formula $insesgado$
 \end_inset
 
 .
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Muestra: 
 \begin_inset Formula $68$
@@ -526,6 +567,7 @@ Muestra:
  
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset Formula $e_{0}=(0-0.85)$
 \end_inset
@@ -559,6 +601,7 @@ Por lo que el error cuádratico medio estaría dado por la fórmula:
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Proporción de sistemas que funcionan correctamente = 
@@ -663,12 +706,12 @@ Solución
 
 \begin_deeper
 \begin_layout Enumerate
-Gráfico del peso del cerebro y peso total para cada ejemplo dado
+.
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-código
+Código de matlab utilizado
 \end_layout
 
 \begin_deeper
@@ -705,7 +748,170 @@ plot(x, z, '*r;Peso Cerebro Promedio en G;')
 \end_layout
 
 \begin_layout LyX-Code
-print('-dpng', './TotalWeightVsBrainWeight.png');
+print('-dpng', './TotalWeightVsBrainWeight.png')
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Ver figura 1 y 2 - Anexo)
+\end_layout
+
+\begin_layout Standard
+En una observación a simple vista, se puede ver que las mediciónes que se
+ diferencian notablemente del resto son: 
+\begin_inset Formula $6,7,14,15,16$
+\end_inset
+
+ y por supuesto, la 
+\begin_inset Formula $25$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+No
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Código de matlab utilizado
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+load brains.txt 
+\end_layout
+
+\begin_layout LyX-Code
+regstats(brains(:,1), brains(:,2),'línear')
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Ver figura 3 - Anexo)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+La recta que mejor ajusta con los ejes 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+ con la función 
+\begin_inset Formula $log$
+\end_inset
+
+ aplicados a ambos es: 
+\begin_inset Formula $y=a*x+b$
+\end_inset
+
+.
+ Con 
+\begin_inset Formula $a=0.496$
+\end_inset
+
+ y 
+\begin_inset Formula $b=2.55$
+\end_inset
+
+.
+ Por lo tanto, para obtener la recta que ajusta a los puntos 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+ sin aplicar las transformación, es aplicar la tranformación inversa al
+ 
+\begin_inset Formula $log$
+\end_inset
+
+, es decir 
+\begin_inset Formula $pow(10,n)$
+\end_inset
+
+.
+ Quedando así la curva que aproxima a los puntos como: 
+\begin_inset Formula $10^{y}=a*10^{x}+b$
+\end_inset
+
+.
+ Despejando por 
+\begin_inset Formula $y$
+\end_inset
+
+, 
+\begin_inset Formula $y=log(a*10^{x}+b)$
+\end_inset
+
+.
+ En la figura 4 del Anexo se puede ver cuan bien se aproximan los valores.
+\end_layout
+
+\begin_layout Enumerate
+En los gráficos del punto 
+\begin_inset Formula $b$
+\end_inset
+
+, se puede observar que las mediciones que estan muy fuera del común de
+ son no solo las
+\begin_inset Formula $14,15$
+\end_inset
+
+ y 
+\begin_inset Formula $25$
+\end_inset
+
+ sinó que también la 
+\begin_inset Formula $6$
+\end_inset
+
+ y la 
+\begin_inset Formula $16$
+\end_inset
+
+.
+ Por lo que fueron removidos de la tabla de valores.
+ El gráfico obtenido luego de ajustados los valores se muestra en la fiegura
+ 
+\begin_inset Formula $5$
+\end_inset
+
+ del Anexo.
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Anexo
+\end_layout
+
+\begin_layout Standard
+Gráficos de cada ejercicio:
+\end_layout
+
+\begin_layout Standard
+1)
 \end_layout
 
 \begin_layout Standard
@@ -803,42 +1009,10 @@ Peso total en Kg Vs peso del cerebro en G**
 \end_inset
 
  ya que ocultaban la visualización de todos los demás valores
-\begin_inset Newline newline
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-En una observación a simple vista, se puede ver que las mediciónes que se
- diferencian notablemente del resto son: 
-\begin_inset Formula $6,7,14,15,16$
-\end_inset
-
- y por supuesto, la 
-\begin_inset Formula $25$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-No
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-código
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-load brains.txt 
-\end_layout
-
-\begin_layout LyX-Code
-regstats(brains(:,1), brains(:,2),'línear')
+4)
 \end_layout
 
 \begin_layout LyX-Code
@@ -846,11 +1020,7 @@ regstats(brains(:,1), brains(:,2),'línear')
 placement H
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -877,7 +1047,40 @@ Logaritmo de ambas mediciónes y la línea que mejor los aproxima
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
 \begin_layout Plain Layout
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename outLayerRemovidos.png
+	lyxscale 30
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Logaritmo de ambas mediciónes y la línea que mejor los aproxima
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -886,7 +1089,5 @@ Logaritmo de ambas mediciónes y la línea que mejor los aproxima
 
 \end_layout
 
-\end_deeper
-\end_deeper
 \end_body
 \end_document

@@ -5,6 +5,8 @@
 \documentclass[english]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=3cm,lmargin=2cm,rmargin=2cm}
 \usepackage{float}
 \usepackage{textcomp}
 \usepackage{amstext}
@@ -36,7 +38,7 @@
 \usepackage{babel}
 \begin{document}
 
-\title{Aprendizaje Automatico - Trabajo Practico 3}
+\title{Aprendizaje Automático - Trabajo Práctico 3}
 
 
 \author{Gonzalo Castiglione - 49138}
@@ -56,7 +58,7 @@ inferencia a partir de datos experiemtales.}
 \item %
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
- & Ancho Pétalo & Largo Pétalo & Ancho Cépalo & Largo Cépalo\tabularnewline
+ & Largo Cépalo & Ancho Cépalo & Largo Pétalo & Ancho Pétalo\tabularnewline
 \hline 
 \hline 
 $\hat{\mu}$ & $6.5880$ & $2.9740$ & $5.5520$ & $2.0260$\tabularnewline
@@ -79,17 +81,30 @@ $I$ & $2.8643$ & $1.9657$ & $3.0837$ & $2.0863$\tabularnewline
 \end{tabular}
 
 \end{enumerate}
-\item Se tienen 80 componentes, de las cuales 12 son defectuosas.
+\item Se tienen 80 componentes, de las cuales 12 son defectuosas. Por ser
+este experimiento una secuencia de ensayos Bernoulli, repetidos n
+veces, se lo puede considerar una distribución binomial.
 
 \begin{enumerate}
 \item La proporción de componentes no defetuosos de la muestra = $\bar{x}_{nd}\frac{80-12}{80}=0.85$
 
 \begin{enumerate}
 \item Un estimador $\hat{x}$ es un estimador insesgado para estimar a $x$
-si $E[\hat{x}]=x$. Por lo tanto este es un estimador $insesgado$.
+si $E[\hat{x}]=p$.
+
+
+Sea $S_{n}=x_{1}+x_{2}+...+x_{n}$. En donde cada $x_{i}$ representa$1$
+si el componente no esta defectuoso o $0$ en caso contrario.
+
+
+$E[\bar{x}]=E((\sum x_{i})/n)=\frac{1}{n}\sum E(x_{i})=\frac{1}{n}np=p$. 
+
+
+Por lo tanto este es un estimador $insesgado$.
+
 \item Muestra: $68$ mediciónes con $\{x_{i},y_{i}\}=1$ y $12$ mediciónes
 con $\{x_{i},y_{i}\}=0$. 
-\end{enumerate}
+
 
 $e_{0}=(0-0.85)$ (para las $12$ muestras defectuosas)
 
@@ -102,6 +117,7 @@ Por lo que el error cuádratico medio estaría dado por la fórmula:
 
 $E_{CM}=\sqrt{\frac{(1-0.85)\text{\texttwosuperior}*68+(0-0.85)\text{\texttwosuperior}*12}{80}}=\sqrt{\frac{1.53+8.67}{80}}\simeq0.35$
 
+\end{enumerate}
 \item Proporción de sistemas que funcionan correctamente = $\frac{\binom{80-12}{2}}{\binom{80}{2}}=\frac{2278}{3160}=0.72$
 \end{enumerate}
 \item código:
@@ -137,10 +153,10 @@ de las plumas
 \item Solución
 
 \begin{enumerate}
-\item Gráfico del peso del cerebro y peso total para cada ejemplo dado
+\item .
 
 \begin{enumerate}
-\item código
+\item Código de matlab utilizado
 
 \begin{lyxcode}
 load~brains.txt;
@@ -159,30 +175,11 @@ plot(x,~y,~'{*}b;Peso~Promedio~en~Kg;')
 
 plot(x,~z,~'{*}r;Peso~Cerebro~Promedio~en~G;')
 
-print('-dpng',~'./TotalWeightVsBrainWeight.png');
+print('-dpng',~'./TotalWeightVsBrainWeight.png')~\\
+
 \end{lyxcode}
 
-\begin{figure}[H]
-\hspace{1.5cm}\includegraphics[scale=0.2]{TotalWeightVsBrainWeight}\caption{Peso del cerebro y peso total para cada medición en brains.txt{*}}
-\end{figure}
-
-
-
-{*} El valor del peso del cerebro de la medición 25 no se ve en la
-figura ya que se aleja demasiado del resto de los valores y el ajustar
-los ejes solo para mostrar ese valor produce que todas las demas mediciónes
-no puedan apreciarse correctamente.
-
-
-\begin{figure}[H]
-\hspace{1cm}\includegraphics[scale=0.5]{TwVsBw}\caption{Peso total en Kg Vs peso del cerebro en G{*}{*}}
-\end{figure}
-
-
-
-{*}{*} Se removieron los valores para los $4$ valores de $x$ mayores
-a $2000$ ya que ocultaban la visualización de todos los demás valores\\
-
+(Ver figura 1 y 2 - Anexo)
 
 
 En una observación a simple vista, se puede ver que las mediciónes
@@ -191,22 +188,69 @@ supuesto, la $25$.
 
 \item No
 \end{enumerate}
-\item código
+\item Código de matlab utilizado
 
 \begin{lyxcode}
 load~brains.txt~
 
-regstats(brains(:,1),~brains(:,2),'línear')
+regstats(brains(:,1),~brains(:,2),'línear')~\\
+
+\end{lyxcode}
+
+(Ver figura 3 - Anexo)
+
+\item La recta que mejor ajusta con los ejes $x$ e $y$ con la función
+$log$ aplicados a ambos es: $y=a*x+b$. Con $a=0.496$ y $b=2.55$.
+Por lo tanto, para obtener la recta que ajusta a los puntos $x$ e
+$y$ sin aplicar las transformación, es aplicar la tranformación inversa
+al $log$, es decir $pow(10,n)$. Quedando así la curva que aproxima
+a los puntos como: $10^{y}=a*10^{x}+b$. Despejando por $y$, $y=log(a*10^{x}+b)$.
+En la figura 4 del Anexo se puede ver cuan bien se aproximan los valores.
+\item En los gráficos del punto $b$, se puede observar que las mediciones
+que estan muy fuera del común de son no solo las$14,15$ y $25$ sinó
+que también la $6$ y la $16$. Por lo que fueron removidos de la
+tabla de valores. El gráfico obtenido luego de ajustados los valores
+se muestra en la fiegura $5$ del Anexo.
+\end{enumerate}
+\end{enumerate}
+\begin{lyxcode}
+\newpage{}
+\end{lyxcode}
+
+\section{Anexo}
+
+Gráficos de cada ejercicio:
+
+1)
 
 \begin{figure}[H]
+\hspace{1.5cm}\includegraphics[scale=0.2]{TotalWeightVsBrainWeight}\caption{Peso del cerebro y peso total para cada medición en brains.txt{*}}
+\end{figure}
 
 
+{*} El valor del peso del cerebro de la medición 25 no se ve en la
+figura ya que se aleja demasiado del resto de los valores y el ajustar
+los ejes solo para mostrar ese valor produce que todas las demas mediciónes
+no puedan apreciarse correctamente.
+
+\begin{figure}[H]
+\hspace{1cm}\includegraphics[scale=0.5]{TwVsBw}\caption{Peso total en Kg Vs peso del cerebro en G{*}{*}}
+\end{figure}
+
+
+{*}{*} Se removieron los valores para los $4$ valores de $x$ mayores
+a $2000$ ya que ocultaban la visualización de todos los demás valores
+
+4)
+\begin{lyxcode}
+\begin{figure}[H]
 \hspace{2cm}\includegraphics[scale=0.6]{logBrains}\caption{Logaritmo de ambas mediciónes y la línea que mejor los aproxima}
+\end{figure}
 
 
+\begin{figure}[H]
+\hspace{2cm}\includegraphics[scale=0.6]{outLayerRemovidos}\caption{Logaritmo de ambas mediciónes y la línea que mejor los aproxima}
 \end{figure}
 \end{lyxcode}
-\end{enumerate}
-\end{enumerate}
 
 \end{document}
