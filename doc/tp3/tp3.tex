@@ -58,28 +58,31 @@ inferencia a partir de datos experiemtales.}
 \item Se calculó para cada especie, su medida y su desvio estandard:
 
 \begin{lyxcode}
+\begin{center}
 \begin{tabular}{|l|c|c|c|c|c|}
 \hline 
 Especie & Estimador & Largo Sépalo & Ancho Sépalo & Largo Pétalo & Ancho Pétalo\tabularnewline
 \hline 
 \hline 
 Virginica & $\hat{\mu}$ & 6.5880 & 2.9740 & 5.5520 & 2.0260\tabularnewline
-\hline 
+\cline{2-6} 
  & $\hat{\sigma}$ & 0.6232  & 0.3160  & 0.5409 & 0.2692\tabularnewline
 \hline 
 Versicolor & $\hat{\mu}$ & 5.9360  & 2.7700  & 4.2600  & 1.3260\tabularnewline
-\hline 
+\cline{2-6} 
  & $\hat{\sigma}$ & 0.5058  & 0.3075  & 0.4605  & 0.1938\tabularnewline
 \hline 
 Setosa & $\hat{\mu}$ & 5.0060  & 3.4280  & 1.4620  & 0.2460 \tabularnewline
-\hline 
+\cline{2-6} 
  & $\hat{\sigma}$ & 0.3454  & 0.3715  & 0.1702  & 0.1033\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}
 \end{lyxcode}
 \item Cálculo de los errores cuadráticos medios
 
 
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
 Especie & Largo Sépalo & Ancho Sépalo & Largo Pétalo & Ancho Pétalo\tabularnewline
@@ -92,10 +95,12 @@ Versicolor & 0.0053 & 0.0020  & 0.0044  & 0.0008\tabularnewline
 Setosa & 0.0025 & 0.0029  & 0.0006 &  0.0002\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}
 
 \item Intervalos de confianza para con un nivel de confianza de $0.95$.
 
 
+\begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
  & \multicolumn{4}{c}{Intervalo}\tabularnewline
@@ -110,6 +115,7 @@ Versicolor & 6.0827 2.8592  & 4.3935 1.3822  & 5.7893 2.6808 &  4.1265 1.2698\ta
 Setosa & 5.1062 3.5357  & 1.5114 0.2760  & 4.9058 3.3203 &  1.4126 0.2160\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}
 
 \end{enumerate}
 \item Se tienen 80 componentes, de las cuales 12 son defectuosas. Por ser
@@ -154,6 +160,7 @@ $E_{CM}=\sqrt{\frac{(1-0.85)\text{\texttwosuperior}*68+(0-0.85)\text{\texttwosup
 \item Resultaodos obtenidos:
 
 
+\begin{center}
 \begin{tabular}{|c|c|}
 \hline 
 Variables & Valor numérico\tabularnewline
@@ -172,6 +179,7 @@ df & 12\tabularnewline
 sd & 0.1428\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}
 
 
 Para el apha tomado, la hipótesis nula se rechaza y los científicos
@@ -184,15 +192,21 @@ estan en lo cierto, hay variación entre el color de las plumas.
 
 
 \begin{figure}[H]
-\hspace{1.5cm}\includegraphics[scale=0.2]{TotalWeightVsBrainWeight}\caption{Peso del cerebro y peso total para cada medición en brains.txt{*}}
+\centering{}\includegraphics[scale=0.25]{TotalWeightVsBrainWeight}\caption{Peso del cerebro y peso total para cada medición en brains.txt{*}}
 \end{figure}
-
+\footnote{{*}El valor del peso del cerebro de la medición 25 no se ve en la
+figura ya que se aleja demasiado del resto de los valores y el ajustar
+los ejes solo para mostrar ese valor produce que todas las demas mediciónes
+no puedan apreciarse correctamente.%
+}
 
 
 \begin{figure}[H]
-\hspace{1cm}\includegraphics[scale=0.5]{TwVsBw}\caption{Peso total en Kg Vs peso del cerebro en G{*}{*}}
+\hspace{3cm}\includegraphics[scale=0.5]{TwVsBw}\caption{Peso total en Kg Vs peso del cerebro en G{*}{*}}
 \end{figure}
-
+\footnote{{*}{*}Se removieron los valores para los $4$ valores de $x$ mayores
+a $2000$ ya que ocultaban la visualización de todos los demás valores%
+}
 \begin{enumerate}
 \item En una observación a simple vista, se puede ver que las mediciónes
 que se diferencian notablemente del resto son: $6,7,14,15,16$ y la
@@ -202,12 +216,12 @@ datos, si aproximamos los valores por una recta, a simple vista se
 ve que se va a estar cometiendo un error muy grande para la mayoría
 de los datos. Por lo que no existe una relación lineal.
 \end{enumerate}
-\item En el gráfico a continuacion puede verse que graficando el $log$
+\item En el gráfico a continuación puede verse que graficando el $log$
 de ambas variables, los datos tienden a formar una línea mas definida. 
 
 \begin{lyxcode}
 \begin{figure}[H]
-\hspace{2cm}\includegraphics[scale=0.6]{logBrains}\caption{Logaritmo de ambas mediciónes y la línea que mejor los aproxima}
+\centering{}\includegraphics[scale=0.75]{logBrains}\caption{Logaritmo de ambas mediciónes y la línea que mejor los aproxima}
 \end{figure}
 
 \end{lyxcode}
@@ -220,11 +234,7 @@ es decir $pow(10,n)$. Quedando así la curva que aproxima a los puntos
 como: $10^{y}=a*10^{x}+b$. Despejando por $y$, se obtiene $y=log(a*10^{x}+b)$. 
 
 \begin{lyxcode}
-\begin{figure}[H]
-\hspace{2cm}\includegraphics[scale=0.6]{outLayerRemovidos}\caption{Logaritmo de ambas mediciónes y la línea que mejor los aproxima}
-\end{figure}
-
-
+\begin{center}
 \begin{tabular}{|c|c|c|}
 \hline 
 Coeficientes de Regresion & $\sum res^{2}$ & $E_{cm}$\tabularnewline
@@ -233,20 +243,30 @@ Coeficientes de Regresion & $\sum res^{2}$ & $E_{cm}$\tabularnewline
 0.496 - 2.55 & 60.99 & 2.34\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}
 \end{lyxcode}
 \item En los gráficos del punto $b$, se puede observar que las mediciones
 que estan muy fuera del común son no solo las$14,15$ y $25$ sinó
 que también la $6$ y la $16$. Por lo que fueron removidos de la
 tabla de valores. El gráfico obtenido luego de ajustados los valores
 se muestra en la fiegura $5$ del Anexo.
+
+\begin{lyxcode}
+\begin{figure}[H]
+\centering{}\includegraphics[scale=0.75]{outLayerRemovidos}\caption{Logaritmo de ambas mediciónes y la línea que mejor los aproxima}
+\end{figure}
+
+\end{lyxcode}
 \end{enumerate}
 \item Censo poblacional de Estados Unidos 1790 - 1990
 
 \begin{enumerate}
 \item 
 \begin{figure}[H]
+\begin{centering}
 \includegraphics[scale=0.7]{population}\caption{Cantidad de habitantes medidas por el cendo por año}
 
+\par\end{centering}
 
 \end{figure}
 
@@ -311,6 +331,7 @@ Por haberle acertado con menor grado de error, el polinomio de grado
 \item Estimadores de maxima verosimilitud
 
 
+\begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline 
 Especie & Vector de medias {[}largo S., ancho S., largo P., ancho P.{]} & $\mu$ & $\sigma$\tabularnewline
@@ -323,8 +344,10 @@ Versicolor & {[}5.9360, 2.7700, 4.2600, 1.3260{]} & 3.5730 & 3.5730\tabularnewli
 Setosa & {[}5.0060, 3.4280, 1.4620, 0.2460{]} & 2.5355 & 3.3235\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}
 
 
+\begin{center}
 \begin{tabular}{|c|c|c|}
 \hline 
 Especie & Matriz de covarianza & $\sigma$\tabularnewline
@@ -370,6 +393,7 @@ Setosa & %
 \end{tabular} & 0.3064\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}
 
 \item Matriz obtenida:
 
@@ -395,6 +419,7 @@ Cuanto mas cercano em módulo a 1 es, mas se correlacionan.
 \item selección hacia adelante
 
 
+\begin{center}
 \begin{tabular}{|c|c|c|}
 \hline 
  & $R^{2}$ & $F$\tabularnewline
@@ -431,22 +456,28 @@ $x_{1}x_{4}x_{2}$ & \textcolor{blue}{0.9823 } & \textcolor{blue}{166.8317}\tabul
 $x_{1}x_{4}x_{3}$ & 0.9813 & 157.2658\tabularnewline
 \hline 
 \end{tabular}
+\par\end{center}
 
 \end{enumerate}
 \item Proporción de la varianza = $\frac{\lambda_{1}+...+\lambda_{k}}{\lambda_{1}+...+\lambda_{p}}$
 para cada una de las variables:
 
 
-0.8660
+1 variable: 0.8660
 
 
-0.9789 
+2 variables:\textcolor{blue}{{} 0.9789} 
 
 
-0.9996
+3 variables:\textcolor{blue}{{} }0.9996
 
 
-1.0000
+4 variables:\textcolor{blue}{{} }1
+
+
+Del análisis de los autovalores de la matriz de covarianza se puede
+ver que solamente con $2$ componentes, es posible representar mas
+del $90\%$ de la varianza.
 
 \end{enumerate}
 \begin{lyxcode}
@@ -458,7 +489,7 @@ para cada una de las variables:
 \item Codigos
 
 \begin{enumerate}
-\item .
+\item Código
 
 \begin{lyxcode}
 \%range~toma~los~valores~0:50;~51:100~y~101:150
@@ -471,14 +502,14 @@ uHat=mean(data);
 
 sHat=(n-1){*}std(range)/n;
 \end{lyxcode}
-\item .
+\item Código
 
 \begin{lyxcode}
 ecm=std(data).\textasciicircum{}2;
 
 ecm=ecm/n;
 \end{lyxcode}
-\item .
+\item Código
 
 \begin{lyxcode}
 mu=mean(data);
@@ -500,7 +531,7 @@ interval={[}mu-aux,mu+aux{]};
 \begin{lyxcode}
 birds={[}~
 
-...meditions~here...
+~~~...meditions~here...
 
 {]};
 
@@ -532,16 +563,6 @@ plot(x,~z,~'{*}r;Peso~Cerebro~Promedio~en~G;')
 
 print('-dpng',~'./TotalWeightVsBrainWeight.png')
 \end{lyxcode}
-
-{*} El valor del peso del cerebro de la medición 25 no se ve en la
-figura ya que se aleja demasiado del resto de los valores y el ajustar
-los ejes solo para mostrar ese valor produce que todas las demas mediciónes
-no puedan apreciarse correctamente.
-
-
-{*}{*} Se removieron los valores para los $4$ valores de $x$ mayores
-a $2000$ ya que ocultaban la visualización de todos los demás valores
-
 \item Código
 
 \begin{lyxcode}

@@ -92,6 +92,7 @@ Se calculó para cada especie, su medida y su desvio estandard:
 
 \begin_deeper
 \begin_layout LyX-Code
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="6">
 <features tabularvalignment="middle">
@@ -158,7 +159,7 @@ Ancho Pétalo
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -217,7 +218,7 @@ Virginica
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -276,7 +277,7 @@ Virginica
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -335,7 +336,7 @@ Versicolor
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -394,7 +395,7 @@ Versicolor
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -453,7 +454,7 @@ Setosa
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -525,6 +526,7 @@ Cálculo de los errores cuadráticos medios
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="5">
 <features tabularvalignment="middle">
@@ -739,6 +741,7 @@ Intervalos de confianza para con un nivel de confianza de
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="5">
 <features tabularvalignment="middle">
@@ -1134,6 +1137,7 @@ Resultaodos obtenidos:
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features tabularvalignment="middle">
@@ -1307,18 +1311,14 @@ Solución
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-\begin_inset space \hspace{}
-\length 1.5cm
-\end_inset
-
-
+\align center
 \begin_inset Graphics
 	filename TotalWeightVsBrainWeight.png
 	lyxscale 30
-	scale 20
+	scale 25
 
 \end_inset
 
@@ -1337,6 +1337,19 @@ Peso del cerebro y peso total para cada medición en brains.txt*
 \end_inset
 
 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+*El valor del peso del cerebro de la medición 25 no se ve en la figura ya
+ que se aleja demasiado del resto de los valores y el ajustar los ejes solo
+ para mostrar ese valor produce que todas las demas mediciónes no puedan
+ apreciarse correctamente.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1348,7 +1361,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
-\length 1cm
+\length 3cm
 \end_inset
 
 
@@ -1369,6 +1382,28 @@ Peso total en Kg Vs peso del cerebro en G**
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+**Se removieron los valores para los 
+\begin_inset Formula $4$
+\end_inset
+
+ valores de 
+\begin_inset Formula $x$
+\end_inset
+
+ mayores a 
+\begin_inset Formula $2000$
+\end_inset
+
+ ya que ocultaban la visualización de todos los demás valores
 \end_layout
 
 \end_inset
@@ -1398,7 +1433,7 @@ En el segundo gráfico, puede verse que debido a la dispersión de los datos,
 
 \end_deeper
 \begin_layout Enumerate
-En el gráfico a continuacion puede verse que graficando el 
+En el gráfico a continuación puede verse que graficando el 
 \begin_inset Formula $log$
 \end_inset
 
@@ -1412,18 +1447,14 @@ En el gráfico a continuacion puede verse que graficando el
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-\begin_inset space \hspace{}
-\length 2cm
-\end_inset
-
-
+\align center
 \begin_inset Graphics
 	filename logBrains.png
 	lyxscale 30
-	scale 60
+	scale 75
 
 \end_inset
 
@@ -1513,43 +1544,7 @@ Para obtener la recta que ajusta a los puntos
 
 \begin_deeper
 \begin_layout LyX-Code
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset space \hspace{}
-\length 2cm
-\end_inset
-
-
-\begin_inset Graphics
-	filename outLayerRemovidos.png
-	lyxscale 30
-	scale 60
-
-\end_inset
-
-
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Logaritmo de ambas mediciónes y la línea que mejor los aproxima
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout LyX-Code
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="3">
 <features tabularvalignment="middle">
@@ -1660,6 +1655,41 @@ En los gráficos del punto
  del Anexo.
 \end_layout
 
+\begin_deeper
+\begin_layout LyX-Code
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename outLayerRemovidos.png
+	lyxscale 30
+	scale 75
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Logaritmo de ambas mediciónes y la línea que mejor los aproxima
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Censo poblacional de Estados Unidos 1790 - 1990
@@ -1671,9 +1701,10 @@ Censo poblacional de Estados Unidos 1790 - 1990
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename population.png
 	lyxscale 70
@@ -1867,6 +1898,7 @@ Estimadores de maxima verosimilitud
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features tabularvalignment="middle">
@@ -2040,6 +2072,7 @@ Setosa
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="3">
 <features tabularvalignment="middle">
@@ -2859,6 +2892,7 @@ selección hacia adelante
 
 \begin_deeper
 \begin_layout Standard
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
@@ -3319,19 +3353,44 @@ Proporción de la varianza =
 
 \begin_deeper
 \begin_layout Standard
-0.8660
+1 variable: 0.8660
 \end_layout
 
 \begin_layout Standard
-0.9789 
+2 variables:
+\color blue
+ 0.9789
+\color inherit
+ 
 \end_layout
 
 \begin_layout Standard
+3 variables:
+\color blue
+ 
+\color inherit
 0.9996
 \end_layout
 
 \begin_layout Standard
-1.0000
+4 variables:
+\color blue
+ 
+\color inherit
+1
+\end_layout
+
+\begin_layout Standard
+Del análisis de los autovalores de la matriz de covarianza se puede ver
+ que solamente con 
+\begin_inset Formula $2$
+\end_inset
+
+ componentes, es posible representar mas del 
+\begin_inset Formula $90\%$
+\end_inset
+
+ de la varianza.
 \end_layout
 
 \end_deeper
@@ -3352,7 +3411,7 @@ Codigos
 
 \begin_deeper
 \begin_layout Enumerate
-.
+Código
 \end_layout
 
 \begin_deeper
@@ -3378,7 +3437,7 @@ sHat=(n-1)*std(range)/n;
 
 \end_deeper
 \begin_layout Enumerate
-.
+Código
 \end_layout
 
 \begin_deeper
@@ -3392,7 +3451,7 @@ ecm=ecm/n;
 
 \end_deeper
 \begin_layout Enumerate
-.
+Código
 \end_layout
 
 \begin_deeper
@@ -3436,7 +3495,7 @@ birds=[
 \end_layout
 
 \begin_layout LyX-Code
-...meditions here...
+   ...meditions here...
 \end_layout
 
 \begin_layout LyX-Code
@@ -3496,29 +3555,6 @@ plot(x, z, '*r;Peso Cerebro Promedio en G;')
 
 \begin_layout LyX-Code
 print('-dpng', './TotalWeightVsBrainWeight.png')
-\end_layout
-
-\begin_layout Standard
-* El valor del peso del cerebro de la medición 25 no se ve en la figura
- ya que se aleja demasiado del resto de los valores y el ajustar los ejes
- solo para mostrar ese valor produce que todas las demas mediciónes no puedan
- apreciarse correctamente.
-\end_layout
-
-\begin_layout Standard
-** Se removieron los valores para los 
-\begin_inset Formula $4$
-\end_inset
-
- valores de 
-\begin_inset Formula $x$
-\end_inset
-
- mayores a 
-\begin_inset Formula $2000$
-\end_inset
-
- ya que ocultaban la visualización de todos los demás valores
 \end_layout
 
 \end_deeper
