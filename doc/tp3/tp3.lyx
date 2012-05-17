@@ -82,7 +82,7 @@ Métodos de estadística paramétrica
 \end_layout
 
 \begin_layout Enumerate
-Soluciones
+Resultados
 \end_layout
 
 \begin_deeper
@@ -997,7 +997,12 @@ Setosa
 \begin_layout Enumerate
 Se tienen 80 componentes, de las cuales 12 son defectuosas.
  Por ser este experimiento una secuencia de ensayos Bernoulli, repetidos
- n veces, se lo puede considerar una distribución binomial.
+ 
+\begin_inset Formula $n$
+\end_inset
+
+ veces a probabilidad constante, se lo puede considerar como una distribución
+ binomial.
 \end_layout
 
 \begin_deeper
@@ -1016,7 +1021,7 @@ Un estimador
 \end_inset
 
  es un estimador insesgado para estimar a 
-\begin_inset Formula $x$
+\begin_inset Formula $p$
 \end_inset
 
  si 
@@ -1027,27 +1032,6 @@ Un estimador
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-Sea 
-\begin_inset Formula $S_{n}=x_{1}+x_{2}+...+x_{n}$
-\end_inset
-
-.
- En donde cada 
-\begin_inset Formula $x_{i}$
-\end_inset
-
- representa
-\begin_inset Formula $1$
-\end_inset
-
- si el componente no esta defectuoso o 
-\begin_inset Formula $0$
-\end_inset
-
- en caso contrario.
-\end_layout
-
 \begin_layout Standard
 \begin_inset Formula $E[\bar{x}]=E((\sum x_{i})/n)=\frac{1}{n}\sum E(x_{i})=\frac{1}{n}np=p$
 \end_inset
@@ -1123,13 +1107,35 @@ Por lo que el error cuádratico medio estaría dado por la fórmula:
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-Proporción de sistemas que funcionan correctamente = 
-\begin_inset Formula $\frac{\binom{80-12}{2}}{\binom{80}{2}}=\frac{2278}{3160}=0.72$
+Sean:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $x_{a}=$
+\end_inset
+
+ total de formas de tomar los componentes que andan de a pares (sin importar
+ orden).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $x_{t}=$
+\end_inset
+
+ toal de formas de tomar el total de componentes de a pares (sin imprtar
+ orden).
+\end_layout
+
+\begin_layout Standard
+Proporción de sistemas que funcionan correctamente 
+\begin_inset Formula $\frac{x_{a}}{x_{t}}=\frac{\binom{80-12}{2}}{\binom{80}{2}}=\frac{2278}{3160}=0.72$
 \end_inset
 
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Resultaodos obtenidos:
@@ -1302,11 +1308,6 @@ Solución
 
 \begin_deeper
 \begin_layout Enumerate
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1352,6 +1353,7 @@ status collapsed
 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset Float figure
 placement H
@@ -3406,7 +3408,7 @@ Anexo
 \end_layout
 
 \begin_layout Enumerate
-Codigos
+Lirios Fisher
 \end_layout
 
 \begin_deeper
@@ -3486,7 +3488,7 @@ interval=[mu-aux,mu+aux];
 \end_layout
 
 \begin_layout Enumerate
-Código
+Carpinteros escapularios
 \end_layout
 
 \begin_deeper
@@ -3512,7 +3514,7 @@ alpha=0.05};
 
 \end_deeper
 \begin_layout Enumerate
-.
+Masa croporal vs Masa cerebral
 \end_layout
 
 \begin_deeper
@@ -3574,7 +3576,7 @@ regstats(brains(:,1), brains(:,2),'línear')
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-.
+Censo
 \end_layout
 
 \begin_deeper
@@ -3620,7 +3622,7 @@ poli2=polyval(c2,cdate);
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-.
+Lirios Fisher
 \end_layout
 
 \begin_deeper
@@ -3654,7 +3656,7 @@ sigma=cm(1,1)+cm(2,2)+cm(3,3)+cm(4,4)*(n-1)/n
 
 \end_deeper
 \begin_layout Enumerate
-.
+Evolución de las calorías por gramo de cemento
 \end_layout
 
 \begin_deeper

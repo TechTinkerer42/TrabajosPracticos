@@ -52,7 +52,7 @@ inferencia a partir de datos experiemtales.}
 
 \section{Métodos de estadística paramétrica}
 \begin{enumerate}
-\item Soluciones
+\item Resultados
 
 \begin{enumerate}
 \item Se calculó para cada especie, su medida y su desvio estandard:
@@ -119,19 +119,16 @@ Setosa & 5.1062 3.5357  & 1.5114 0.2760  & 4.9058 3.3203 &  1.4126 0.2160\tabula
 
 \end{enumerate}
 \item Se tienen 80 componentes, de las cuales 12 son defectuosas. Por ser
-este experimiento una secuencia de ensayos Bernoulli, repetidos n
-veces, se lo puede considerar una distribución binomial.
+este experimiento una secuencia de ensayos Bernoulli, repetidos $n$
+veces a probabilidad constante, se lo puede considerar como una distribución
+binomial.
 
 \begin{enumerate}
 \item La proporción de componentes no defetuosos de la muestra = $\bar{x}_{nd}\frac{80-12}{80}=0.85$
 
 \begin{enumerate}
-\item Un estimador $\hat{x}$ es un estimador insesgado para estimar a $x$
+\item Un estimador $\hat{x}$ es un estimador insesgado para estimar a $p$
 si $E[\hat{x}]=p$.
-
-
-Sea $S_{n}=x_{1}+x_{2}+...+x_{n}$. En donde cada $x_{i}$ representa$1$
-si el componente no esta defectuoso o $0$ en caso contrario.
 
 
 $E[\bar{x}]=E((\sum x_{i})/n)=\frac{1}{n}\sum E(x_{i})=\frac{1}{n}np=p$. 
@@ -155,7 +152,19 @@ Por lo que el error cuádratico medio estaría dado por la fórmula:
 $E_{CM}=\sqrt{\frac{(1-0.85)\text{\texttwosuperior}*68+(0-0.85)\text{\texttwosuperior}*12}{80}}=\sqrt{\frac{1.53+8.67}{80}}\simeq0.35$
 
 \end{enumerate}
-\item Proporción de sistemas que funcionan correctamente = $\frac{\binom{80-12}{2}}{\binom{80}{2}}=\frac{2278}{3160}=0.72$
+\item Sean:
+
+
+$x_{a}=$ total de formas de tomar los componentes que andan de a
+pares (sin importar orden).
+
+
+$x_{t}=$ toal de formas de tomar el total de componentes de a pares
+(sin imprtar orden).
+
+
+Proporción de sistemas que funcionan correctamente $\frac{x_{a}}{x_{t}}=\frac{\binom{80-12}{2}}{\binom{80}{2}}=\frac{2278}{3160}=0.72$
+
 \end{enumerate}
 \item Resultaodos obtenidos:
 
@@ -188,9 +197,7 @@ estan en lo cierto, hay variación entre el color de las plumas.
 \item Solución
 
 \begin{enumerate}
-\item .
-
-
+\item 
 \begin{figure}[H]
 \centering{}\includegraphics[scale=0.25]{TotalWeightVsBrainWeight}\caption{Peso del cerebro y peso total para cada medición en brains.txt{*}}
 \end{figure}
@@ -486,7 +493,7 @@ del $90\%$ de la varianza.
 
 \section{Anexo}
 \begin{enumerate}
-\item Codigos
+\item Lirios Fisher
 
 \begin{enumerate}
 \item Código
@@ -526,7 +533,7 @@ interval={[}mu-aux,mu+aux{]};
 \end{lyxcode}
 \end{enumerate}
 \item -
-\item Código
+\item Carpinteros escapularios
 
 \begin{lyxcode}
 birds={[}~
@@ -539,7 +546,7 @@ alpha=0.05\};
 
 {[}h,p,ci,stats{]}=ttest(birds(:,2),birds(:,3),alpha);
 \end{lyxcode}
-\item .
+\item Masa croporal vs Masa cerebral
 
 \begin{enumerate}
 \item Código
@@ -571,7 +578,7 @@ load~brains.txt~
 regstats(brains(:,1),~brains(:,2),'línear')
 \end{lyxcode}
 \end{enumerate}
-\item .
+\item Censo
 
 \begin{enumerate}
 \item .
@@ -595,7 +602,7 @@ c2=polyfit(cdate,pop,2)
 poli2=polyval(c2,cdate);
 \end{lyxcode}
 \end{enumerate}
-\item .
+\item Lirios Fisher
 
 \begin{lyxcode}
 meanVector=mean(data)
@@ -611,7 +618,7 @@ cm=cov(data)
 
 sigma=cm(1,1)+cm(2,2)+cm(3,3)+cm(4,4){*}(n-1)/n
 \end{lyxcode}
-\item .
+\item Evolución de las calorías por gramo de cemento
 
 \begin{lyxcode}
 {[}r{]}~=~corrcoef(ingredients)\end{lyxcode}
