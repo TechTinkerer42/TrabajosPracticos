@@ -87,20 +87,373 @@ Soluciones
 
 \begin_deeper
 \begin_layout Enumerate
-medidas:
+Se calculó para cada especie, su medida y su desvio estandard:
 \end_layout
 
-\begin_layout Enumerate
+\begin_deeper
+\begin_layout LyX-Code
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="5">
+<lyxtabular version="3" rows="7" columns="6">
 <features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0pt">
 <row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Especie
+\end_layout
+
+\end_inset
+</cell>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estimador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Largo Sépalo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho Sépalo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Largo Pétalo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho Pétalo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Virginica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.5880
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.9740
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.5520
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.0260
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6232 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3160 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5409
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2692
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versicolor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.9360 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.7700 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.2600 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.3260
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5058 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3075 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4605 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1938
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Setosa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hat{\mu}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.0060 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.4280 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.4620 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2460 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -113,7 +466,10 @@ medidas:
 \begin_inset Text
 
 \begin_layout Plain Layout
-Largo Cépalo
+\begin_inset Formula $\hat{\sigma}$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -122,7 +478,85 @@ Largo Cépalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ancho Cépalo
+0.3454 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3715 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1702 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1033
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Cálculo de los errores cuadráticos medios
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Especie
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Largo Sépalo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho Sépalo
 \end_layout
 
 \end_inset
@@ -151,10 +585,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\hat{\mu}$
-\end_inset
-
-
+Virginica
 \end_layout
 
 \end_inset
@@ -163,7 +594,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0081 
 \end_layout
 
 \end_inset
@@ -172,7 +603,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0021 
 \end_layout
 
 \end_inset
@@ -181,7 +612,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0061 
 \end_layout
 
 \end_inset
@@ -190,7 +621,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0015
 \end_layout
 
 \end_inset
@@ -201,10 +632,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\hat{\sigma}$
-\end_inset
-
-
+Versicolor
 \end_layout
 
 \end_inset
@@ -213,7 +641,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0053
 \end_layout
 
 \end_inset
@@ -222,7 +650,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0020 
 \end_layout
 
 \end_inset
@@ -231,7 +659,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0044 
 \end_layout
 
 \end_inset
@@ -240,7 +668,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0008
 \end_layout
 
 \end_inset
@@ -251,10 +679,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $E_{cm}$
-\end_inset
-
-
+Setosa
 \end_layout
 
 \end_inset
@@ -263,7 +688,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0025
 \end_layout
 
 \end_inset
@@ -272,7 +697,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0029 
 \end_layout
 
 \end_inset
@@ -281,7 +706,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.0006
 \end_layout
 
 \end_inset
@@ -290,7 +715,7 @@ Ancho Pétalo
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+ 0.0002
 \end_layout
 
 \end_inset
@@ -303,18 +728,7 @@ Ancho Pétalo
 
 \end_layout
 
-\begin_layout Standard
-5.0060 3.4280 1.4620 0.2460 
-\end_layout
-
-\begin_layout Standard
-5.9360 2.7700 4.2600 1.3260 
-\end_layout
-
-\begin_layout Standard
-6.5880 2.9740 5.5520 2.0260
-\end_layout
-
+\end_deeper
 \begin_layout Enumerate
 Intervalos de confianza para con un nivel de confianza de 
 \begin_inset Formula $0.95$
@@ -326,7 +740,7 @@ Intervalos de confianza para con un nivel de confianza de
 \begin_deeper
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="5">
+<lyxtabular version="3" rows="5" columns="5">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -343,38 +757,179 @@ Intervalos de confianza para con un nivel de confianza de
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ancho
+Intervalo
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Largo
+
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ancho
+
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Largo
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Especie
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Largo Sépalo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho Sépalo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Largo Pétalo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho Pétalo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Virginica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.7687 3.0657
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.7088 2.1041
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.4073 2.8823 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.3952 1.9479
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versicolor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.0827 2.8592 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.3935 1.3822 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.7893 2.6808
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 4.1265 1.2698
 \end_layout
 
 \end_inset
@@ -385,10 +940,7 @@ Largo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $I$
-\end_inset
-
-
+Setosa
 \end_layout
 
 \end_inset
@@ -397,10 +949,7 @@ Largo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $2.8643$
-\end_inset
-
-
+5.1062 3.5357 
 \end_layout
 
 \end_inset
@@ -409,10 +958,7 @@ Largo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $1.9657$
-\end_inset
-
-
+1.5114 0.2760 
 \end_layout
 
 \end_inset
@@ -421,10 +967,7 @@ Largo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $3.0837$
-\end_inset
-
-
+4.9058 3.3203
 \end_layout
 
 \end_inset
@@ -433,10 +976,7 @@ Largo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $2.0863$
-\end_inset
-
-
+ 1.4126 0.2160
 \end_layout
 
 \end_inset
@@ -589,90 +1129,166 @@ Proporción de sistemas que funcionan correctamente =
 
 \end_deeper
 \begin_layout Enumerate
-código:
+Resultaodos obtenidos:
 \end_layout
 
 \begin_deeper
-\begin_layout LyX-Code
-birds=[ 
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Variables
 \end_layout
 
-\begin_layout LyX-Code
-...replace meditions here...
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor numérico
 \end_layout
 
-\begin_layout LyX-Code
-];
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+alpha
 \end_layout
 
-\begin_layout LyX-Code
-alpha=0.01 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.05
 \end_layout
 
-\begin_layout LyX-Code
-[h,p,ci,stats] = ttest(birds(:,2), birds(:,3), alpha)
-\begin_inset Newline newline
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+p
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0118
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ci
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[0.0314,0.2040]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+df
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1428
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Si alpha > p-value = 0.0117 
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-Entonces se rechaza 
-\begin_inset Formula $H_{0}$
-\end_inset
-
- (o sea que uD=0) 
-\end_layout
-
-\begin_layout Standard
-Si no
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-Entonces no se rechaza, es decir las plumas podrían ser iguales.
-\end_layout
-
-\begin_layout Standard
-Estan en lo cierto, para alpha 
-\begin_inset Formula $=0.05$
-\end_inset
-
- hay variación entre el color de las plumas
+Para el apha tomado, la hipótesis nula se rechaza y los científicos estan
+ en lo cierto, hay variación entre el color de las plumas.
 \end_layout
 
 \end_deeper
@@ -686,240 +1302,6 @@ Solución
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
-Código de matlab utilizado
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-load brains.txt;
-\end_layout
-
-\begin_layout LyX-Code
-x = 1:28;
-\end_layout
-
-\begin_layout LyX-Code
-y = brains(:,1);
-\end_layout
-
-\begin_layout LyX-Code
-z = brains(:,2);
-\end_layout
-
-\begin_layout LyX-Code
-clf;
-\end_layout
-
-\begin_layout LyX-Code
-hold on;
-\end_layout
-
-\begin_layout LyX-Code
-plot(x, y, '*b;Peso Promedio en Kg;')
-\end_layout
-
-\begin_layout LyX-Code
-plot(x, z, '*r;Peso Cerebro Promedio en G;')
-\end_layout
-
-\begin_layout LyX-Code
-print('-dpng', './TotalWeightVsBrainWeight.png')
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-(Ver figura 1 y 2 - Anexo)
-\end_layout
-
-\begin_layout Standard
-En una observación a simple vista, se puede ver que las mediciónes que se
- diferencian notablemente del resto son: 
-\begin_inset Formula $6,7,14,15,16$
-\end_inset
-
- y por supuesto, la 
-\begin_inset Formula $25$
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-No
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Código de matlab utilizado
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-load brains.txt 
-\end_layout
-
-\begin_layout LyX-Code
-regstats(brains(:,1), brains(:,2),'línear')
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-(Ver figura 3 - Anexo)
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-La recta que mejor ajusta con los ejes 
-\begin_inset Formula $x$
-\end_inset
-
- e 
-\begin_inset Formula $y$
-\end_inset
-
- con la función 
-\begin_inset Formula $log$
-\end_inset
-
- aplicados a ambos es: 
-\begin_inset Formula $y=a*x+b$
-\end_inset
-
-.
- Con 
-\begin_inset Formula $a=0.496$
-\end_inset
-
- y 
-\begin_inset Formula $b=2.55$
-\end_inset
-
-.
- Por lo tanto, para obtener la recta que ajusta a los puntos 
-\begin_inset Formula $x$
-\end_inset
-
- e 
-\begin_inset Formula $y$
-\end_inset
-
- sin aplicar las transformación, es aplicar la tranformación inversa al
- 
-\begin_inset Formula $log$
-\end_inset
-
-, es decir 
-\begin_inset Formula $pow(10,n)$
-\end_inset
-
-.
- Quedando así la curva que aproxima a los puntos como: 
-\begin_inset Formula $10^{y}=a*10^{x}+b$
-\end_inset
-
-.
- Despejando por 
-\begin_inset Formula $y$
-\end_inset
-
-, 
-\begin_inset Formula $y=log(a*10^{x}+b)$
-\end_inset
-
-.
- En la figura 4 del Anexo se puede ver cuan bien se aproximan los valores.
-\end_layout
-
-\begin_layout Enumerate
-En los gráficos del punto 
-\begin_inset Formula $b$
-\end_inset
-
-, se puede observar que las mediciones que estan muy fuera del común de
- son no solo las
-\begin_inset Formula $14,15$
-\end_inset
-
- y 
-\begin_inset Formula $25$
-\end_inset
-
- sinó que también la 
-\begin_inset Formula $6$
-\end_inset
-
- y la 
-\begin_inset Formula $16$
-\end_inset
-
-.
- Por lo que fueron removidos de la tabla de valores.
- El gráfico obtenido luego de ajustados los valores se muestra en la fiegura
- 
-\begin_inset Formula $5$
-\end_inset
-
- del Anexo.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-asd
-\end_layout
-
-\begin_layout Enumerate
-Estimadores de maxima verosimilitud
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-mu hat:
-\end_layout
-
-\begin_layout Standard
-5.8433 3.0573 3.7580 1.1993 
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-sigma hat: 
-\end_layout
-
-\begin_layout Standard
-0.4214 0.0756 2.9140 0.5361
-\end_layout
-
-\end_deeper
-\begin_layout LyX-Code
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Anexo
-\end_layout
-
-\begin_layout Standard
-Gráficos de cada ejercicio:
-\end_layout
-
-\begin_layout Standard
-1)
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float figure
 placement H
@@ -955,13 +1337,6 @@ Peso del cerebro y peso total para cada medición en brains.txt*
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-* El valor del peso del cerebro de la medición 25 no se ve en la figura
- ya que se aleja demasiado del resto de los valores y el ajustar los ejes
- solo para mostrar ese valor produce que todas las demas mediciónes no puedan
- apreciarse correctamente.
 \end_layout
 
 \begin_layout Standard
@@ -1001,26 +1376,37 @@ Peso total en Kg Vs peso del cerebro en G**
 
 \end_layout
 
-\begin_layout Standard
-** Se removieron los valores para los 
-\begin_inset Formula $4$
+\begin_layout Enumerate
+En una observación a simple vista, se puede ver que las mediciónes que se
+ diferencian notablemente del resto son: 
+\begin_inset Formula $6,7,14,15,16$
 \end_inset
 
- valores de 
-\begin_inset Formula $x$
+ y la 
+\begin_inset Formula $25$
 \end_inset
 
- mayores a 
-\begin_inset Formula $2000$
-\end_inset
-
- ya que ocultaban la visualización de todos los demás valores
+.
 \end_layout
 
-\begin_layout Standard
-4)
+\begin_layout Enumerate
+En el segundo gráfico, puede verse que debido a la dispersión de los datos,
+ si aproximamos los valores por una recta, a simple vista se ve que se va
+ a estar cometiendo un error muy grande para la mayoría de los datos.
+ Por lo que no existe una relación lineal.
 \end_layout
 
+\end_deeper
+\begin_layout Enumerate
+En el gráfico a continuacion puede verse que graficando el 
+\begin_inset Formula $log$
+\end_inset
+
+ de ambas variables, los datos tienden a formar una línea mas definida.
+ 
+\end_layout
+
+\begin_deeper
 \begin_layout LyX-Code
 \begin_inset Float figure
 placement H
@@ -1058,12 +1444,80 @@ Logaritmo de ambas mediciónes y la línea que mejor los aproxima
 
 \end_layout
 
+\end_deeper
+\begin_layout Enumerate
+La recta que mejor ajusta con los ejes 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+ con la función 
+\begin_inset Formula $log$
+\end_inset
+
+ aplicados a ambos es: 
+\begin_inset Formula $y=a*x+b$
+\end_inset
+
+.
+ Con 
+\begin_inset Formula $a=0.496$
+\end_inset
+
+ y 
+\begin_inset Formula $b=2.55$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Para obtener la recta que ajusta a los puntos 
+\begin_inset Formula $x$
+\end_inset
+
+ e 
+\begin_inset Formula $y$
+\end_inset
+
+ sin aplicar las transformación, se debe aplicar la tranformación inversa
+ al 
+\begin_inset Formula $log$
+\end_inset
+
+, es decir 
+\begin_inset Formula $pow(10,n)$
+\end_inset
+
+.
+ Quedando así la curva que aproxima a los puntos como: 
+\begin_inset Formula $10^{y}=a*10^{x}+b$
+\end_inset
+
+.
+ Despejando por 
+\begin_inset Formula $y$
+\end_inset
+
+, se obtiene 
+\begin_inset Formula $y=log(a*10^{x}+b)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
 \begin_layout LyX-Code
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hspace{}
@@ -1096,8 +1550,2082 @@ Logaritmo de ambas mediciónes y la línea que mejor los aproxima
 \end_layout
 
 \begin_layout LyX-Code
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coeficientes de Regresion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sum res^{2}$
+\end_inset
+
 
 \end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E_{cm}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.496 - 2.55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.34
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+En los gráficos del punto 
+\begin_inset Formula $b$
+\end_inset
+
+, se puede observar que las mediciones que estan muy fuera del común son
+ no solo las
+\begin_inset Formula $14,15$
+\end_inset
+
+ y 
+\begin_inset Formula $25$
+\end_inset
+
+ sinó que también la 
+\begin_inset Formula $6$
+\end_inset
+
+ y la 
+\begin_inset Formula $16$
+\end_inset
+
+.
+ Por lo que fueron removidos de la tabla de valores.
+ El gráfico obtenido luego de ajustados los valores se muestra en la fiegura
+ 
+\begin_inset Formula $5$
+\end_inset
+
+ del Anexo.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Censo poblacional de Estados Unidos 1790 - 1990
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename population.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cantidad de habitantes medidas por el cendo por año
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+De la figura puede verse que exite un patrón entre las mediciones, pero
+ no lineal.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $P_{2}(x)=p1*z^{2}+p2*z+p3$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $z=\frac{x-\mu}{\sigma}=\frac{x-1890}{62.05}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p1=2.5049e7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p2=7.5414e7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p3=6.1927e7$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $P_{3}(x)=p1*z^{3}+p2*z^{2}+p3*z+p4$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $p1=7.7279e5$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p2=2.5049e7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p3=7.4093e7$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p4=6.1927e7$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename populationBestFit.png
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Cantidad de habitantes por cada año
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A partir de los residuos generados por cada polinomio, puede verse que el
+ polinomio de grado 
+\begin_inset Formula $3$
+\end_inset
+
+ es ligeramente menor, por lo que es el que mejor representaría a esta muestra.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+De acuerdo a cada polinomio, 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $P_{2}(2000)=2.74e8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{3}(2000)=2.76e8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sabiendo que el valor real para ese año fue 
+\begin_inset Formula $281421906$
+\end_inset
+
+ (
+\begin_inset Formula $2.8e8$
+\end_inset
+
+).
+ Por haberle acertado con menor grado de error, el polinomio de grado 3
+ es el que mejor aproxima.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Estimadores de maxima verosimilitud
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Especie
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vector de medias [largo S., ancho S., largo P., ancho P.]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Virginica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[6.5880, 2.9740, 5.5520, 2.0260]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.2850
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.4327
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versicolor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[5.9360, 2.7700, 4.2600, 1.3260]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5730
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5730
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Setosa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+[5.0060, 3.4280, 1.4620, 0.2460]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.5355
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.3235
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Especie
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Matriz de covarianza
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Virgínica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4043
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0938 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3033 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0491
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0938
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1040
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0714 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0476 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3033 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0714 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3046
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.0488
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0491 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0476 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0488 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0754
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8695
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versicolor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2664 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0852 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1829
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.0558
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0852
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0985 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0827
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.0412
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1829 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0827 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2208
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.0731
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0558 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0412 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0731 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0391
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6150
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Setosa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1242
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0992 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0164 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0103
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0992 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1437 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0117
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 0.0093
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0164 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0117 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0302 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0061
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0103
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0093 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0061 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0111
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3064
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Matriz obtenida:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2286
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.8241 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.2454
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2286
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.1392
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ -0.9730
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.8241
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.1392
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0295
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.2454 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-0.9730
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0295 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Cada 
+\begin_inset Formula $x_{ij}$
+\end_inset
+
+ representa la correlación de la cantidad de calor por ingrediente 
+\begin_inset Formula $i$
+\end_inset
+
+ por gramo de cemento con relacion al elemento 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ Cuanto mas cercano em módulo a 1 es, mas se correlacionan.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+selección hacia adelante
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5339 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12.6025
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6663 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21.9606
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2859 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.4034
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+0.6745 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+22.7985
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{4}x_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+0.9725
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+ 176.6270
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{4}x_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.6801 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.6280
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{4}x_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9353 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+72.2674
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $R^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{1}x_{4}x_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+0.9823 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+166.8317
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x_{1}x_{4}x_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9813
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+157.2658
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Proporción de la varianza = 
+\begin_inset Formula $\frac{\lambda_{1}+...+\lambda_{k}}{\lambda_{1}+...+\lambda_{p}}$
+\end_inset
+
+ para cada una de las variables:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+0.8660
+\end_layout
+
+\begin_layout Standard
+0.9789 
+\end_layout
+
+\begin_layout Standard
+0.9996
+\end_layout
+
+\begin_layout Standard
+1.0000
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Anexo
+\end_layout
+
+\begin_layout Enumerate
+Codigos
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+%range toma los valores 0:50; 51:100 y 101:150
+\end_layout
+
+\begin_layout LyX-Code
+data=meas(range,:);
+\end_layout
+
+\begin_layout LyX-Code
+n=size(data,1);
+\end_layout
+
+\begin_layout LyX-Code
+uHat=mean(data);
+\end_layout
+
+\begin_layout LyX-Code
+sHat=(n-1)*std(range)/n;
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+ecm=std(data).^2;
+\end_layout
+
+\begin_layout LyX-Code
+ecm=ecm/n;
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+mu=mean(data);
+\end_layout
+
+\begin_layout LyX-Code
+sigma=std(data);
+\end_layout
+
+\begin_layout LyX-Code
+p=0.05/2;
+\end_layout
+
+\begin_layout LyX-Code
+zAlpha=tinv(p,n-1) % T student
+\end_layout
+
+\begin_layout LyX-Code
+aux=zAlpha.*sigma/sqrt(n);
+\end_layout
+
+\begin_layout LyX-Code
+interval=[mu-aux,mu+aux];
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+-
+\end_layout
+
+\begin_layout Enumerate
+Código
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+birds=[ 
+\end_layout
+
+\begin_layout LyX-Code
+...meditions here...
+\end_layout
+
+\begin_layout LyX-Code
+];
+\end_layout
+
+\begin_layout LyX-Code
+alpha=0.05};
+\end_layout
+
+\begin_layout LyX-Code
+[h,p,ci,stats]=ttest(birds(:,2),birds(:,3),alpha);
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Código
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+load brains.txt;
+\end_layout
+
+\begin_layout LyX-Code
+x = 1:28;
+\end_layout
+
+\begin_layout LyX-Code
+y = brains(:,1);
+\end_layout
+
+\begin_layout LyX-Code
+z = brains(:,2);
+\end_layout
+
+\begin_layout LyX-Code
+clf;
+\end_layout
+
+\begin_layout LyX-Code
+hold on;
+\end_layout
+
+\begin_layout LyX-Code
+plot(x, y, '*b;Peso Promedio en Kg;')
+\end_layout
+
+\begin_layout LyX-Code
+plot(x, z, '*r;Peso Cerebro Promedio en G;')
+\end_layout
+
+\begin_layout LyX-Code
+print('-dpng', './TotalWeightVsBrainWeight.png')
+\end_layout
+
+\begin_layout Standard
+* El valor del peso del cerebro de la medición 25 no se ve en la figura
+ ya que se aleja demasiado del resto de los valores y el ajustar los ejes
+ solo para mostrar ese valor produce que todas las demas mediciónes no puedan
+ apreciarse correctamente.
+\end_layout
+
+\begin_layout Standard
+** Se removieron los valores para los 
+\begin_inset Formula $4$
+\end_inset
+
+ valores de 
+\begin_inset Formula $x$
+\end_inset
+
+ mayores a 
+\begin_inset Formula $2000$
+\end_inset
+
+ ya que ocultaban la visualización de todos los demás valores
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Código
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+load brains.txt 
+\end_layout
+
+\begin_layout LyX-Code
+regstats(brains(:,1), brains(:,2),'línear')
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+load population.txt; 
+\end_layout
+
+\begin_layout LyX-Code
+x = population(:, 1); 
+\end_layout
+
+\begin_layout LyX-Code
+y = population(:, 2); 
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y, '*')
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+load population.txt;
+\end_layout
+
+\begin_layout LyX-Code
+c2=polyfit(cdate,pop,2)
+\end_layout
+
+\begin_layout LyX-Code
+poli2=polyval(c2,cdate);
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+meanVector=mean(data)
+\end_layout
+
+\begin_layout LyX-Code
+n=size(meanVector,2);
+\end_layout
+
+\begin_layout LyX-Code
+mu=mean(meanVector)
+\end_layout
+
+\begin_layout LyX-Code
+sigma= sum((meanVector-ones(1,n)*mu).^2)/n
+\begin_inset Newline newline
+\end_inset
+
+% segunda parte
+\end_layout
+
+\begin_layout LyX-Code
+cm=cov(data)
+\end_layout
+
+\begin_layout LyX-Code
+sigma=cm(1,1)+cm(2,2)+cm(3,3)+cm(4,4)*(n-1)/n
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+[r] = corrcoef(ingredients)
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
