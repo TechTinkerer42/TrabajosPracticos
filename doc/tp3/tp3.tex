@@ -9,8 +9,6 @@
 \geometry{verbose,tmargin=2cm,bmargin=3cm,lmargin=2cm,rmargin=2cm}
 \usepackage{color}
 \usepackage{float}
-\usepackage{textcomp}
-\usepackage{amstext}
 \usepackage{graphicx}
 
 \makeatletter
@@ -124,32 +122,24 @@ veces a probabilidad constante, se lo puede considerar como una distribución
 binomial.
 
 \begin{enumerate}
-\item La proporción de componentes no defetuosos de la muestra = $\bar{x}_{nd}\frac{80-12}{80}=0.85$
+\item La proporción de componentes no defetuosos de la muestra $=\bar{x}_{nd}=\frac{80-12}{80}=0.85$
 
 \begin{enumerate}
 \item Un estimador $\hat{x}$ es un estimador insesgado para estimar a $p$
 si $E[\hat{x}]=p$.
 
 
-$E[\bar{x}]=E((\sum x_{i})/n)=\frac{1}{n}\sum E(x_{i})=\frac{1}{n}np=p$. 
+$E[\bar{x}]=E((\sum x_{i})/n)=\frac{1}{n}E(\sum x_{i})=\frac{1}{n}np=p$. 
 
 
 Por lo tanto este es un estimador $insesgado$.
 
-\item Muestra: $68$ mediciónes con $\{x_{i},y_{i}\}=1$ y $12$ mediciónes
-con $\{x_{i},y_{i}\}=0$. 
+\item Por ser $X$ una muestra aleatoria de variables independiente, y $\hat{x}$
+un estimador insesgado de $p$, se puede calcular al error cuadràtico
+medio como
 
 
-$e_{0}=(0-0.85)$ (para las $12$ muestras defectuosas)
-
-
-$e_{1}=(1-0.85)$ (para las $68$ muestras no defectuosas)
-
-
-Por lo que el error cuádratico medio estaría dado por la fórmula:
-
-
-$E_{CM}=\sqrt{\frac{(1-0.85)\text{\texttwosuperior}*68+(0-0.85)\text{\texttwosuperior}*12}{80}}=\sqrt{\frac{1.53+8.67}{80}}\simeq0.35$
+$r[\hat{\mu},\mu]=V(\hat{\mu})+b_{\mu}(\hat{\mu})=V(\hat{\mu})=\frac{V(x_{i})}{n}=\frac{\sigma^{2}}{n}=\frac{(npq)^{2}}{n}=80*(0.85*(1-0.85))^{2}=1.30$
 
 \end{enumerate}
 \item Sean:
@@ -361,42 +351,27 @@ Especie & Matriz de covarianza & $\sigma$\tabularnewline
 \hline 
 \hline 
 Virgínica & %
-\begin{tabular}{|c|c|c|c|}
-\hline 
+\begin{tabular}{cccc}
 0.4043 & 0.0938  & 0.3033  & 0.0491\tabularnewline
-\hline 
 0.0938 & 0.1040 & 0.0714  & 0.0476 \tabularnewline
-\hline 
 0.3033  & 0.0714  & 0.3046 &  0.0488\tabularnewline
-\hline 
 0.0491  & 0.0476  & 0.0488  & 0.0754\tabularnewline
-\hline 
 \end{tabular} & 0.8695\tabularnewline
 \hline 
 Versicolor & %
-\begin{tabular}{|c|c|c|c|}
-\hline 
+\begin{tabular}{cccc}
 0.2664  & 0.0852  & 0.1829 &  0.0558\tabularnewline
-\hline 
 0.0852 & 0.0985  & 0.0827 &  0.0412\tabularnewline
-\hline 
 0.1829  & 0.0827  & 0.2208 &  0.0731\tabularnewline
-\hline 
 0.0558  & 0.0412  & 0.0731  & 0.0391\tabularnewline
-\hline 
 \end{tabular} & 0.6150\tabularnewline
 \hline 
 Setosa & %
-\begin{tabular}{|c|c|c|c|}
-\hline 
+\begin{tabular}{cccc}
 0.1242 & 0.0992  & 0.0164  & 0.0103\tabularnewline
-\hline 
 0.0992  & 0.1437  & 0.0117 &  0.0093\tabularnewline
-\hline 
 0.0164  & 0.0117  & 0.0302  & 0.0061\tabularnewline
-\hline 
 0.0103 & 0.0093  & 0.0061  & 0.0111\tabularnewline
-\hline 
 \end{tabular} & 0.3064\tabularnewline
 \hline 
 \end{tabular}

@@ -1007,8 +1007,8 @@ Se tienen 80 componentes, de las cuales 12 son defectuosas.
 
 \begin_deeper
 \begin_layout Enumerate
-La proporción de componentes no defetuosos de la muestra = 
-\begin_inset Formula $\bar{x}_{nd}\frac{80-12}{80}=0.85$
+La proporción de componentes no defetuosos de la muestra 
+\begin_inset Formula $=\bar{x}_{nd}=\frac{80-12}{80}=0.85$
 \end_inset
 
 
@@ -1033,7 +1033,7 @@ Un estimador
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset Formula $E[\bar{x}]=E((\sum x_{i})/n)=\frac{1}{n}\sum E(x_{i})=\frac{1}{n}np=p$
+\begin_inset Formula $E[\bar{x}]=E((\sum x_{i})/n)=\frac{1}{n}E(\sum x_{i})=\frac{1}{n}np=p$
 \end_inset
 
 .
@@ -1050,55 +1050,24 @@ Por lo tanto este es un estimador
 
 \end_deeper
 \begin_layout Enumerate
-Muestra: 
-\begin_inset Formula $68$
+Por ser 
+\begin_inset Formula $X$
 \end_inset
 
- mediciónes con 
-\begin_inset Formula $\{x_{i},y_{i}\}=1$
+ una muestra aleatoria de variables independiente, y 
+\begin_inset Formula $\hat{x}$
 \end_inset
 
- y 
-\begin_inset Formula $12$
+ un estimador insesgado de 
+\begin_inset Formula $p$
 \end_inset
 
- mediciónes con 
-\begin_inset Formula $\{x_{i},y_{i}\}=0$
-\end_inset
-
-.
- 
+, se puede calcular al error cuadràtico medio como
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset Formula $e_{0}=(0-0.85)$
-\end_inset
-
- (para las 
-\begin_inset Formula $12$
-\end_inset
-
- muestras defectuosas)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $e_{1}=(1-0.85)$
-\end_inset
-
- (para las 
-\begin_inset Formula $68$
-\end_inset
-
- muestras no defectuosas)
-\end_layout
-
-\begin_layout Standard
-Por lo que el error cuádratico medio estaría dado por la fórmula:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $E_{CM}=\sqrt{\frac{(1-0.85)\text{²}*68+(0-0.85)\text{²}*12}{80}}=\sqrt{\frac{1.53+8.67}{80}}\simeq0.35$
+\begin_inset Formula $r[\hat{\mu},\mu]=V(\hat{\mu})+b_{\mu}(\hat{\mu})=V(\hat{\mu})=\frac{V(x_{i})}{n}=\frac{\sigma^{2}}{n}=\frac{(npq)^{2}}{n}=80*(0.85*(1-0.85))^{2}=1.30$
 \end_inset
 
 
