@@ -10,6 +10,7 @@
 \usepackage{array}
 \usepackage{float}
 \usepackage{multirow}
+\usepackage{amssymb}
 \usepackage{graphicx}
 
 \makeatletter
@@ -85,12 +86,18 @@ Matriz de confusión
 \end{tabular}
 \par\end{center}
 
-\item Calsificación 
+
+\[
+error=\frac{8+14}{150}\backsimeq0.15
+\]
+
+
+\item Calsificación segun algoritmo de clusters jerárquicos aglomerativos
 
 
 \begin{center}
 \begin{figure}[H]
-\centering{}\includegraphics[scale=0.5]{dendograma}\caption{Agrupamiento de los lirios de Fisher}
+\centering{}\includegraphics[scale=0.5]{liriosFisher}\caption{Agrupamiento de los lirios de Fisher}
 \end{figure}
 
 \par\end{center}
@@ -115,7 +122,123 @@ Matriz de confusión
 \end{tabular}
 \par\end{center}
 
+
+\[
+error=\frac{1+15}{150}\backsimeq0.11
+\]
+
+
+\item Luego de comprados los resultados obtenidos por cada algoritmo en
+los puntos $(a)$ y $(b)$ se pudo concluir que para este problema,
+el algoritmo que mejor clasifica a los los lirios recogidos es el
+de clasificación jerarquica ya que obtuvo un error menor al momento
+de realizar las clasificaciones.
+
+
+Matriz obtenida en el ejercicio $5$ del tp $2$:
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & \multicolumn{4}{c|}{Clase Predicha}\tabularnewline
+\hline 
+\multirow{4}{*}{Clase Real} &  & Setosa & Versicolor & Virginica\tabularnewline
+\cline{2-5} 
+ & Setosa & $50$ & $0$ & $0$\tabularnewline
+\cline{2-5} 
+ & Versicolor & $0$ & $47$ & $3$\tabularnewline
+\cline{2-5} 
+ & Virginica & $0$ & $3$ & $47$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+
+\[
+error=\frac{3+3}{150}\backsimeq0.04
+\]
+
+
+
+Como se pudo obervar, este algoritmo clasificó aun mejor que los anteriores
+a los lirios, en especial para los de la clase $Virginica$, que es
+donde mayor cantidad de errores tuvieron los dos anteriores.
+
 \end{enumerate}
+\item (TO DO)
+\item Congresistas
+
+\begin{enumerate}
+\item Luego de realizadas pruebas de clasificación variando el tipo de distancia
+entre $euclidean$ y $cityblock$. Y el tipo de metodo de creación
+del árbol jerárquico entre $single$, $complete$ y $average$. Se
+pudo observar que todos pudieron calsificar correctamente a todos
+los congrsistas de acuerdo a si es Demócrata o Republicando (excepto
+por uno que siempre es clasificado mal) a excepción del método $single$,
+el cual terminó por clasificar a todos como Democratas excepto por
+el número $2$, que fue clasificado correctamente con Republicano.
+\end{enumerate}
+
+\begin{center}
+\begin{figure}[H]
+\centering{}\includegraphics[scale=0.4]{Congresistas_euc_avg}\includegraphics[scale=0.4]{Congresistas_euc_comp}\caption{Árbol de jerarqua creados utilizando al distancia $euclidea$ con
+el método $average$(izquierda) y el método $complete$(derecha)}
+\end{figure}
+
+\par\end{center}
+
+
+\begin{center}
+Para los métodos aplicados en los gráficos anteriores, se puede observar
+que si bien se obtuvieron distintas categorías para varios conjuntos
+de congresistas, tomando clusters de $2$ (por los grupos democrata
+o republicano) ambos algoritmos clasificaron correctamente a todos
+los congresistas a exepción del numero $12$ que en realidad pertenece
+al partido republicano.
+\par\end{center}
+
+
+A continuación se muestra la matriz de confusión para ambos árboles
+jerarquicos (notar que ambos presentan la misma matriz):\\
+
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & \multicolumn{3}{c|}{Clase Predicha}\tabularnewline
+\hline 
+\multirow{3}{*}{Clase Real} &  & Demócrata & Republicano\tabularnewline
+\cline{2-4} 
+ & Demócrata & $8$ & $1$\tabularnewline
+\cline{2-4} 
+ & Republicano & $0$ & $6$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+
+\[
+error=\frac{1}{15}\backsimeq0.07
+\]
+
+
+
+\begin{center}
+\begin{figure}[H]
+\centering{}\includegraphics[scale=0.4]{Congresistas_euc_sin}\caption{Árbol de jerarqua creado utilizando al distancia $euclidea$ con el
+método $single$}
+\end{figure}
+
+\par\end{center}
+
+
+Como se puede ver en la figura 4, no se obtuvieron buenos resultados
+al tratar de utilizar el metodo $single$ (minimas distancias) para
+agrupar los datos ya que fueron clasificados todos dentro de la misma
+categoria, a excepcion del numero 2.
+
 \end{enumerate}
 \newpage{}
 
@@ -172,23 +295,31 @@ cMat~=~confusionmat(types,cidx)
 
 //~b)
 
-eucD~=~pdist(meas,~'euclidean');
+dist~=~pdist(meas,~'euclidean');
 
-clustTreeEuc~=~linkage(eucD,~'average');
+clustTree~=~linkage(dist,~'average');
 
-{[}h,~nodes{]}~=~dendrogram(clustTreeEuc,~0);
+{[}h,~nodes{]}~=~dendrogram(clustTree);
 
 set(gca,~'TickDir',~'out',~'TickLength',~{[}.002~0{]},~'XTickLabel',~{[}{]});
 
 
 
-dist~=~pdist(~data~);~
 
-linkage\_matrix~=~linkage(~dist,~\textquoteleft{}ward'~);~
 
-cluster\_labels~=~cluster(~linkage\_matrix,~'maxclust',~3~);~
+cluster\_labels~=~cluster(clustTree,~'maxclust',~3~);~
 
 confusion\_matrix~=~crosstab(~cluster\_labels,~class~)~
+\end{lyxcode}
+\item (TO DO)
+\item Congresistas
+
+\begin{lyxcode}
+Y~=~pdist(X,~'cityblock');
+
+Z~=~linkage(Y,~'average');
+
+H~=~dendrogram(Z);
 \end{lyxcode}
 \end{enumerate}
 \begin{lyxcode}

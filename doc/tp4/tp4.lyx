@@ -149,7 +149,7 @@ Matriz de confusión
 <column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -207,7 +207,7 @@ Clase Real
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -216,7 +216,7 @@ Clase Real
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -225,7 +225,7 @@ Setosa
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -234,7 +234,7 @@ Versicolor
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -419,9 +419,20 @@ Virginica
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\[
+error=\frac{8+14}{150}\backsimeq0.15
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
-Calsificación 
+Calsificación segun algoritmo de clusters jerárquicos aglomerativos
 \end_layout
 
 \begin_deeper
@@ -436,7 +447,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename dendograma.png
+	filename liriosFisher.png
 	scale 50
 
 \end_inset
@@ -471,7 +482,7 @@ Matriz de confusión
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
-<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -529,7 +540,7 @@ Clase Real
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -538,7 +549,7 @@ Clase Real
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -547,7 +558,7 @@ Setosa
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -556,7 +567,7 @@ Versicolor
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -741,7 +752,716 @@ Virginica
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Formula 
+\[
+error=\frac{1+15}{150}\backsimeq0.11
+\]
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
+\begin_layout Enumerate
+Luego de comprados los resultados obtenidos por cada algoritmo en los puntos
+ 
+\begin_inset Formula $(a)$
+\end_inset
+
+ y 
+\begin_inset Formula $(b)$
+\end_inset
+
+ se pudo concluir que para este problema, el algoritmo que mejor clasifica
+ a los los lirios recogidos es el de clasificación jerarquica ya que obtuvo
+ un error menor al momento de realizar las clasificaciones.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Matriz obtenida en el ejercicio 
+\begin_inset Formula $5$
+\end_inset
+
+ del tp 
+\begin_inset Formula $2$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clase Predicha
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clase Real
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Setosa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versicolor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Virginica
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Setosa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $50$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versicolor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $47$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Virginica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $47$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+error=\frac{3+3}{150}\backsimeq0.04
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se pudo obervar, este algoritmo clasificó aun mejor que los anteriores
+ a los lirios, en especial para los de la clase 
+\begin_inset Formula $Virginica$
+\end_inset
+
+, que es donde mayor cantidad de errores tuvieron los dos anteriores.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+(TO DO)
+\end_layout
+
+\begin_layout Enumerate
+Congresistas
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Luego de realizadas pruebas de clasificación variando el tipo de distancia
+ entre 
+\begin_inset Formula $euclidean$
+\end_inset
+
+ y 
+\begin_inset Formula $cityblock$
+\end_inset
+
+.
+ Y el tipo de metodo de creación del árbol jerárquico entre 
+\begin_inset Formula $single$
+\end_inset
+
+, 
+\begin_inset Formula $complete$
+\end_inset
+
+ y 
+\begin_inset Formula $average$
+\end_inset
+
+.
+ Se pudo observar que todos pudieron calsificar correctamente a todos los
+ congrsistas de acuerdo a si es Demócrata o Republicando (excepto por uno
+ que siempre es clasificado mal) a excepción del método 
+\begin_inset Formula $single$
+\end_inset
+
+, el cual terminó por clasificar a todos como Democratas excepto por el
+ número 
+\begin_inset Formula $2$
+\end_inset
+
+, que fue clasificado correctamente con Republicano.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Congresistas_euc_avg.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Congresistas_euc_comp.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Árbol de jerarqua creados utilizando al distancia 
+\begin_inset Formula $euclidea$
+\end_inset
+
+ con el método 
+\begin_inset Formula $average$
+\end_inset
+
+(izquierda) y el método 
+\begin_inset Formula $complete$
+\end_inset
+
+(derecha)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Para los métodos aplicados en los gráficos anteriores, se puede observar
+ que si bien se obtuvieron distintas categorías para varios conjuntos de
+ congresistas, tomando clusters de 
+\begin_inset Formula $2$
+\end_inset
+
+ (por los grupos democrata o republicano) ambos algoritmos clasificaron
+ correctamente a todos los congresistas a exepción del numero 
+\begin_inset Formula $12$
+\end_inset
+
+ que en realidad pertenece al partido republicano.
+\end_layout
+
+\begin_layout Standard
+A continuación se muestra la matriz de confusión para ambos árboles jerarquicos
+ (notar que ambos presentan la misma matriz):
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clase Predicha
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clase Real
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Demócrata
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Republicano
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Demócrata
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Republicano
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+error=\frac{1}{15}\backsimeq0.07
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Congresistas_euc_sin.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Árbol de jerarqua creado utilizando al distancia 
+\begin_inset Formula $euclidea$
+\end_inset
+
+ con el método 
+\begin_inset Formula $single$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como se puede ver en la figura 4, no se obtuvieron buenos resultados al
+ tratar de utilizar el metodo 
+\begin_inset Formula $single$
+\end_inset
+
+ (minimas distancias) para agrupar los datos ya que fueron clasificados
+ todos dentro de la misma categoria, a excepcion del numero 2.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Newpage newpage
@@ -858,15 +1578,15 @@ cMat = confusionmat(types,cidx)
 \end_layout
 
 \begin_layout LyX-Code
-eucD = pdist(meas, 'euclidean');
+dist = pdist(meas, 'euclidean');
 \end_layout
 
 \begin_layout LyX-Code
-clustTreeEuc = linkage(eucD, 'average');
+clustTree = linkage(dist, 'average');
 \end_layout
 
 \begin_layout LyX-Code
-[h, nodes] = dendrogram(clustTreeEuc, 0);
+[h, nodes] = dendrogram(clustTree);
 \end_layout
 
 \begin_layout LyX-Code
@@ -878,19 +1598,37 @@ set(gca, 'TickDir', 'out', 'TickLength', [.002 0], 'XTickLabel', []);
 \end_layout
 
 \begin_layout LyX-Code
-dist = pdist( data ); 
+
 \end_layout
 
 \begin_layout LyX-Code
-linkage_matrix = linkage( dist, ‘ward' ); 
-\end_layout
-
-\begin_layout LyX-Code
-cluster_labels = cluster( linkage_matrix, 'maxclust', 3 ); 
+cluster_labels = cluster(clustTree, 'maxclust', 3 ); 
 \end_layout
 
 \begin_layout LyX-Code
 confusion_matrix = crosstab( cluster_labels, class ) 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+(TO DO)
+\end_layout
+
+\begin_layout Enumerate
+Congresistas
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+Y = pdist(X, 'cityblock');
+\end_layout
+
+\begin_layout LyX-Code
+Z = linkage(Y, 'average');
+\end_layout
+
+\begin_layout LyX-Code
+H = dendrogram(Z);
 \end_layout
 
 \end_deeper
