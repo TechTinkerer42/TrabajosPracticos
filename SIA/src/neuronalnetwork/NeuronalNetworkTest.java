@@ -8,7 +8,7 @@ import neuronalnetwork.function.TransferFunction;
 public class NeuronalNetworkTest {
 
 	public static void main(String[] args) {
-		NeuronalNetwork net = new NeuronalNetwork(new int[] {3});
+		NeuralNetwork net = new NeuralNetwork(new int[] {3});
 		float[] input = new float[] {5, 1, -2};
 		TransferFunction f = new SgFunction();
 		float[] output = net.evaluate(input, f);
