@@ -6,6 +6,12 @@ public class NeuralNetwork {
 
 	private Layer[] layers;
 	
+	/**
+	 * Crea una red con el structure[0] input y structure[structure.length - 1] 
+	 * output.
+	 * Todos los demas valores que se encuentren entre 0 y structure.length - 1 
+	 * son creados como capas ocultas.
+	 */
 	public NeuralNetwork(int[] structure) {
 		if (structure.length < 2) {
 			throw new IllegalArgumentException("Net must have at least one layer");
@@ -31,5 +37,17 @@ public class NeuralNetwork {
 			aux = l.evaluate(aux, f);
 		}
 		return aux;
+	}
+	
+	public Layer getLayer(int index) {
+		return layers[index];
+	}
+	
+	public Layer[] getLayers() {
+		return layers;
+	}
+	
+	public int getTotalLayers() {
+		return layers.length;
 	}
 }
