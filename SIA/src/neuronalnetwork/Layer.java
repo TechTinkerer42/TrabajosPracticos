@@ -7,6 +7,9 @@ public class Layer {
 	private float[][] weights;
 	private int neurons; 
 	private int outputLen;
+	// Used for backpropagation
+	private float[] lastOutput;
+	private float[] lastInput;
 	
 	/**
 	 * Inicializa este Layer con input neuronas como 
@@ -27,7 +30,8 @@ public class Layer {
 	private Layer(int neurons, int outputLen, boolean outerLayer) {
 		this.neurons = neurons;
 		this.outputLen = outputLen;
-		if (outerLayer) {			
+		lastOutput = new float[outputLen];
+		if (outerLayer) {
 			// input + 1 because of the Bias input for each neuron
 			weights = new float[neurons + 1][outputLen];			
 			initWeightMantrix();
@@ -56,19 +60,19 @@ public class Layer {
 	
 	public float[] evaluate(float[] in, TransferFunction f) {
 		validateInputDimention(in.length);
+		lastInput = in;
 		if (weights == null) {	// this is an outer layer
 			return in;
 		}
-		float[] out = new float[outputLen];
 		for (int i = 0; i < outputLen; i++) {
 			float sum = 0;
 			for (int j = 0; j < neurons; j++) {
 				sum += weights[j][i] * in[j];
 			}
 			sum -= weights[neurons][i];	// Bias
-			out[i] = f.valueAt(sum);
+			lastOutput[i] = f.valueAt(sum);
 		}
-		return out;
+		return lastOutput;
 	}
 	
 	private void validateInputDimention(int dim) {
@@ -76,6 +80,14 @@ public class Layer {
 			throw new IllegalArgumentException("Invalid input dimention given: " 
 				+ dim + ". Should be " + neurons);
 		}
+	}
+	
+	public float[] getLastOutput() {
+		return lastOutput;
+	}
+	
+	public float[] getLastInput() {
+		return lastInput;
 	}
 
 }
