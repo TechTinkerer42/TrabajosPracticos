@@ -2,14 +2,16 @@ package neuronalnetwork;
 
 import java.util.Arrays;
 
+import neuronalnetwork.function.SgFunction;
+import neuronalnetwork.function.TransferFunction;
+
 public class NeuronalNetworkTest {
 
 	public static void main(String[] args) {
 		NeuronalNetwork net = new NeuronalNetwork(new int[] {3});
-		float[] input = new float[3];
-		input[0] = 5;
-		input[1] = 1;
-		input[2] = -2;
-		System.out.println(Arrays.toString(net.evaluate(input)));
+		float[] input = new float[] {5, 1, -2};
+		TransferFunction f = new SgFunction();
+		float[] output = net.evaluate(input, f);
+		System.out.println(Arrays.toString(output));
 	}
 }
