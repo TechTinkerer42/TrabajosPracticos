@@ -5,15 +5,33 @@ import neuronalnetwork.function.TransferFunction;
 public class Layer {
 	
 	private float[][] weights;
-	private int input; 
-	private int output;
+	private int neurons; 
+	private int outputLen;
 	
-	public Layer(int input, int output) {
-		// input + 1 because of the Bias input for each neuron
-		weights = new float[input + 1][output];
-		this.input = input;
-		this.output = output;
-		initWeightMantrix();
+	/**
+	 * Inicializa este Layer con input neuronas como 
+	 * layer de salida (no crea coencciones con capas sucesivas).
+	 */
+	public Layer(int neurons) {
+		this(neurons, neurons, false);
+	}
+	
+	/**
+	 * Inicializa este layer con input neuronas, cada
+	 * una con output conecciones con la capa siguiente.
+	 */
+	public Layer(int neurons, int outputLen) {
+		this(neurons, outputLen, true);
+	}
+	
+	private Layer(int neurons, int outputLen, boolean outerLayer) {
+		this.neurons = neurons;
+		this.outputLen = outputLen;
+		if (outerLayer) {			
+			// input + 1 because of the Bias input for each neuron
+			weights = new float[neurons + 1][outputLen];			
+			initWeightMantrix();
+		}
 	}
 	
 	private void initWeightMantrix() {
@@ -28,32 +46,35 @@ public class Layer {
 		return weights;
 	}
 	
-	public int getInput() {
-		return input;
+	public int getNeurons() {
+		return neurons;
 	}
 	
-	public int getOutput() {
-		return output;
+	public int getOutputLen() {
+		return outputLen;
 	}
 	
 	public float[] evaluate(float[] in, TransferFunction f) {
 		validateInputDimention(in.length);
-		float[] out = new float[output];
-		for (int i = 0; i < output; i++) {
+		if (weights == null) {	// this is an outer layer
+			return in;
+		}
+		float[] out = new float[outputLen];
+		for (int i = 0; i < outputLen; i++) {
 			float sum = 0;
-			for (int j = 0; j < input; j++) {
+			for (int j = 0; j < neurons; j++) {
 				sum += weights[j][i] * in[j];
 			}
-			sum -= weights[input][i];	// Bias
+			sum -= weights[neurons][i];	// Bias
 			out[i] = f.valueAt(sum);
 		}
 		return out;
 	}
 	
 	private void validateInputDimention(int dim) {
-		if (dim != input) {
+		if (dim != neurons) {
 			throw new IllegalArgumentException("Invalid input dimention given: " 
-				+ dim + ". Should be " + input);
+				+ dim + ". Should be " + neurons);
 		}
 	}
 
