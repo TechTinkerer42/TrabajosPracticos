@@ -48,7 +48,40 @@
 
 \section{Determinación de clases. Clustering.}
 \begin{enumerate}
-\item (TO DO)
+\item El comando $princomp$ de MATLAB c calcula las componentes principales
+para una matriz de datos. También se pueden calcular los valores y
+vectores propios de la matriz de correlación usando los comandos $corrcoef$
+y $eigs$ porque la componente principal es el autovector asociado
+al autovalor dominante de dicha matriz.
+
+
+Una consideracion a tener antes del cálculo de las componentes principales
+es que las unidades de medida de las variables $X_{i}$ son muy distintas
+y no hay que olvidar que los cambios de unidades afectan a la varianza
+de la variable en el sentido que: 
+\[
+\xi=aX_{i}\Longrightarrow var(\xi)=a^{2}var(X_{i})
+\]
+ y como consecuencia, esto afecta a las componentes principales.
+
+
+Las elevadas varianzas de las mediciones de {}``Número de teléfonos
+fijos registrados'' y el {}``Número de vehículos de motor matriculados''
+hacen prever que un análisis de componentes principales realizado
+a partor de la matroz de covariansa $S$ dará como resultado una primera
+y segunda componentes principales que coincidan basicamente con estas
+dos variables observadas.
+
+
+Para poder obtener uasn componentes principales que no dependan de
+las unidades en que han sido medidas las variables originales, se
+debe estandarizar a media vero y varianza unidad las variables originales.
+Lo que equivale a realizar el análisis de componentes a partir de
+la matriz de correlaciones.
+\begin{enumerate}
+\item {[}r,p{]} = corrcoef(x) \% compute sample correlation and p-values 
+\item {[}i,j{]} = find(p<0.05); \% find significant correlations 
+\end{enumerate}
 \item Lirios de Fisher
 
 \begin{enumerate}
