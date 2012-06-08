@@ -48,14 +48,7 @@
 
 \section{Determinación de clases. Clustering.}
 \begin{enumerate}
-\item El comando $princomp$ de MATLAB c calcula las componentes principales
-para una matriz de datos. También se pueden calcular los valores y
-vectores propios de la matriz de correlación usando los comandos $corrcoef$
-y $eigs$ porque la componente principal es el autovector asociado
-al autovalor dominante de dicha matriz.
-
-
-Una consideracion a tener antes del cálculo de las componentes principales
+\item Una consideracion a tener antes del cálculo de las componentes principales
 es que las unidades de medida de las variables $X_{i}$ son muy distintas
 y no hay que olvidar que los cambios de unidades afectan a la varianza
 de la variable en el sentido que: 
@@ -68,19 +61,92 @@ de la variable en el sentido que:
 Las elevadas varianzas de las mediciones de {}``Número de teléfonos
 fijos registrados'' y el {}``Número de vehículos de motor matriculados''
 hacen prever que un análisis de componentes principales realizado
-a partor de la matroz de covariansa $S$ dará como resultado una primera
+a partir de la matriz de covariansa $S$ dará como resultado una primera
 y segunda componentes principales que coincidan basicamente con estas
 dos variables observadas.
 
 
-Para poder obtener uasn componentes principales que no dependan de
-las unidades en que han sido medidas las variables originales, se
-debe estandarizar a media vero y varianza unidad las variables originales.
+Para poder obtener componentes principales que no dependan de las
+unidades en que han sido medidas las variables originales, se debe
+estandarizar a media cero y varianza uno las variables originales.
 Lo que equivale a realizar el análisis de componentes a partir de
-la matriz de correlaciones.
+la matriz de correlaciones. Para esto se utiliza el comando de $matlab$
+princomp que tiene en cuanta estos detalles.
 \begin{enumerate}
-\item {[}r,p{]} = corrcoef(x) \% compute sample correlation and p-values 
-\item {[}i,j{]} = find(p<0.05); \% find significant correlations 
+\item A partir del anális de las componentes principales, se puede ver que
+basta tomar una sola componente para clasificas a las provincias dado
+que ya se tiene una representacion muy precisa de las muestras.
+
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline 
+ & $\%$\tabularnewline
+\hline 
+\hline 
+1 & $0.9961$\tabularnewline
+\hline 
+2 & $0.999$\tabularnewline
+\hline 
+3 & $1$\tabularnewline
+\hline 
+4 & ...\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+
+En este caso, con la variable población es suficiente para clasificar
+la muestra en un $99\%$.
+
+
+\begin{center}
+\begin{figure}[H]
+\centering{}\includegraphics[scale=0.5]{ciudadesEspañolas1}\caption{Biplot de las componentes de las mediciones para las mediciones de
+las ciudades españolas}
+\end{figure}
+
+\par\end{center}
+
+\item %
+\begin{tabular}{|c||c|c|c|c|}
+\hline 
+\multicolumn{1}{|c|}{} & \multicolumn{2}{c|}{A(2)} & \multicolumn{2}{c|}{B(15)}\tabularnewline
+\hline 
+Variable & Media & Varianza & Media & Varianza\tabularnewline
+\hline 
+\hline 
+Poblacion & 5,595,248.5  & 521,695.605 & 1,262,343.867  & 430,782.681 \tabularnewline
+\hline 
+Tel. Fijo & 2,802,510.5  & 88,271.675 & 475,434.6  & 155,222.802\tabularnewline
+\hline 
+Vehiculos Matriculados & 346,810  & 423,110.070  & 748,407.267  & 272,113.378\tabularnewline
+\hline 
+\end{tabular}
+
+
+\begin{tabular}{|c||c|c|}
+\hline 
+\multicolumn{1}{|c|}{} & \multicolumn{2}{c|}{C(35)}\tabularnewline
+\hline 
+Variable & Media & Varianza\tabularnewline
+\hline 
+\hline 
+Poblacion & 399,510.714  & 207,726.956\tabularnewline
+\hline 
+Tel. Fijo & 157,819.943  & 83,126.300\tabularnewline
+\hline 
+Vehiculos Matriculados & 237,011.257  & 124,416.649\tabularnewline
+\hline 
+\end{tabular}
+
+
+Resulta de interés resaltar que para los dos miembros de la clase
+$A$, sus varianzas superan en las de cinco veces la de la clase $B$
+y en mucho mas la de la $C$. Por lo que se podría realizar un nuevo
+análisis de los datos removiendo estos dos valores y analizando nuevamente
+los nuevos grupos formados.
+
 \end{enumerate}
 \item Lirios de Fisher
 
@@ -199,7 +265,45 @@ a los lirios, en especial para los de la clase $Virginica$, que es
 donde mayor cantidad de errores tuvieron los dos anteriores.
 
 \end{enumerate}
-\item (TO DO)
+\item Dialectos ingleses
+
+\begin{enumerate}
+\item A continuación se presentan los gráficos obtenidos para diversos parámetros
+de distancia y método de agrupamiento de datos para el dendograma
+
+
+\begin{figure}[H]
+\includegraphics[scale=0.55]{dialects1}\includegraphics[scale=0.55]{dialects4}
+
+\caption{Método: $average$ para distancias $euclidean$ y $cityblock$}
+
+
+\end{figure}
+
+
+
+\begin{figure}[H]
+\includegraphics[scale=0.55]{dialects3}\includegraphics[scale=0.55]{dialects6}
+
+\caption{Método: $signle$ para distancias $euclidean$ y $cityblock$}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\includegraphics[scale=0.55]{dialects5}\includegraphics[scale=0.55]{dialects2}
+
+\caption{Método: $complete$ para distancias $euclidean$ y $cityblock$}
+\end{figure}
+
+
+
+De los resultados obtenidos se puede observar que los métodos $avergae$
+y $complete$ son los que mas parecidos agruparon a los condados (para
+ambos tipos de distancias).\\
+
+
+\end{enumerate}
 \item Congresistas
 
 \begin{enumerate}
@@ -278,7 +382,25 @@ categoria, a excepcion del numero 2.
 
 \section{Código}
 \begin{enumerate}
-\item (TO DO)
+\item Ciudades españolas
+
+\begin{lyxcode}
+{[}coeff,~score,~latent{]}~=~princomp(ciudadesEspanolas);
+
+cumsum(latent)./sum(latent)
+
+biplot(coeff,'scores',~score,~'varlabels',~nombres)
+
+-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-
+
+X~=~kmeans(ciudadesEspanolas,~2);
+
+k~=~1;
+
+nombres(find(X~==~k))
+
+mean(ciudadesEspanolas(find(X~==~k),1))
+\end{lyxcode}
 \item Lirios de Fisher
 
 \begin{lyxcode}
@@ -344,7 +466,59 @@ cluster\_labels~=~cluster(clustTree,~'maxclust',~3~);~
 
 confusion\_matrix~=~crosstab(~cluster\_labels,~class~)~
 \end{lyxcode}
-\item (TO DO)
+\item -
+
+\begin{lyxcode}
+dialects=load('dialects.mat');
+
+dialects=dialects.A\_pastespecial;
+
+labels=\{'A~-~Nottinghamshire','B~-~Nottinghamshire','C~-~Nottinghamshire',...~~~~~
+
+'D~-~Lincolnshire','F~-~Lincolnshire','G~-~Lincolnshire','H~-~Lincolnshire',...~~~~~
+
+'I~-~Lincolnshire','J~-~Lincolnshire','K~-~Lincolnshire','L~-~Lincolnshire',...~~~~~
+
+'M~-~Leicestershire','N~-~Leicestershire','O~-~Leicestershire',...~~~~~
+
+'P~-~Leicestershire','Q~-~Rutland','R~-~Northamptonshire',...~~~~~
+
+'S~-~Northamptonshire','T~-~Northamptonshire','U~-~Northamptonshire',...~~~~~
+
+'V~-~Huntingdonshire','W~-~Cambridgeshire','X~-~Buckinghamshire',~...
+
+'Y~-~Bedfordshire'\};
+
+methods=\{'single','complete','average'\};~
+
+distances=\{'euclidean','cityblock'\};
+
+for~i=1:size(distances,2)~~~~~
+\begin{lyxcode}
+distance=distances\{i\};~~~~~
+
+for~j=1:size(methods,2)~~~~~~~~~
+\begin{lyxcode}
+method=methods\{j\};~~~~~~~~~
+
+thistitle=strcat('Distance:',~distance,'~Method:~',method);~~~~~~~~~~~~~~~~~~~~~~~~~~~~Y=pdist(dialects,distance);~~~~~~~~~
+
+Z=linkage(Y,method);~~~~~~~~~
+
+t~=~.5{*}(max(Z(:,3)));~\%~dendogram~plot~threshold~~~~~~~~~
+
+figure;{[}H,T{]}~=~dendrogram(Z,'colorthreshold',t,'labels',~...
+
+labels,~'Orientation','left');~~~~~~~~~
+
+set(H,'LineWidth',3)~~~~~~~~~
+
+title(thistitle);~~~~~
+\end{lyxcode}
+end~
+\end{lyxcode}
+end
+\end{lyxcode}
 \item Congresistas
 
 \begin{lyxcode}

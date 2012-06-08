@@ -82,26 +82,6 @@ Determinación de clases.
 \end_layout
 
 \begin_layout Enumerate
-El comando 
-\begin_inset Formula $princomp$
-\end_inset
-
- de MATLAB c calcula las componentes principales para una matriz de datos.
- También se pueden calcular los valores y vectores propios de la matriz
- de correlación usando los comandos 
-\begin_inset Formula $corrcoef$
-\end_inset
-
- y 
-\begin_inset Formula $eigs$
-\end_inset
-
- porque la componente principal es el autovector asociado al autovalor dominante
- de dicha matriz.
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
 Una consideracion a tener antes del cálculo de las componentes principales
  es que las unidades de medida de las variables 
 \begin_inset Formula $X_{i}$
@@ -119,6 +99,7 @@ Una consideracion a tener antes del cálculo de las componentes principales
  y como consecuencia, esto afecta a las componentes principales.
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 Las elevadas varianzas de las mediciones de 
 \begin_inset Quotes eld
@@ -136,8 +117,8 @@ Número de vehículos de motor matriculados
 \begin_inset Quotes erd
 \end_inset
 
- hacen prever que un análisis de componentes principales realizado a partor
- de la matroz de covariansa 
+ hacen prever que un análisis de componentes principales realizado a partir
+ de la matriz de covariansa 
 \begin_inset Formula $S$
 \end_inset
 
@@ -146,21 +127,627 @@ Número de vehículos de motor matriculados
 \end_layout
 
 \begin_layout Standard
-Para poder obtener uasn componentes principales que no dependan de las unidades
+Para poder obtener componentes principales que no dependan de las unidades
  en que han sido medidas las variables originales, se debe estandarizar
- a media vero y varianza unidad las variables originales.
+ a media cero y varianza uno las variables originales.
  Lo que equivale a realizar el análisis de componentes a partir de la matriz
  de correlaciones.
+ Para esto se utiliza el comando de 
+\begin_inset Formula $matlab$
+\end_inset
+
+ princomp que tiene en cuanta estos detalles.
 \end_layout
 
 \begin_layout Enumerate
-[r,p] = corrcoef(x) % compute sample correlation and p-values 
+A partir del anális de las componentes principales, se puede ver que basta
+ tomar una sola componente para clasificas a las provincias dado que ya
+ se tiene una representacion muy precisa de las muestras.
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.9961$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.999$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este caso, con la variable población es suficiente para clasificar la
+ muestra en un 
+\begin_inset Formula $99\%$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ciudadesEspañolas1.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Biplot de las componentes de las mediciones para las mediciones de las ciudades
+ españolas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
-[i,j] = find(p<0.05); % find significant correlations 
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A(2)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B(15)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Variable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Varianza
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Varianza
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Poblacion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,595,248.5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+521,695.605
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,262,343.867 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+430,782.681 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tel.
+ Fijo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,802,510.5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+88,271.675
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+475,434.6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+155,222.802
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vehiculos Matriculados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+346,810 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+423,110.070 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+748,407.267 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+272,113.378
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C(35)
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Variable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Media
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Varianza
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Poblacion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+399,510.714 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+207,726.956
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tel.
+ Fijo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+157,819.943 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+83,126.300
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vehiculos Matriculados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+237,011.257 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+124,416.649
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resulta de interés resaltar que para los dos miembros de la clase 
+\begin_inset Formula $A$
+\end_inset
+
+, sus varianzas superan en las de cinco veces la de la clase 
+\begin_inset Formula $B$
+\end_inset
+
+ y en mucho mas la de la 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ Por lo que se podría realizar un nuevo análisis de los datos removiendo
+ estos dos valores y analizando nuevamente los nuevos grupos formados.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Lirios de Fisher
@@ -1171,9 +1758,204 @@ Como se pudo obervar, este algoritmo clasificó aun mejor que los anteriores
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-(TO DO)
+Dialectos ingleses
 \end_layout
 
+\begin_deeper
+\begin_layout Enumerate
+A continuación se presentan los gráficos obtenidos para diversos parámetros
+ de distancia y método de agrupamiento de datos para el dendograma
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dialects1.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename dialects4.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Método: 
+\begin_inset Formula $average$
+\end_inset
+
+ para distancias 
+\begin_inset Formula $euclidean$
+\end_inset
+
+ y 
+\begin_inset Formula $cityblock$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dialects3.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename dialects6.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Método: 
+\begin_inset Formula $signle$
+\end_inset
+
+ para distancias 
+\begin_inset Formula $euclidean$
+\end_inset
+
+ y 
+\begin_inset Formula $cityblock$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename dialects5.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename dialects2.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Método: 
+\begin_inset Formula $complete$
+\end_inset
+
+ para distancias 
+\begin_inset Formula $euclidean$
+\end_inset
+
+ y 
+\begin_inset Formula $cityblock$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De los resultados obtenidos se puede observar que los métodos 
+\begin_inset Formula $avergae$
+\end_inset
+
+ y 
+\begin_inset Formula $complete$
+\end_inset
+
+ son los que mas parecidos agruparon a los condados (para ambos tipos de
+ distancias).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Enumerate
 Congresistas
 \end_layout
@@ -1552,9 +2334,43 @@ Código
 \end_layout
 
 \begin_layout Enumerate
-(TO DO)
+Ciudades españolas
 \end_layout
 
+\begin_deeper
+\begin_layout LyX-Code
+[coeff, score, latent] = princomp(ciudadesEspanolas);
+\end_layout
+
+\begin_layout LyX-Code
+cumsum(latent)./sum(latent)
+\end_layout
+
+\begin_layout LyX-Code
+biplot(coeff,'scores', score, 'varlabels', nombres)
+\end_layout
+
+\begin_layout LyX-Code
+-------------------
+\end_layout
+
+\begin_layout LyX-Code
+X = kmeans(ciudadesEspanolas, 2);
+\end_layout
+
+\begin_layout LyX-Code
+k = 1;
+\end_layout
+
+\begin_layout LyX-Code
+nombres(find(X == k))
+\end_layout
+
+\begin_layout LyX-Code
+mean(ciudadesEspanolas(find(X == k),1))
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Lirios de Fisher
 \end_layout
@@ -1688,9 +2504,122 @@ confusion_matrix = crosstab( cluster_labels, class )
 
 \end_deeper
 \begin_layout Enumerate
-(TO DO)
+-
 \end_layout
 
+\begin_deeper
+\begin_layout LyX-Code
+dialects=load('dialects.mat');
+\end_layout
+
+\begin_layout LyX-Code
+dialects=dialects.A_pastespecial;
+\end_layout
+
+\begin_layout LyX-Code
+labels={'A - Nottinghamshire','B - Nottinghamshire','C - Nottinghamshire',...
+     
+\end_layout
+
+\begin_layout LyX-Code
+'D - Lincolnshire','F - Lincolnshire','G - Lincolnshire','H - Lincolnshire',...
+     
+\end_layout
+
+\begin_layout LyX-Code
+'I - Lincolnshire','J - Lincolnshire','K - Lincolnshire','L - Lincolnshire',...
+     
+\end_layout
+
+\begin_layout LyX-Code
+'M - Leicestershire','N - Leicestershire','O - Leicestershire',...
+     
+\end_layout
+
+\begin_layout LyX-Code
+'P - Leicestershire','Q - Rutland','R - Northamptonshire',...
+     
+\end_layout
+
+\begin_layout LyX-Code
+'S - Northamptonshire','T - Northamptonshire','U - Northamptonshire',...
+     
+\end_layout
+
+\begin_layout LyX-Code
+'V - Huntingdonshire','W - Cambridgeshire','X - Buckinghamshire', ...
+\end_layout
+
+\begin_layout LyX-Code
+'Y - Bedfordshire'};
+\end_layout
+
+\begin_layout LyX-Code
+methods={'single','complete','average'}; 
+\end_layout
+
+\begin_layout LyX-Code
+distances={'euclidean','cityblock'};
+\end_layout
+
+\begin_layout LyX-Code
+for i=1:size(distances,2)     
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+distance=distances{i};     
+\end_layout
+
+\begin_layout LyX-Code
+for j=1:size(methods,2)         
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+method=methods{j};         
+\end_layout
+
+\begin_layout LyX-Code
+thistitle=strcat('Distance:', distance,' Method: ',method);            
+                Y=pdist(dialects,distance);         
+\end_layout
+
+\begin_layout LyX-Code
+Z=linkage(Y,method);         
+\end_layout
+
+\begin_layout LyX-Code
+t = .5*(max(Z(:,3))); % dendogram plot threshold         
+\end_layout
+
+\begin_layout LyX-Code
+figure;[H,T] = dendrogram(Z,'colorthreshold',t,'labels', ...
+\end_layout
+
+\begin_layout LyX-Code
+labels, 'Orientation','left');         
+\end_layout
+
+\begin_layout LyX-Code
+set(H,'LineWidth',3)         
+\end_layout
+
+\begin_layout LyX-Code
+title(thistitle);     
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+end 
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+end
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Congresistas
 \end_layout
