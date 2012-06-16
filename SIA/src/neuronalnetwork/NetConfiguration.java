@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import main.ExamplesUtils;
 import neuronalnetwork.function.TransferFunction;
+import util.ExamplesUtils;
 
 public class NetConfiguration {
 
