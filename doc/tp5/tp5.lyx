@@ -1,0 +1,798 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Aprendizaje Automático - Trabajo Práctico 5
+\end_layout
+
+\begin_layout Author
+Gonzalo Castiglione - 
+\begin_inset Formula $49138$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Objetivo: Aprender a tomar decisiones basadas en un árbol de decisión
+\end_layout
+
+\begin_layout Section
+Aprendizaje de árboles de decisiones
+\end_layout
+
+\begin_layout Enumerate
+La 
+\begin_inset Formula $entropía$
+\end_inset
+
+ para un conjunto de 
+\begin_inset Formula $ejemplos$
+\end_inset
+
+ 
+\begin_inset Formula $S$
+\end_inset
+
+ esta dada por la fórmula
+\begin_inset Formula 
+\[
+E(S)=\sum_{i\epsilon C}-p_{i}log_{2}p_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+En donde 
+\begin_inset Formula $C$
+\end_inset
+
+ es el conjunto de clases a las quepueden perteneces dichos ejemplos y 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ es la probabilidad de que un ejemplo dado pertenezca a la clase 
+\begin_inset Formula $i-esima$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Sea el siguiente conjunto de entrenamiento:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Instancia
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clasificacion
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
++
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p_{-}=p_{+}=0.5=p$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado que los patrones estan divididos exactamente a la mitad, es de esperarse
+ que el valor de la entropía sea maximo, es decir, 1.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E(S)=-p_{+}log_{2}p_{+}-p_{-}log_{2}p_{-}=-2plog_{2}p=1$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+En base a la entropia, se define la 
+\begin_inset Formula $ganancia$
+\end_inset
+
+ 
+\begin_inset Formula $de$
+\end_inset
+
+ 
+\begin_inset Formula $información$
+\end_inset
+
+ como la disminución de la entropia que se produce al dividir un conjunto
+ S de ejemplos según valores 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ de un atributo 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Es decir:
+\begin_inset Formula 
+\[
+G(S,A)=E(S)-\sum_{v_{i}\epsilon V}\frac{|S_{v_{i}}|}{|S|}E(S_{v_{i}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+donde 
+\begin_inset Formula $V$
+\end_inset
+
+ es el conjunto de valores que puede tomar el atributo 
+\begin_inset Formula $A$
+\end_inset
+
+, y 
+\begin_inset Formula $S_{v_{i}}$
+\end_inset
+
+, es el subconjunto de ejemplos de 
+\begin_inset Formula $S$
+\end_inset
+
+ cuyo atributo 
+\begin_inset Formula $A$
+\end_inset
+
+ tiene el valores 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $G(S,a_{2})=1-\frac{4}{6}*1-\frac{2}{6}*1=0$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+ELIMINACIÓN- DE-CANDIDATOS Vs ID3
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Arbol creado por el algoritmo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2_ArbolDecis.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Árbol de decisión generado a partir de la tabla dada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+El espacio de versiones contiene todas las hipótesis consitentes con los
+ ejemplos de entrenamiento, mientras que el árbol de decisión aprendido
+ es una de las hipótesis consistentes con los ejemplos de entrenamiento.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Resolución
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Primero 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Entropia(X) = -3/5*log2(3/5)-2/5*log2(2/5) = 0.971 
+\end_layout
+
+\begin_layout Standard
+G(X, cielo) = 0.971-4/5*(-3/4log2 (3/4)-(1/4)log2(1/4))-1/5*0 = 0.322 
+\end_layout
+
+\begin_layout Standard
+G(X, tempAire) = 0.971-4/5*(-3/4log2 (3/4)-(1/4)log2(1/4))-1/5*0 = 0.322 
+\end_layout
+
+\begin_layout Standard
+G(X, humedad) = 0.971-3/5*(-2/3log2 (2/3)-(1/3)log2(1/3))-2/5*1 = 0.02 
+\end_layout
+
+\begin_layout Standard
+G(X, viento) = 0.971-4/5*(-3/4log2 (3/4)-(1/4)log2(1/4))-1/5*0 = 0.322 
+\end_layout
+
+\begin_layout Standard
+G(X, tempAgua) = 0.971-4/5*(-2/4log2 (2/4)-(2/4)log2(2/4))-1/5*0 = 0.171 
+\end_layout
+
+\begin_layout Standard
+G(X, pronostico) = 0.971-3/5*(-2/3log2 (2/3)-(1/3)log2(1/3))-2/5*1 = 0.02
+ 
+\end_layout
+
+\begin_layout Itemize
+El algorimto elige “cielo” como el atributo de testeo para la raiz.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Segundo
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Entropia(X) = -3/4*log2(3/4)-1/4*log2(1/4) = 0.8113 
+\end_layout
+
+\begin_layout Standard
+G(X, tempAire) = 0 
+\end_layout
+
+\begin_layout Standard
+G(X, humedad) = 0.3113 
+\end_layout
+
+\begin_layout Standard
+G(X, viento) = 0.8113 
+\end_layout
+
+\begin_layout Standard
+G(X, tempAgua) = 0.1226 
+\end_layout
+
+\begin_layout Standard
+G(X, pronostico) = 0.1226
+\end_layout
+
+\begin_layout Itemize
+El algorimto elige “viento”.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Version final del arbol de decisión creado
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 3_ArbolDecis.png
+	lyxscale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Nuevo árbol creado a partir de la tabla original con el nuevo ejemplo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Árbol generado para los lirios de 
+\begin_inset Formula $fisher$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename fisheriris.png
+	lyxscale 50
+	scale 75
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Árbol creado a partir de las mediciones de los lirios de Fisher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+if PL<2.45 then node 2 
+\end_layout
+
+\begin_layout LyX-Code
+elseif PL>=2.45 then node 3 
+\begin_inset Newline newline
+\end_inset
+
+else setosa
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+class = setosa
+\end_layout
+
+\begin_layout LyX-Code
+if PW<1.75 then node 4 
+\end_layout
+
+\begin_layout LyX-Code
+elseif PW>=1.75 then node 5 
+\end_layout
+
+\begin_layout LyX-Code
+else versicolor
+\end_layout
+
+\begin_layout LyX-Code
+if PL<4.95 then node 6 
+\end_layout
+
+\begin_layout LyX-Code
+elseif PL>=4.95 then node 7 
+\end_layout
+
+\begin_layout LyX-Code
+else versicolor 5
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+class = virginica
+\end_layout
+
+\begin_layout LyX-Code
+if PW<1.65 then node 8 
+\end_layout
+
+\begin_layout LyX-Code
+elseif PW>=1.65 then node 9 
+\end_layout
+
+\begin_layout LyX-Code
+else versicolor
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+class = virginica 
+\end_layout
+
+\begin_layout LyX-Code
+class = versicolor
+\end_layout
+
+\begin_layout LyX-Code
+class = virginica
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document

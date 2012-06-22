@@ -86,7 +86,8 @@ public class BackPropagation {
 	
 	private float getY(int layer, int neuron, int connection, float[] neuronWeights, float[] input) {
 		float y;
-		if (isThresHoldConnection(connection, neuronWeights.length)) {
+		boolean isThresHold = (connection == neuronWeights.length - 1);
+		if (isThresHold) {
 			return -1;
 		}
 		if (layer == 0) {
@@ -98,7 +99,4 @@ public class BackPropagation {
 		return y;
 	}
 	
-	private boolean isThresHoldConnection(int connection, int arrayLen) {
-		return connection == arrayLen - 1;
-	}
 }
