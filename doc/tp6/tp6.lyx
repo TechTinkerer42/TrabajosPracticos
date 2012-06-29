@@ -1,0 +1,400 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Aprendizaje Automático - Trabajo Práctico 6
+\end_layout
+
+\begin_layout Author
+Gonzalo Castiglione - 49138
+\end_layout
+
+\begin_layout Paragraph*
+Objetivo: Aplicar diversos métodos de estadística no paramétrica para aprender
+ a hacer inferencia a partir de datos experimentales
+\end_layout
+
+\begin_layout Section
+Aprendizaje basado en instancias
+\end_layout
+
+\begin_layout Enumerate
+asd
+\end_layout
+
+\begin_layout Enumerate
+a
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Regresión lineal local pesada con núcleo gaussiano
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2a.png
+	width 10cm
+	height 10cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Regresión lineal local pesada con núcleo tricubo
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 2b.png
+	width 10cm
+	height 10cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+asd
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Porcentaje de acatamiento vs disminución en el nivel de colesterol
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 3.png
+	width 10cm
+	height 10cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 3b.png
+	width 10cm
+	height 10cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Código
+\end_layout
+
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+% Classify the fisheriris data with a K-Nearest Neighbor classifier 
+\end_layout
+
+\begin_layout LyX-Code
+load fisheriris 
+\end_layout
+
+\begin_layout LyX-Code
+c = knnclassify(meas,meas,species,4,'euclidean','Consensus'); 
+\end_layout
+
+\begin_layout LyX-Code
+cp = classperf(species,c) 
+\end_layout
+
+\begin_layout LyX-Code
+get(cp) 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+autosData=load('autos.txt');
+\end_layout
+
+\begin_layout LyX-Code
+x=autosData(:,2); 
+\end_layout
+
+\begin_layout LyX-Code
+y=autosData(:,3);
+\end_layout
+
+\begin_layout LyX-Code
+r=ksrlin(x,y);
+\end_layout
+
+\begin_layout LyX-Code
+plot(x, y, 'rx', r.x, r.f, 'b');
+\end_layout
+
+\begin_layout LyX-Code
+xlabel('Velocidad [millas/h]'); 
+\end_layout
+
+\begin_layout LyX-Code
+ylabel('Distancia de frenado [pies]');
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+colesterol=load('colesterol.txt'); 
+\end_layout
+
+\begin_layout LyX-Code
+x=colesterol(:,2); y=colesterol(:,3);
+\end_layout
+
+\begin_layout LyX-Code
+% a 
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y,'bx'); 
+\end_layout
+
+\begin_layout LyX-Code
+xlabel('disminución de colesterol'); 
+\end_layout
+
+\begin_layout LyX-Code
+ylabel('porcentaje de acatamiento'); 
+\end_layout
+
+\begin_layout LyX-Code
+hold on;
+\end_layout
+
+\begin_layout LyX-Code
+% c 
+\end_layout
+
+\begin_layout LyX-Code
+span = ceil(0.2*length(y)); 
+\end_layout
+
+\begin_layout LyX-Code
+z = smooth(x,y,span,'lowess'); 
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,z,'r*'); 
+\end_layout
+
+\begin_layout LyX-Code
+legend('datos', 'regresión lineal pesada', 'Location', 'NorthWest');
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
