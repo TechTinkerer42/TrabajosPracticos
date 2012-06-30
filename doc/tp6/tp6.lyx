@@ -82,16 +82,599 @@ Aprendizaje basado en instancias
 \end_layout
 
 \begin_layout Enumerate
-asd
-\end_layout
-
-\begin_layout Enumerate
-a
+Resultados
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+k
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Error porcentual cometido
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porcentaje de correctos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1400
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+0.8600
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho y largo de los pétalos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1933
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8067
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1600
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8400
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.040
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.9600
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ancho y largo de los cépalos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0460
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.954
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0460
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.954
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0133
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.9867
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Las 4 variables
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.98
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0267
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.9733
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.9800
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seleccion aleatoria (d) *
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.0200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.9800
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(100 entrenamiento + 50 testeo)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0.9000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede observar que para este probelma, la mejor clasificación de los
+ individuos se produce cuando 
+\begin_inset Formula $k\approx10$
+\end_inset
+
+.
+ A excepción de la selección aleatoria, que parece funcionar mejor, permitiendo
+ una clasificación con conjuntos tomando cualquier tamaño de vecinos (entre
+ los valores de testeo al menos) y obteniendo aún mejores resultados.
+\end_layout
+
+\begin_layout Standard
+Otra observación que puede realizarse es que se obtienen resultados mucho
+ mas precisos cuando se clasifican las flores por el tamaño de sus cépalos
+ que tomando el tamaño de los pétalos.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En comparación con los métodos aplicados en los trabajos prácticos anteriores,
+ el único que logró clasificar con un nivel de acierto igual o superior
+ fue el método de 
+\begin_inset Formula $Árbol$
+\end_inset
+
+ 
+\begin_inset Formula $de$
+\end_inset
+
+ 
+\begin_inset Formula $desición$
+\end_inset
+
+ (ID3), el cual también obtuvo un acierto del 
+\begin_inset Formula $98\%$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+* Debido a que se está tomando dos tercios del conjunto original (una buena
+ parte del conjunto), no hace falta verificar que se hallan tomado un poco
+ de cada subconjunto de mediciones (uno por cada tipo de especie) ya que
+ es muy raro que no se tomen suficientes elementos de alguno de los tres
+ conjuntos.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Enumerate
-Regresión lineal local pesada con núcleo gaussiano
+Gráficos obtenidos
 \end_layout
 
 \begin_deeper
@@ -101,7 +684,7 @@ Regresión lineal local pesada con núcleo gaussiano
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -120,7 +703,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
+Regresión lineal local pesada con núcleo gaussiano
 \end_layout
 
 \end_inset
@@ -137,19 +720,13 @@ status collapsed
 
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-Regresión lineal local pesada con núcleo tricubo
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 \align center
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -157,18 +734,14 @@ status collapsed
 	filename 2b.png
 	width 10cm
 	height 10cm
-	keepAspectRatio
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
+Regresión lineal local pesada con núcleo tricubo
 \end_layout
 
 \end_inset
@@ -181,15 +754,53 @@ status collapsed
 
 \end_layout
 
-\end_deeper
-\end_deeper
-\begin_layout Enumerate
-asd
+\begin_layout Standard
+Se puede ver en la 
+\begin_inset Formula $Figura$
+\end_inset
+
+ 
+\begin_inset Formula $2$
+\end_inset
+
+ que, conforme se aumenta la cantidad de vecinos a considerar, se 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+suaviza
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ en cuanto a los picos que genera y se asemeja mas a la curva obtenida en
+ la Figura 1 para la regresión lineal local pesada con núcleo gaussiano.
 \end_layout
 
-\begin_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Enumerate
-Porcentaje de acatamiento vs disminución en el nivel de colesterol
+Resultados
 \end_layout
 
 \begin_deeper
@@ -199,7 +810,7 @@ Porcentaje de acatamiento vs disminución en el nivel de colesterol
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -218,7 +829,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
+Nivel de colesterol según porcentaje de a acatamiento y regresión lineal
 \end_layout
 
 \end_inset
@@ -256,7 +867,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-
+Polynomio de grado 4 que mejor ajusta a los datos
 \end_layout
 
 \end_inset
@@ -269,7 +880,14 @@ status open
 
 \end_layout
 
-\end_deeper
+\begin_layout Standard
+Luego de analizados los datos graficados y su línea de regresión, se puede
+ concluir que la pastilla efectivamente funciona a combatir el colesterol
+ ya que se puede ver que, en la mayoría de los casos, la gente que mejor
+ acató la toma del medicamento sufrió una baja importante en su nivel de
+ colesterol.
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Newpage newpage
@@ -288,23 +906,107 @@ Código
 
 \begin_deeper
 \begin_layout LyX-Code
-% Classify the fisheriris data with a K-Nearest Neighbor classifier 
+% a, b, c
 \end_layout
 
 \begin_layout LyX-Code
-load fisheriris 
+% Se puede variariar la asignacion de las variables
 \end_layout
 
 \begin_layout LyX-Code
-c = knnclassify(meas,meas,species,4,'euclidean','Consensus'); 
+% sample, training y k para distintas pruebas.
 \end_layout
 
 \begin_layout LyX-Code
-cp = classperf(species,c) 
+load fisheriris; 
 \end_layout
 
 \begin_layout LyX-Code
-get(cp) 
+group = species; 
+\end_layout
+
+\begin_layout LyX-Code
+sample = meas(:, 1:2); 
+\end_layout
+
+\begin_layout LyX-Code
+training = meas(:, 1:2); 
+\end_layout
+
+\begin_layout LyX-Code
+checkgroup = species; 
+\end_layout
+
+\begin_layout LyX-Code
+distance = 'euclidean'; 
+\end_layout
+
+\begin_layout LyX-Code
+n = size(sample, 1); 
+\end_layout
+
+\begin_layout LyX-Code
+k = 10;
+\end_layout
+
+\begin_layout LyX-Code
+c = knnclassify(sample,training, group, k, distance); 
+\end_layout
+
+\begin_layout LyX-Code
+mistake = size(find(strcmp(c,checkgroup)==0),1); 
+\end_layout
+
+\begin_layout LyX-Code
+correct = (n - mistake) / n
+\end_layout
+
+\begin_layout LyX-Code
+error = mistake / n
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+% d -- division en conjunto de entrenamiento y testeo
+\end_layout
+
+\begin_layout LyX-Code
+total = 100;
+\end_layout
+
+\begin_layout LyX-Code
+lenght = size(meas,1);
+\end_layout
+
+\begin_layout LyX-Code
+indexes = randperm(lenght);  
+\end_layout
+
+\begin_layout LyX-Code
+g1 = indexes(:, 1:total);  
+\end_layout
+
+\begin_layout LyX-Code
+g2 = indexes(:, (total + 1):lenght); 
+\end_layout
+
+\begin_layout LyX-Code
+group = species(g1,:); 
+\end_layout
+
+\begin_layout LyX-Code
+sample = meas(g2,:);  
+\end_layout
+
+\begin_layout LyX-Code
+training = meas(g1,:);  
+\end_layout
+
+\begin_layout LyX-Code
+checkgroup = species(g2,:);
 \end_layout
 
 \end_deeper
@@ -313,6 +1015,10 @@ get(cp)
 \end_layout
 
 \begin_deeper
+\begin_layout LyX-Code
+% a
+\end_layout
+
 \begin_layout LyX-Code
 autosData=load('autos.txt');
 \end_layout
@@ -341,6 +1047,119 @@ xlabel('Velocidad [millas/h]');
 ylabel('Distancia de frenado [pies]');
 \end_layout
 
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+% b
+\end_layout
+
+\begin_layout LyX-Code
+lengthdata = size(y,1); 
+\end_layout
+
+\begin_layout LyX-Code
+colors = {'m', 'g', 'c', 'r', 'k'}; 
+\end_layout
+
+\begin_layout LyX-Code
+colorsize = size(colors,2) vecinos = [1, 5, 10, 30]; 
+\end_layout
+
+\begin_layout LyX-Code
+j = 1; 
+\end_layout
+
+\begin_layout LyX-Code
+hold on; 
+\end_layout
+
+\begin_layout LyX-Code
+for i = vecinos
+\end_layout
+
+\begin_layout LyX-Code
+    span = ceil((i *length(y))/lengthdata);
+\end_layout
+
+\begin_layout LyX-Code
+    z = smooth(x, y, span, 'lowess');
+\end_layout
+
+\begin_layout LyX-Code
+    c = mod(j,colorsize)+1;
+\end_layout
+
+\begin_layout LyX-Code
+	if i == 1
+\end_layout
+
+\begin_layout LyX-Code
+		plot(x,z, strcat(colors{c}, 'x'));
+\end_layout
+
+\begin_layout LyX-Code
+	else
+\end_layout
+
+\begin_layout LyX-Code
+		plot(x,z, colors{c});
+\end_layout
+
+\begin_layout LyX-Code
+	end
+\end_layout
+
+\begin_layout LyX-Code
+    j = j+1; 
+\end_layout
+
+\begin_layout LyX-Code
+end 
+\end_layout
+
+\begin_layout LyX-Code
+j = 1; 
+\end_layout
+
+\begin_layout LyX-Code
+l{j} = 'Mediciones'; 
+\end_layout
+
+\begin_layout LyX-Code
+j = j+1; 
+\end_layout
+
+\begin_layout LyX-Code
+for i = vecinos
+\end_layout
+
+\begin_layout LyX-Code
+    l{j} = strcat(num2str(i),' vecinos');
+\end_layout
+
+\begin_layout LyX-Code
+    j = j+1; 
+\end_layout
+
+\begin_layout LyX-Code
+end
+\end_layout
+
+\begin_layout LyX-Code
+legend(l); 
+\end_layout
+
+\begin_layout LyX-Code
+title({'Distancia de frenado en función de la velocidad'}); xlabel('velocidad
+ [millas/h]'); 
+\end_layout
+
+\begin_layout LyX-Code
+ylabel('distancia de frenado [pies]');
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
 .
@@ -352,7 +1171,11 @@ colesterol=load('colesterol.txt');
 \end_layout
 
 \begin_layout LyX-Code
-x=colesterol(:,2); y=colesterol(:,3);
+x=colesterol(:,2); 
+\end_layout
+
+\begin_layout LyX-Code
+y=colesterol(:,3);
 \end_layout
 
 \begin_layout LyX-Code
@@ -373,6 +1196,10 @@ ylabel('porcentaje de acatamiento');
 
 \begin_layout LyX-Code
 hold on;
+\end_layout
+
+\begin_layout LyX-Code
+% polinomio que mejor ajusta fue creado con la tool del matlab
 \end_layout
 
 \begin_layout LyX-Code
