@@ -87,6 +87,16 @@ Resultados
 
 \begin_deeper
 \begin_layout Standard
+A continuación se muestra una tabla comprativa entre las mediciones seleccionada
+s y el resultado de uso del algoritmo 
+\begin_inset Formula $knnclassify$
+\end_inset
+
+ (k vecinos mas cercnanos).
+ 
+\end_layout
+
+\begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="13" columns="4">
@@ -610,6 +620,23 @@ Seleccion aleatoria (d) *
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $k$
+\end_inset
+
+ = Cantidad de vecinos a considerar.
+\end_layout
+
+\begin_layout Standard
+Los valores en 
+\series bold
+negrita 
+\series default
+representan los mejores valores en cuanto a cantidad de mediciones clasificadas
+ correctamente para esa clase.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
 Se puede observar que para este probelma, la mejor clasificación de los
  individuos se produce cuando 
 \begin_inset Formula $k\approx10$
@@ -665,7 +692,6 @@ En comparación con los métodos aplicados en los trabajos prácticos anteriores
  conjuntos.
 \end_layout
 
-\end_deeper
 \begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
