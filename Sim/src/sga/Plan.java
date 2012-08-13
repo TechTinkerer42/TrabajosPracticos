@@ -7,6 +7,7 @@ public class Plan {
 	private String name, focalization;
 	private List<Semester> basicSemesters;
 	private List<Semester> professionalSemesters;
+	private List<Semester> electives;
 	
 	public Plan(String name) {
 		this.name = name;
@@ -38,5 +39,13 @@ public class Plan {
 	
 	public String getFocalization() {
 		return focalization;
+	}
+	
+	public List<Semester> getElectives() {
+		return electives;
+	}
+	
+	public void setElectives(List<Semester> electives) {
+		this.electives = electives;
 	}
 }

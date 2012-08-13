@@ -56,4 +56,14 @@ public class Course {
 		int correl = correlCodes == null ? 0 : correlCodes.size();
 		return correl + "{ " + code + ", " + name + ", {" + correlCodes + "}}";
 	}
+	
+	@Override
+	public int hashCode() {
+		return code.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return ((Course) obj).code.equals(code);
+	}
 }

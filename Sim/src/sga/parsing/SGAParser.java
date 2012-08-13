@@ -15,10 +15,12 @@ public class SGAParser {
 		
 	private CicleParser basicCicleParser;
 	private CicleParser professionalCicleParser;
+	private CicleParser electivesParser;
 	
 	public SGAParser() {
 		basicCicleParser = new CicleParser(CicleParser.TYPE_INF_BASICO);
 		professionalCicleParser = new CicleParser();
+		electivesParser = new ElectivesParser();
 	}
 	
 	public Plan parse(File f, int orientationType) throws IOException {
@@ -28,9 +30,11 @@ public class SGAParser {
 		List<Semester> basic = basicCicleParser.parse(allCourses);
 		professionalCicleParser.setType(orientationType);
 		List<Semester> profesional = professionalCicleParser.parse(allCourses);
+		List<Semester> electives = electivesParser.parse(allCourses);
 		Plan p = new Plan(planName);
 		p.setBasicSemesters(basic);
 		p.setProfessionalSemesters(profesional);
+		p.setElectives(electives);
 		return p;
 	}
 

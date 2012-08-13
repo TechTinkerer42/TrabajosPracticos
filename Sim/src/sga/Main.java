@@ -14,7 +14,7 @@ public class Main {
 			// List<Semester> semesters = getSemesters("res/informatica_basico.html");
 			Plan p = getPlan("res/informatica.html", CicleParser.TYPE_INF_IA);
 			GraphvizTranslator translator = new GraphvizTranslator(p);
-			translator.toGraphviz();
+			translator.toGraphviz(true);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

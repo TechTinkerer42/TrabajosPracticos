@@ -46,16 +46,16 @@ public class CicleParser {
 		while (it.hasNext()) {
 			Element semesterEl = it.next();
 			semesterEl = semesterEl.child(0).child(0);
-			Semester s = parseSemester(semesterEl);
+			Semester s = parseSemester(semesterEl.child(1), semesterEl.child(2));
 			semesters.add(s);
 		}
 		return semesters;
 	}
 	
-	protected Semester parseSemester(Element elem) {
-		String name = elem.child(1).getElementsByTag("span").html();
+	protected Semester parseSemester(Element nameEl, Element coursesEl) {
+		String name = nameEl.getElementsByTag("span").html();
 		Semester semeser = new Semester(name);
-		Elements trs = elem.child(2).getElementsByTag("tr");
+		Elements trs = coursesEl.getElementsByTag("tr");
 		for (int i = 1; i < trs.size(); i++) {
 			Course c = courseParser.parse(trs.get(i));
 			if (!"0".equals(c.getCredits())) {				
