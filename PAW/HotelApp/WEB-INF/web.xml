@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <display-name>Example</display-name>
+
+  <!-- Declare the existence of a servlet. -->
+  <servlet>
+	<servlet-name>LoginServlet</servlet-name>
+    <servlet-class>hotelapp.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ListHotels</servlet-name>
+    <servlet-class>hotelapp.ListHotels</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>ViewHotel</servlet-name>
+    <servlet-class>hotelapp.ViewHotel</servlet-class>
+  </servlet>
+  <servlet>
+	<servlet-name>AddComment</servlet-name>
+    <servlet-class>hotelapp.AddComment</servlet-class>
+  </servlet>
+  
+  <!-- Map URLs to that servlet. -->
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ListHotels</servlet-name>
+    <url-pattern>/ListHotels</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ViewHotel</servlet-name>
+    <url-pattern>/ViewHotel</url-pattern>
+  </servlet-mapping>  
+  <servlet-mapping>
+    <servlet-name>AddComment</servlet-name>
+    <url-pattern>/AddComment</url-pattern>
+  </servlet-mapping>
+</web-app>
