@@ -49,7 +49,7 @@ public class ViewHotel extends HttpServlet {
 	}
 	
 	private void addHotelInfo(PrintWriter out, Hotel hotel) {
-		out.println("<a href='" + ServletType.LIST_HOTELS + "'><< Volver</a>");
+		out.println("<a href='" + ServletName.LIST_HOTELS + "'><< Volver</a>");
 		out.printf("<h2>Hotel %s - %d stars</h2>", hotel.getName(), hotel.getRating());
 		out.println("<ul>");
 		out.printf("<li>Address: %s</li>", hotel.getAddress());
@@ -68,7 +68,7 @@ public class ViewHotel extends HttpServlet {
 	}
 	
 	private void addComentsArea(PrintWriter out, Hotel hotel) {
-		out.println("<form method='POST' action='" + ServletType.ADD_COMMENT + "'>");
+		out.println("<form method='POST' action='" + ServletName.ADD_COMMENT + "'>");
 		out.println("<h3>Add your coment!</h3>");
 		out.print("<h4>Your name:</h4>");
 		out.println("<input name='author'/>");
