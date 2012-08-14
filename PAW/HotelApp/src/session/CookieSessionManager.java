@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import user.UserManager;
 
-public class CookieSessionManager implements SessionManager {
+public class CookieSessionManager implements HttpSessionManager {
 
 	private static String COOKIE_NAME = "session_id";
 
@@ -14,12 +14,19 @@ public class CookieSessionManager implements SessionManager {
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 
-	public CookieSessionManager(HttpServletRequest request,
-			HttpServletResponse response) {
-		this.request = request;
-		this.response = response;
+	public CookieSessionManager() {
 	}
 
+	public CookieSessionManager(HttpServletRequest req, HttpServletResponse resp) {
+		setHttpParams(req, resp);
+	}
+	
+	@Override
+	public void setHttpParams(HttpServletRequest req, HttpServletResponse resp) {
+		this.request = req;
+		this.response = resp;
+	}	
+	
 	@Override
 	public boolean userIsSet() {
 		Cookie cookie = getCookie(COOKIE_NAME);
@@ -34,7 +41,7 @@ public class CookieSessionManager implements SessionManager {
 	public boolean setUser(String name, String password) {
 		String id = userManager.login(name, password);
 		if (id != null) {
-			setCookie(COOKIE_NAME, id);
+			response.addCookie(new Cookie(COOKIE_NAME, id));
 			return true;
 		}
 		return false;
@@ -52,8 +59,4 @@ public class CookieSessionManager implements SessionManager {
 		return null;
 	}
 
-	private void setCookie(String name, String value) {
-		Cookie cookie = new Cookie(name, value);
-		response.addCookie(cookie);
-	}
 }
