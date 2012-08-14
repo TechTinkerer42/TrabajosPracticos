@@ -19,20 +19,20 @@ public class AddComment extends HttpServlet {
 			throws ServletException, IOException {
 		String codeString = req.getParameter("code");
 		if (codeString == null || codeString.isEmpty()) {
-			req.getRequestDispatcher(ServletType.LIST_HOTELS + "").forward(req, resp);
+			req.getRequestDispatcher(ServletName.LIST_HOTELS.addrs).forward(req, resp);
 			return;
 		}
 		int code;
 		try {
 			code = Integer.parseInt(codeString);
 		} catch (NumberFormatException e) {
-			req.getRequestDispatcher(ServletType.LIST_HOTELS + "").forward(req, resp);
+			req.getRequestDispatcher(ServletName.LIST_HOTELS.addrs).forward(req, resp);
 			return;
 		}
 		String author = req.getParameter("author");
 		String comment = req.getParameter("comment");
 		addComent(code, author, comment);
-		resp.sendRedirect(ServletType.VIEW_HOTEL + "?code=" + code);
+		resp.sendRedirect(ServletName.VIEW_HOTEL + "?code=" + code);
 	}
 
 	protected void addComent(int code, String author, String comment) {

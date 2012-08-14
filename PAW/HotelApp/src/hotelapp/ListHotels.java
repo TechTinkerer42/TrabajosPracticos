@@ -36,7 +36,7 @@ public class ListHotels extends HttpServlet {
 	private String buildHotelLink(Hotel hotel) {
 		int code = hotel.getCode();
 		String name = hotel.getName();
-		return "<a href='" + ServletType.VIEW_HOTEL + "?code=" + code + "'>"
+		return "<a href='" + ServletName.VIEW_HOTEL + "?code=" + code + "'>"
 				+ name + "</a>";
 	}
 

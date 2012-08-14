@@ -1,20 +1,20 @@
 package hotelapp;
 
-public enum ServletType {	
+public enum ServletName {	
 	
 	LIST_HOTELS("ListHotels"), 
 	VIEW_HOTEL("ViewHotel"), 
 	ADD_COMMENT("AddComment"),
 	LOGIN_SERVLET("LoginServlet");
 	
-	private final String address;
+	public final String addrs;
 	
-	private ServletType(String name) {
-		this.address = name;
+	private ServletName(String name) {
+		this.addrs = name;
 	}
 	
 	@Override
 	public String toString() {
-		return address;
+		return addrs;
 	}
 }
