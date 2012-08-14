@@ -54,7 +54,7 @@ public class ViewHotel extends HttpServlet {
 		out.println("<ul>");
 		out.printf("<li>Address: %s</li>", hotel.getAddress());
 		out.printf("<li>Price: %s</li>", hotel.getDetails().getFee());
-		out.printf("<li>Comments: %s</li>", hotel.getAddress());
+		out.printf("<li>Description: %s</li>", hotel.getDesc());
 		out.println("</ul>");
 		out.println("<h4>User comments:</h4>");
 		out.println("<table border=\"1\">");

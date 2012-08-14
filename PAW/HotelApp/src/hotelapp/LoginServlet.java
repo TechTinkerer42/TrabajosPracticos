@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		resp.sendRedirect(ServletType.LOGIN_SERVLET + "");
 	}
-	
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
