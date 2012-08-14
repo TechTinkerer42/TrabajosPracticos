@@ -4,12 +4,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import session.CookieSessionManager;
-import session.SessionManager;
+import session.HttpSessionManager;
 
 public class LoginServlet extends HttpServlet {
 
@@ -18,26 +19,22 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		SessionManager sessionManager = new CookieSessionManager(req, resp);
-		if (sessionManager.userIsSet()) {
-			resp.sendRedirect(ServletType.LIST_HOTELS + "");
-			return;
-		}
+		HttpSessionManager sessionManager = new CookieSessionManager(req, resp);
 		String user = req.getParameter("username");
 		String password = req.getParameter("password");
 		if (sessionManager.setUser(user, password)) {
-			redirectToHome(resp);
+			redirect(req, resp);
 			return;
 		}
-		resp.sendRedirect(ServletType.LOGIN_SERVLET + "");
+		resp.sendRedirect(ServletName.LOGIN_SERVLET + "");
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		SessionManager sessionManager = new CookieSessionManager(req, resp);
+		HttpSessionManager sessionManager = new CookieSessionManager(req, resp);
 		if (sessionManager.userIsSet()) {
-			redirectToHome(resp);
+			redirect(req, resp);
 			return;
 		}
 		PrintWriter out = resp.getWriter();
@@ -45,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	private void addLoginForm(PrintWriter out) {
-		out.println("<form method='POST' action='" + ServletType.LOGIN_SERVLET + "'>");
+		out.println("<form method='POST' action='" + ServletName.LOGIN_SERVLET + "'>");
 		out.println("<h3>Sign in</h3>");
 		out.println("<h4>Username:</h4>");
 		out.println("<input name='username'/>");
@@ -55,7 +52,17 @@ public class LoginServlet extends HttpServlet {
 		out.println("</form>");
 	}
 	
-	private void redirectToHome(HttpServletResponse resp) throws IOException {
-		resp.sendRedirect(ServletType.LIST_HOTELS + "");
+	private void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		Cookie[] cookies = req.getCookies();
+		String redirect = ServletName.LIST_HOTELS.addrs;
+		if (cookies != null) {
+			for (Cookie cookie: cookies) {
+				if ("redirect".equals(cookie.getName())) {
+					redirect = cookie.getValue();
+					break;
+				}
+			}
+		}
+		resp.sendRedirect(redirect);
 	}
 }
