@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,23 +15,31 @@ public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	private HttpSessionManager sessionManager;
+	
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		sessionManager = new CookieSessionManager();
+	}
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		HttpSessionManager sessionManager = new CookieSessionManager(req, resp);
+		sessionManager.setHttpParams(req, resp);
 		String user = req.getParameter("username");
 		String password = req.getParameter("password");
 		if (sessionManager.setUser(user, password)) {
 			redirect(req, resp);
 			return;
 		}
-		resp.sendRedirect(ServletName.LOGIN_SERVLET + "");
+		redirect(req, resp);
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		HttpSessionManager sessionManager = new CookieSessionManager(req, resp);
+		sessionManager.setHttpParams(req, resp);
 		if (sessionManager.userIsSet()) {
 			redirect(req, resp);
 			return;
@@ -53,16 +60,12 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	private void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		Cookie[] cookies = req.getCookies();
 		String redirect = ServletName.LIST_HOTELS.addrs;
-		if (cookies != null) {
-			for (Cookie cookie: cookies) {
-				if ("redirect".equals(cookie.getName())) {
-					redirect = cookie.getValue();
-					break;
-				}
-			}
+		String cookieRedirect = CookieUtil.deleteCookie(req.getCookies(), "redirect", resp);
+		if (cookieRedirect != null) {
+			redirect = cookieRedirect;
 		}
 		resp.sendRedirect(redirect);
 	}
+
 }

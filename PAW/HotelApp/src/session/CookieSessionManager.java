@@ -1,5 +1,7 @@
 package session;
 
+import hotelapp.CookieUtil;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,11 +31,10 @@ public class CookieSessionManager implements HttpSessionManager {
 	
 	@Override
 	public boolean userIsSet() {
-		Cookie cookie = getCookie(COOKIE_NAME);
-		if (cookie == null) {
+		String id = CookieUtil.getCookieValue(request.getCookies(), COOKIE_NAME);
+		if (id == null) {
 			return false;
 		}
-		String id = cookie.getValue();
 		return userManager.isLoggedIn(id);
 	}
 
@@ -47,16 +48,13 @@ public class CookieSessionManager implements HttpSessionManager {
 		return false;
 	}
 
-	private Cookie getCookie(String name) {
-		Cookie[] cookies = request.getCookies();
-		if (cookies != null) {
-			for (Cookie c : cookies) {
-				if (c.getName().equals(name)) {
-					return c;
-				}
-			}
+	@Override
+	public boolean unsetUser(String name) {
+		String id = CookieUtil.getCookieValue(request.getCookies(), COOKIE_NAME);
+		if (id == null) {
+			return false;
 		}
-		return null;
+		return userManager.logout(id);
 	}
 
 }

@@ -40,11 +40,13 @@ public class UserManager {
 		return null;
 	}
 
-	public void logout(String id) {
+	public boolean logout(String id) {
 		String username = loggedUsersById.remove(id);
 		if (username != null) {
 			loggedUsersByUsername.remove(username);
+			return true;
 		}
+		return false;
 	}
 
 	public boolean isLoggedIn(String id) {

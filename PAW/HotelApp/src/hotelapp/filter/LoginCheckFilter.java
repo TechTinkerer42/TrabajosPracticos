@@ -30,9 +30,8 @@ public class LoginCheckFilter implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest httpReq = (HttpServletRequest) req;
 		HttpServletResponse httpResp = (HttpServletResponse) resp;
-		String requestUrl = httpReq.getRequestURL().toString();
+		String requestUrl = getFullUrl(httpReq);
 		sessionManager.setHttpParams(httpReq, httpResp);
-
 		if (sessionManager.userIsSet() || requestUrl.contains(ServletName.LOGIN_SERVLET.addrs)) {
 			chain.doFilter(req, resp);
 		} else {
@@ -41,6 +40,15 @@ public class LoginCheckFilter implements Filter {
 		}
 	}
 
+	private String getFullUrl(HttpServletRequest req) {
+		StringBuffer url = req.getRequestURL();
+		String query = req.getQueryString();
+		if (query != null && !query.isEmpty()) {
+			url = url.append("?").append(query);
+		}
+		return url.toString();
+	}
+	
 	private String getRedirectUrl(String fullUrl) {
 		int index = fullUrl.lastIndexOf("/");
 		return fullUrl.substring(index);
