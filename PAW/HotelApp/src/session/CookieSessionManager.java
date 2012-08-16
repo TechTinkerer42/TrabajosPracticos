@@ -47,10 +47,15 @@ public class CookieSessionManager implements HttpSessionManager {
 		}
 		return false;
 	}
+	
+	public String getUser() {
+		String id = CookieUtil.getCookieValue(request.getCookies(), COOKIE_NAME);
+		return (id == null) ? null : userManager.getUserName(id);
+	}
 
 	@Override
-	public boolean unsetUser(String name) {
-		String id = CookieUtil.getCookieValue(request.getCookies(), COOKIE_NAME);
+	public boolean unsetUser() {
+		String id = CookieUtil.deleteCookie(request.getCookies(), COOKIE_NAME, response);
 		if (id == null) {
 			return false;
 		}

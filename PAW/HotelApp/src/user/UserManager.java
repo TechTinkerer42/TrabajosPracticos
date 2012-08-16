@@ -52,4 +52,8 @@ public class UserManager {
 	public boolean isLoggedIn(String id) {
 		return loggedUsersById.get(id) != null;
 	}
+	
+	public String getUserName(String id) {
+		return loggedUsersById.get(id);
+	}
 }

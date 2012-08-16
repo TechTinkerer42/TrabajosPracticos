@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ViewHotel extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-
+		
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -69,13 +69,10 @@ public class ViewHotel extends HttpServlet {
 	
 	private void addComentsArea(PrintWriter out, Hotel hotel) {
 		out.println("<form method='POST' action='" + ServletName.ADD_COMMENT + "'>");
-		out.println("<h3>Add your coment!</h3>");
-		out.print("<h4>Your name:</h4>");
-		out.println("<input name='author'/>");
-		out.println("<h4>Your comment:</h4>");
-		out.print("<input name='comment'/>");
+		out.println("<h3>Share your experience!</h3>");
+		out.print("<textarea rows='5' cols='20' name='comment'>Comment here</textarea>");
 		out.printf("<input name='code' type='hidden' value='%s'/>", hotel.getCode());
-		out.println("<input type='submit' value='Add comment'/>");
+		out.println("<br/><input type='submit' value='Submit'/>");
 		out.println("</form>");
 	}
 }

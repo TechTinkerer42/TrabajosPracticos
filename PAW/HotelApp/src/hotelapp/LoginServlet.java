@@ -30,18 +30,22 @@ public class LoginServlet extends HttpServlet {
 		String user = req.getParameter("username");
 		String password = req.getParameter("password");
 		if (sessionManager.setUser(user, password)) {
-			redirect(req, resp);
+			redirectLoggedUser(req, resp);
 			return;
 		}
-		redirect(req, resp);
+		redirectLoggedUser(req, resp);
 	}
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		sessionManager.setHttpParams(req, resp);
-		if (sessionManager.userIsSet()) {
-			redirect(req, resp);
+		String logout = req.getParameter("logout");
+		if ("true".equals(logout)) {
+			sessionManager.unsetUser();
+			resp.sendRedirect(ServletName.LOGIN_SERVLET.addrs);
+		} else if (sessionManager.userIsSet()) {
+			redirectLoggedUser(req, resp);
 			return;
 		}
 		PrintWriter out = resp.getWriter();
@@ -59,7 +63,7 @@ public class LoginServlet extends HttpServlet {
 		out.println("</form>");
 	}
 	
-	private void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	private void redirectLoggedUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String redirect = ServletName.LIST_HOTELS.addrs;
 		String cookieRedirect = CookieUtil.deleteCookie(req.getCookies(), "redirect", resp);
 		if (cookieRedirect != null) {

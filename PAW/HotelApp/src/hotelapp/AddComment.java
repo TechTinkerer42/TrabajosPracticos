@@ -10,10 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import session.CookieSessionManager;
+import session.HttpSessionManager;
+
 public class AddComment extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
+	private HttpSessionManager sessionManager;
+
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		sessionManager = new CookieSessionManager();
+	}
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -29,7 +40,10 @@ public class AddComment extends HttpServlet {
 			req.getRequestDispatcher(ServletName.LIST_HOTELS.addrs).forward(req, resp);
 			return;
 		}
-		String author = req.getParameter("author");
+		String author = sessionManager.getUser();
+		if (author == null) {
+			author = "null!";
+		}
 		String comment = req.getParameter("comment");
 		addComent(code, author, comment);
 		resp.sendRedirect(ServletName.VIEW_HOTEL + "?code=" + code);

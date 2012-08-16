@@ -11,5 +11,7 @@ public interface HttpSessionManager {
 	
 	boolean setUser(String name, String password);
 	
-	boolean unsetUser(String name);
+	String getUser();
+	
+	boolean unsetUser();
 }
