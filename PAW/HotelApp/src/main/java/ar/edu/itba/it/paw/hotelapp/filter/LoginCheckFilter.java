@@ -29,27 +29,22 @@ public class LoginCheckFilter implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest httpReq = (HttpServletRequest) req;
 		HttpServletResponse httpResp = (HttpServletResponse) resp;
-		String requestUrl = getFullUrl(httpReq);
+		String requestUrl = httpReq.getRequestURI();
 		if (sessionManager.userIsSet() || requestUrl.contains(ServletName.LOGIN_SERVLET.addrs)) {
 			chain.doFilter(req, resp);
 		} else {
-			httpResp.addCookie(new Cookie("redirect", getRedirectUrl(requestUrl)));
+			createRedirectCookie(httpReq, httpResp);
 			httpResp.sendRedirect(ServletName.LOGIN_SERVLET.addrs);
 		}
 	}
-
-	private String getFullUrl(HttpServletRequest req) {
+	
+	private void createRedirectCookie(HttpServletRequest req, HttpServletResponse resp) {
 		StringBuffer url = req.getRequestURL();
 		String query = req.getQueryString();
 		if (query != null && !query.isEmpty()) {
 			url = url.append("?").append(query);
-		}
-		return url.toString();
-	}
-	
-	private String getRedirectUrl(String fullUrl) {
-		int index = fullUrl.lastIndexOf("/");
-		return fullUrl.substring(index);
+		}		
+		resp.addCookie(new Cookie("redirect", url.toString()));
 	}
 	
 	@Override
