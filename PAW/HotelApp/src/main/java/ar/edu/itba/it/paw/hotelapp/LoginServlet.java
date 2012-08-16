@@ -20,13 +20,12 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		sessionManager = new CookieSessionManager();
+		sessionManager = CookieSessionManager.getInstance();
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		sessionManager.setHttpParams(req, resp);
 		String user = req.getParameter("username");
 		String password = req.getParameter("password");
 		if (sessionManager.setUser(user, password)) {
@@ -39,7 +38,6 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		sessionManager.setHttpParams(req, resp);
 		String logout = req.getParameter("logout");
 		if ("true".equals(logout)) {
 			sessionManager.unsetUser();

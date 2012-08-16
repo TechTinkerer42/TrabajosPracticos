@@ -19,7 +19,7 @@ public class SessionUpdaterFilter implements Filter {
 	
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		sessionManager = new CookieSessionManager();
+		sessionManager = CookieSessionManager.getInstance();
 	}
 
 	@Override

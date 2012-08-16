@@ -10,18 +10,20 @@ import ar.edu.itba.it.paw.user.UserManager;
 public class CookieSessionManager implements HttpSessionManager {
 
 	private static String COOKIE_NAME = "session_id";
-
+	
+	private static CookieSessionManager instance = new CookieSessionManager();
+	
+	public static CookieSessionManager getInstance() {
+		return instance;
+	}
+	
 	private UserManager userManager = UserManager.getInstance();
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 
-	public CookieSessionManager() {
+	private CookieSessionManager() {
 	}
 
-	public CookieSessionManager(HttpServletRequest req, HttpServletResponse resp) {
-		setHttpParams(req, resp);
-	}
-	
 	@Override
 	public void setHttpParams(HttpServletRequest req, HttpServletResponse resp) {
 		this.request = req;

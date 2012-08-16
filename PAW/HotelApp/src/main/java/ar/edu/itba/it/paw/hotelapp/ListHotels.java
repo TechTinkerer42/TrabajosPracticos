@@ -21,12 +21,11 @@ public class ListHotels extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		sessionManager = new CookieSessionManager();
+		sessionManager = CookieSessionManager.getInstance();
 	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		sessionManager.setHttpParams(req, resp);
 		PrintWriter out = resp.getWriter();
 		out.println("<html>");
 		out.println("<body>");

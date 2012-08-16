@@ -21,7 +21,7 @@ public class LoginCheckFilter implements Filter {
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		sessionManager = new CookieSessionManager();
+		sessionManager = CookieSessionManager.getInstance();
 	}
 
 	@Override
@@ -30,7 +30,6 @@ public class LoginCheckFilter implements Filter {
 		HttpServletRequest httpReq = (HttpServletRequest) req;
 		HttpServletResponse httpResp = (HttpServletResponse) resp;
 		String requestUrl = getFullUrl(httpReq);
-		sessionManager.setHttpParams(httpReq, httpResp);
 		if (sessionManager.userIsSet() || requestUrl.contains(ServletName.LOGIN_SERVLET.addrs)) {
 			chain.doFilter(req, resp);
 		} else {
