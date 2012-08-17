@@ -46,8 +46,7 @@ public class LoginServlet extends HttpServlet {
 			redirectLoggedUser(req, resp);
 			return;
 		}
-		PrintWriter out = resp.getWriter();
-		addLoginForm(out);
+		req.getRequestDispatcher("/WEB-INF/jsp/test.jsp").forward(req, resp);
 	}
 	
 	private void addLoginForm(PrintWriter out) {

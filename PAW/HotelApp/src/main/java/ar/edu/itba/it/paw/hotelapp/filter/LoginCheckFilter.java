@@ -30,12 +30,20 @@ public class LoginCheckFilter implements Filter {
 		HttpServletRequest httpReq = (HttpServletRequest) req;
 		HttpServletResponse httpResp = (HttpServletResponse) resp;
 		String requestUrl = httpReq.getRequestURI();
+		if (isStaticRequest(requestUrl)) {	// ignore statis requests
+			chain.doFilter(req, resp);
+			return;
+		}
 		if (sessionManager.userIsSet() || requestUrl.contains(ServletName.LOGIN_SERVLET.addrs)) {
 			chain.doFilter(req, resp);
 		} else {
-			createRedirectCookie(httpReq, httpResp);
+			// createRedirectCookie(httpReq, httpResp);
 			httpResp.sendRedirect(ServletName.LOGIN_SERVLET.addrs);
 		}
+	}
+	
+	private boolean isStaticRequest(String url) {
+		return url.endsWith(".css") || url.endsWith(".js");
 	}
 	
 	private void createRedirectCookie(HttpServletRequest req, HttpServletResponse resp) {
