@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ar.edu.itba.it.paw.Config;
 import ar.edu.itba.it.paw.hotel.Hotel;
 import ar.edu.itba.it.paw.hotel.HotelManager;
-import ar.edu.itba.it.paw.session.CookieSessionManager;
 import ar.edu.itba.it.paw.session.HttpSessionManager;
 
 public class ListHotels extends HttpServlet {
@@ -21,7 +21,7 @@ public class ListHotels extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		sessionManager = CookieSessionManager.getInstance();
+		sessionManager = Config.sessionManager;
 	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -39,11 +39,11 @@ public class ListHotels extends HttpServlet {
 	
 	private void addHotelList(PrintWriter out) {
 		out.println("<table border=\"1\">");
-		HotelManager hotelManager = HotelManager.getInstance();
+		HotelManager hotelManager = new HotelManager();
 		for (Hotel hotel : hotelManager.getHotels()) {
 			out.println("<tr>");
 			out.println("<th>" + buildHotelLink(hotel) + "</th>");
-			out.println("<th>" + hotel.getDesc() + "</th>");
+			out.println("<th>" + hotel.getDescription() + "</th>");
 			out.println("</tr>");
 		}
 		out.println("</table>");
@@ -59,6 +59,10 @@ public class ListHotels extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		doGet(req, resp);
+	}
+	
+	public String getHola() {
+		return "Hola";
 	}
 
 }

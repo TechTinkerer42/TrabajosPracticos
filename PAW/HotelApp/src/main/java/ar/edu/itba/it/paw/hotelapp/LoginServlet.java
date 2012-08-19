@@ -1,14 +1,13 @@
 package ar.edu.itba.it.paw.hotelapp;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ar.edu.itba.it.paw.session.CookieSessionManager;
+import ar.edu.itba.it.paw.Config;
 import ar.edu.itba.it.paw.session.HttpSessionManager;
 
 public class LoginServlet extends HttpServlet {
@@ -20,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		sessionManager = CookieSessionManager.getInstance();
+		sessionManager = Config.sessionManager;
 	}
 	
 	@Override
@@ -42,29 +41,20 @@ public class LoginServlet extends HttpServlet {
 		if ("true".equals(logout)) {
 			sessionManager.unsetUser();
 			resp.sendRedirect(ServletName.LOGIN_SERVLET.addrs);
+			return;
 		} else if (sessionManager.userIsSet()) {
 			redirectLoggedUser(req, resp);
 			return;
 		}
-		req.getRequestDispatcher("/WEB-INF/jsp/test.jsp").forward(req, resp);
-	}
-	
-	private void addLoginForm(PrintWriter out) {
-		out.println("<form method='POST' action='" + ServletName.LOGIN_SERVLET + "'>");
-		out.println("<h3>Sign in</h3>");
-		out.println("<h4>Username:</h4>");
-		out.println("<input name='username'/>");
-		out.println("<h4>Password:</h4>");
-		out.println("<input name='password' type='password'/><br/>");
-		out.println("<input type='submit' value='Log in'/>");
-		out.println("</form>");
+		req.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(req, resp);
 	}
 	
 	private void redirectLoggedUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String redirect = ServletName.LIST_HOTELS.addrs;
-		String cookieRedirect = CookieUtil.deleteCookie(req.getCookies(), "redirect", resp);
-		if (cookieRedirect != null) {
-			redirect = cookieRedirect;
+		String redirectAtt = (String) req.getAttribute("ATT_REDIRECT");
+		if (redirectAtt != null) {
+			req.removeAttribute("ATT_REDIRECT");
+			redirect = redirectAtt;
 		}
 		resp.sendRedirect(redirect);
 	}

@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ar.edu.itba.it.paw.Config;
 import ar.edu.itba.it.paw.hotel.Hotel;
 import ar.edu.itba.it.paw.hotel.HotelManager;
-import ar.edu.itba.it.paw.session.CookieSessionManager;
 import ar.edu.itba.it.paw.session.HttpSessionManager;
 
 public class AddComment extends HttpServlet {
@@ -21,22 +21,24 @@ public class AddComment extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		sessionManager = CookieSessionManager.getInstance();
+		sessionManager = Config.sessionManager;
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		String codeString = req.getParameter("code");
 		if (codeString == null || codeString.isEmpty()) {
-			req.getRequestDispatcher(ServletName.LIST_HOTELS.addrs).forward(req, resp);
+			req.getRequestDispatcher(ServletName.LIST_HOTELS.addrs).forward(
+					req, resp);
 			return;
 		}
 		int code;
 		try {
 			code = Integer.parseInt(codeString);
 		} catch (NumberFormatException e) {
-			req.getRequestDispatcher(ServletName.LIST_HOTELS.addrs).forward(req, resp);
+			req.getRequestDispatcher(ServletName.LIST_HOTELS.addrs).forward(
+					req, resp);
 			return;
 		}
 		String author = sessionManager.getUser();
@@ -48,12 +50,13 @@ public class AddComment extends HttpServlet {
 		resp.sendRedirect(ServletName.VIEW_HOTEL + "?code=" + code);
 	}
 
-	protected void addComent(int code, String author, String comment) {
-		HotelManager hotelManager = HotelManager.getInstance();
-		Hotel hotel = hotelManager.getHotel(code);
-		if (hotel == null || author == null || author.isEmpty() || comment == null || comment.isEmpty()) {
+	protected void addComent(int id, String author, String comment) {
+		HotelManager hotelManager = new HotelManager();
+		Hotel hotel = hotelManager.getHotel(id);
+		if (hotel == null || author == null || author.isEmpty()
+				|| comment == null || comment.isEmpty()) {
 			return;
 		}
-		hotel.getDetails().addComments(author, comment);
+		hotel.getComments().add(author, comment);
 	}
 }

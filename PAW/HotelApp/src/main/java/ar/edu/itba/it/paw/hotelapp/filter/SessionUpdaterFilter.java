@@ -11,15 +11,16 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ar.edu.itba.it.paw.session.CookieSessionManager;
+import ar.edu.itba.it.paw.Config;
+import ar.edu.itba.it.paw.session.HttpSessionManager;
 
 public class SessionUpdaterFilter implements Filter {
 
-	private CookieSessionManager sessionManager;
+	private HttpSessionManager sessionManager;
 	
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		sessionManager = CookieSessionManager.getInstance();
+		sessionManager = Config.sessionManager;
 	}
 
 	@Override

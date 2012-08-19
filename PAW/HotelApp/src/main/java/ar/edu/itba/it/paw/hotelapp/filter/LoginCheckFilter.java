@@ -8,20 +8,20 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ar.edu.itba.it.paw.Config;
 import ar.edu.itba.it.paw.hotelapp.ServletName;
-import ar.edu.itba.it.paw.session.CookieSessionManager;
+import ar.edu.itba.it.paw.session.HttpSessionManager;
 
 public class LoginCheckFilter implements Filter {
 
-	private CookieSessionManager sessionManager;
+	private HttpSessionManager sessionManager;
 
 	@Override
-	public void init(FilterConfig arg0) throws ServletException {
-		sessionManager = CookieSessionManager.getInstance();
+	public void init(FilterConfig config) throws ServletException {
+		sessionManager = Config.sessionManager;
 	}
 
 	@Override
@@ -30,14 +30,14 @@ public class LoginCheckFilter implements Filter {
 		HttpServletRequest httpReq = (HttpServletRequest) req;
 		HttpServletResponse httpResp = (HttpServletResponse) resp;
 		String requestUrl = httpReq.getRequestURI();
-		if (isStaticRequest(requestUrl)) {	// ignore statis requests
+		if (isStaticRequest(requestUrl)) {	// ignore static requests
 			chain.doFilter(req, resp);
 			return;
 		}
 		if (sessionManager.userIsSet() || requestUrl.contains(ServletName.LOGIN_SERVLET.addrs)) {
 			chain.doFilter(req, resp);
 		} else {
-			// createRedirectCookie(httpReq, httpResp);
+			createRedirectCookie(httpReq, httpResp);
 			httpResp.sendRedirect(ServletName.LOGIN_SERVLET.addrs);
 		}
 	}
@@ -51,8 +51,8 @@ public class LoginCheckFilter implements Filter {
 		String query = req.getQueryString();
 		if (query != null && !query.isEmpty()) {
 			url = url.append("?").append(query);
-		}		
-		resp.addCookie(new Cookie("redirect", url.toString()));
+		}
+		req.getSession().setAttribute("ATT_REDIRECT", url.toString());
 	}
 	
 	@Override

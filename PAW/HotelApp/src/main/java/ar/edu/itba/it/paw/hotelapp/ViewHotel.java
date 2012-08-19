@@ -32,7 +32,7 @@ public class ViewHotel extends HttpServlet {
 			out.println("<h2>Hotel code must be numeric</h2>");
 			return;
 		}
-		HotelManager hotelManager = HotelManager.getInstance();
+		HotelManager hotelManager = new HotelManager();
 		Hotel hotel = hotelManager.getHotel(code);
 		if (hotel == null) {
 			out.printf("<h2>Hotel %d does not exists</h2>", code);
@@ -53,12 +53,12 @@ public class ViewHotel extends HttpServlet {
 		out.printf("<h2>Hotel %s - %d stars</h2>", hotel.getName(), hotel.getRating());
 		out.println("<ul>");
 		out.printf("<li>Address: %s</li>", hotel.getAddress());
-		out.printf("<li>Price: %s</li>", hotel.getDetails().getFee());
-		out.printf("<li>Description: %s</li>", hotel.getDesc());
+		out.printf("<li>Price: %s</li>", hotel.getPrice());
+		out.printf("<li>Description: %s</li>", hotel.getDescription());
 		out.println("</ul>");
 		out.println("<h4>User comments:</h4>");
 		out.println("<table border=\"1\">");
-		for (Comment comment : hotel.getDetails().getComments()) {
+		for (Comment comment : hotel.getComments().getAll()) {
 			out.println("<tr>");
 			out.println("<th>" + comment.getAuthor() + "</th>");
 			out.println("<th>" + comment.getDetails() + "</th>");

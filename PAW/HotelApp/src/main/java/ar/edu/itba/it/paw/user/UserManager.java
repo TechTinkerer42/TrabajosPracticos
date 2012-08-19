@@ -6,54 +6,57 @@ import java.util.Map;
 public class UserManager {
 
 	private static UserManager instance = new UserManager();
-	private static SessionIdentifierGenerator sessionGen = new SessionIdentifierGenerator();
-
-	// For fast checking against session ids.
-	// SessionId -> Username
-	private Map<String, String> loggedUsersById;
-
-	// For fast checking against new users trying to login.
-	// Username -> SessionId
-	private Map<String, String> loggedUsersByUsername;
 
 	public static UserManager getInstance() {
 		return instance;
 	}
 
+	private Map<String, UserInfo> allUsers;
+
 	private UserManager() {
-		loggedUsersById = new HashMap<String, String>();
-		loggedUsersByUsername = new HashMap<String, String>();
-	}
-
-	public String login(String username, String passwd) {
-		String loggedInId = loggedUsersByUsername.get(username); 
-		if (loggedInId != null) {
-			return loggedInId;
-		}
-		User user = User.getInstance();
-		if (user.userExists(username, passwd)) {
-			String id = sessionGen.nextSessionId();
-			loggedUsersById.put(id, username);
-			loggedUsersByUsername.put(username, id);
-			return id;
-		}
-		return null;
-	}
-
-	public boolean logout(String id) {
-		String username = loggedUsersById.remove(id);
-		if (username != null) {
-			loggedUsersByUsername.remove(username);
-			return true;
-		}
-		return false;
-	}
-
-	public boolean isLoggedIn(String id) {
-		return loggedUsersById.get(id) != null;
+		allUsers = new HashMap<String, UserInfo>();
+		addUser("admin", "admin");
+		addUser("gonzalo", "mypassword");
+		addUser("asd", "asd");
 	}
 	
-	public String getUserName(String id) {
-		return loggedUsersById.get(id);
+	public void addUser(String username, String passwd) {
+		if (allUsers.get(username) != null) {
+			throw new IllegalArgumentException("Username is already in use");
+		}
+		allUsers.put(username, new UserInfo(passwd));
+	}
+
+	public void removeUser(String username) {
+		allUsers.remove(username);
+	}
+
+	public boolean userExists(String username, String passwd) {
+		UserInfo user = allUsers.get(username);
+		if (user == null || !user.passwd.equals(passwd)) {
+			return false;
+		}
+		return true;
+	}
+	
+	public int getUserId(String username) {
+		UserInfo userInfo = allUsers.get(username);
+		if (userInfo == null) {
+			return -1;
+		}
+		return userInfo.id;
+	}
+	
+	private static class UserInfo {
+		private static int next_id = 1;
+		
+		int id;
+		String passwd;
+
+		public UserInfo(String passwd) {
+			id = next_id++;
+			this.passwd = passwd;
+		}
+
 	}
 }

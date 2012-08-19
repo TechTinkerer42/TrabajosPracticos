@@ -14,4 +14,5 @@ public interface HttpSessionManager {
 	String getUser();
 	
 	boolean unsetUser();
+
 }
