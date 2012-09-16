@@ -35,25 +35,28 @@ public class Layer {
 	}
 
 	public float[] evaluate(float[] in, TransferFunction f) {
-		validateInputDimention(in.length);
-		// copia a biasedInputCache la entrada y agrega un -1 al final
-		System.arraycopy(in, 0, biasedInputCache, 0, in.length);
-		biasedInputCache[in.length] = -1;
-		
+		prepareInput(in);
 		for (int n = 0; n < neurons; n++) {
 			h[n] = MoreMath.dotProduct(weights[n], biasedInputCache);
 			outputCache[n] = f.valueAt(h[n]);
 		}
 		return outputCache;
 	}
-
+	
+	// copia a biasedInputCache la entrada y agrega un -1 al final
+	private void prepareInput(float[] in) {
+		validateInputDimention(in.length);
+		System.arraycopy(in, 0, biasedInputCache, 0, in.length);
+		biasedInputCache[in.length] = -1;
+	}
+	
 	private void validateInputDimention(int in) {
 		if (in != inputLen) {
 			throw new IllegalArgumentException(
 				"Invalid input dimention given: " + in + " but should be " + inputLen);
 		}
 	}
-
+	
 	public float[] getH() {
 		return h;
 	}
