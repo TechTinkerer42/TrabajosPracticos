@@ -4,11 +4,8 @@ import neuronalnetwork.function.TransferFunction;
 
 public class NeuralNetwork {
 
+	private TransferFunction f;
 	private Layer[] layers;
-
-	public NeuralNetwork() {
-	}
-
 	/**
 	 * Crea una red con input de largo structure[0]. Todos los demas valores que
 	 * se encuentren entre 1 y structure.length - 1 son creados como capas
@@ -25,6 +22,14 @@ public class NeuralNetwork {
 		}
 	}
 
+	public void setTransferFunction(TransferFunction f) {
+		this.f = f;
+	}
+	
+	public TransferFunction getTransferFunction() {
+		return f;
+	}
+	
 	public NeuralNetwork(Layer[] layers) {
 		setLayers(layers);
 	}
@@ -33,7 +38,7 @@ public class NeuralNetwork {
 		this.layers = layers;
 	}
 
-	public float[] evaluate(float[] input, TransferFunction f) {
+	public float[] evaluate(float[] input) {
 		float[] aux = input;
 		for (Layer l : layers) {
 			aux = l.evaluate(aux, f);

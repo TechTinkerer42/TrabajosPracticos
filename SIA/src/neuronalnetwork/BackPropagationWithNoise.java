@@ -2,15 +2,13 @@ package neuronalnetwork;
 
 import java.util.List;
 
-import neuronalnetwork.function.TransferFunction;
-
 public class BackPropagationWithNoise extends BackPropagation {
 
 	private float pNoise = 0.01f;
 	private float noiseAmount = 0.01f;
 	
-	public BackPropagationWithNoise(TransferFunction f, float eta) {
-		super(f, eta);
+	public BackPropagationWithNoise(float eta) {
+		super(eta);
 	}
 
 	public void train(NeuralNetwork net, List<TrainItem> train, int epochs) {

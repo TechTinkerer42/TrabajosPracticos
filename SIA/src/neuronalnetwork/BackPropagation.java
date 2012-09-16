@@ -8,16 +8,17 @@ import neuronalnetwork.function.TransferFunction;
 public class BackPropagation {
 
 	protected NeuralNetwork net;
-	protected TransferFunction f;
 	protected float eta;
 	
-	public BackPropagation(TransferFunction f, float eta) {
-		this.f = f;
+	protected TransferFunction f;
+	
+	public BackPropagation(float eta) {
 		this.eta = eta;
 	}
 	
 	public void train(NeuralNetwork net, List<TrainItem> train, int epochs) {
 		this.net = net;
+		f = net.getTransferFunction();
 		while (epochs-- > 0) { 
 			for (TrainItem item: train) {
 				train(item.input, item.output);
@@ -26,7 +27,7 @@ public class BackPropagation {
 	}
 	
 	protected void train(float[] input, float[] expectedOutput) {
-		float[] output = net.evaluate(input, f);
+		float[] output = net.evaluate(input);
 		if (Arrays.equals(output, expectedOutput)) {
 			return;
 		}
