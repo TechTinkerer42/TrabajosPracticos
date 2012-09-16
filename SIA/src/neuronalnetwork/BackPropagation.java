@@ -1,5 +1,6 @@
 package neuronalnetwork;
 
+import java.util.Arrays;
 import java.util.List;
 
 import neuronalnetwork.function.TransferFunction;
@@ -26,6 +27,9 @@ public class BackPropagation {
 	
 	protected void train(float[] input, float[] expectedOutput) {
 		float[] output = net.evaluate(input, f);
+		if (Arrays.equals(output, expectedOutput)) {
+			return;
+		}
 		int k = net.getTotalLayers();
 		float[][] deltas = new float[k][];
 		// Eval delta for last layer (k)
