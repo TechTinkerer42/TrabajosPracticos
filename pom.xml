@@ -16,6 +16,12 @@
 			<artifactId>commons-httpclient</artifactId>
 			<version>3.1</version>
 		</dependency>
+		<!-- sga -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.6.3</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
